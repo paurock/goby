@@ -1,0 +1,30 @@
+import type { AppProps } from "next/app";
+import { ChakraProvider } from "@chakra-ui/react";
+import { extendTheme } from "@chakra-ui/react";
+import Head from "next/head";
+
+const colors = {
+  brand: {
+    900: "coral",
+    800: "coral",
+    700: "coral",
+  },
+};
+
+const theme = extendTheme({ colors });
+
+function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <ChakraProvider resetCSS theme={theme}>
+      <Head>
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
+        />
+      </Head>
+      <Component {...pageProps} />
+    </ChakraProvider>
+  );
+}
+
+export default MyApp;

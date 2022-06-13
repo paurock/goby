@@ -1,0 +1,19 @@
+@font-face {
+  font-family: 'Gilroy Medium';
+  src: url('gilroy-m.woff2') format('woff2');
+  font-weight: 500;
+
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('inter-r.woff2') format('woff2');
+    font-weight: 400;
+}
+
+
+@font-face {
+    font-family: 'Inter Medium';
+    src: url('inter-m.woff2') format('woff2');
+    font-weight: 500;
+  }
