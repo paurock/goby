@@ -13,9 +13,7 @@ const Home: NextPage = () => {
       </Head>
       <Header />
       <main>
-        <Container h="calc(90vh)">
-          <h1>Welcome to Next.js!</h1>
-        </Container>
+        <Container h="calc(90vh)"></Container>
       </main>
       <Footer />
     </div>
