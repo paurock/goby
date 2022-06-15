@@ -13,14 +13,16 @@ import {
   Container,
   Box as Div,
   IconButton,
-} from "@chakra-ui/react";
-import { motion } from "framer-motion";
+  Divider,
+  Center,
+} from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 
-import Link from "next/link";
-import React, { useState } from "react";
-import { useRouter } from "next/router";
+import Link from 'next/link';
+import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 
-import { links, useAssets, VFlex, DropdownMenu } from "shared";
+import { links, useAssets, VFlex, DropdownMenu } from 'shared';
 
 export const Header = () => {
   const { route } = useRouter();
@@ -45,10 +47,11 @@ export const Header = () => {
     bellLight,
     bellDarksvg,
   } = useAssets();
+
   const currencies = [
-    { caption: "Ethereum", imgSrc: ethereum },
-    { caption: "Poligon", imgSrc: polygon },
-    { caption: "BNB Chain", imgSrc: bnbChain },
+    { caption: 'Ethereum', imgSrc: ethereum },
+    { caption: 'Poligon', imgSrc: polygon },
+    { caption: 'BNB Chain', imgSrc: bnbChain },
   ];
   const { colorMode, toggleColorMode, setColorMode } = useColorMode();
 
@@ -61,8 +64,8 @@ export const Header = () => {
 
   return (
     <Container
-      maxW={["none", "750px", "970px", "1440px", "1440px"]}
-      px={["16px", "16px", "20px", "32px"]}
+      maxW={['none', '750px', '970px', '1440px', '1440px', '1600px']}
+      px={['16px', '16px', '20px', '32px']}
     >
       <Flex>
         <Flex
@@ -70,8 +73,8 @@ export const Header = () => {
           gap="32px"
           justify="space-between"
           align="center"
-          pt="40px"
-          display={["none", "none", "none", "flex", "flex"]}
+          pt="20px"
+          display={['none', 'none', 'none', 'flex', 'flex']}
           fontFamily="body"
           fontSize="16px"
           lineHeight="6"
@@ -86,32 +89,41 @@ export const Header = () => {
               <Flex
                 key={link}
                 mt="2"
-                _hover={{ opacity: "0.8", textDecor: "underline" }}
+                _hover={{ opacity: '0.8', textDecor: 'underline' }}
               >
                 <Link href="#">{link}</Link>
               </Flex>
             ))}
-            <Img src={toggler} onClick={toggleColorMode} />
-            <IconButton
-              aria-label="notifications"
-              rounded="20px"
-              zIndex="4"
-              icon={<Img src={bellLight} />}
-            />
-            <VFlex onClick={changeCurrency}>
-              <Flex
-                color={text}
-                background={select}
-                h="40px"
-                w="160px"
-                justify="center"
-                align="center"
-                gap="8px"
-                cursor="pointer"
-              >
+            <Flex as="div" gap="20px">
+              {/* Devider  */}
+              <Center height="50px">
+                <Divider orientation="vertical" />
+              </Center>
+              <IconButton
+                aria-label="notifications"
+                rounded="20px"
+                zIndex="4"
+                icon={<Img src={toggler} onClick={toggleColorMode} />}
+              />
+              {/* Devider  */}
+              <Center height="50px">
+                <Divider orientation="vertical" />
+              </Center>
+              <IconButton
+                aria-label="notifications"
+                rounded="20px"
+                zIndex="4"
+                icon={<Img src={bellLight} />}
+              />
+              {/* Devider  */}
+              <Center height="50px">
+                <Divider orientation="vertical" />
+              </Center>
+
+              <VFlex onClick={changeCurrency}>
                 <DropdownMenu entries={currencies} />
-              </Flex>
-            </VFlex>
+              </VFlex>
+            </Flex>
             <Button background="#28FF98" color="#000" px="16px" py="9px">
               Connect wallet
             </Button>
@@ -120,17 +132,17 @@ export const Header = () => {
         <Flex
           as="header"
           display={[
-            hidden ? "flex" : "none",
-            hidden ? "flex" : "none",
-            hidden ? "flex" : "none",
-            "none",
-            "none",
+            hidden ? 'flex' : 'none',
+            hidden ? 'flex' : 'none',
+            hidden ? 'flex' : 'none',
+            'none',
+            'none',
           ]}
           justify="space-between"
-          pos={hidden ? "fixed" : "absolute"}
+          pos={hidden ? 'fixed' : 'absolute'}
           ml="-20px"
           w="105%"
-          p={["32px 16px", "32px 16px", "32px 32px", "32px 16px", "32px 16px"]}
+          p={['32px 16px', '32px 16px', '32px 32px', '32px 16px', '32px 16px']}
           zIndex="228"
         >
           <Div
@@ -147,7 +159,7 @@ export const Header = () => {
           />
           <Img src={logoMob} zIndex="4" />
           <Flex gap="16px">
-            {route !== "/" ? (
+            {route !== '/' ? (
               <IconButton
                 aria-label="notifications"
                 rounded="20px"
@@ -170,42 +182,42 @@ export const Header = () => {
           initial={false}
           onAnimationStart={() => setHidden(false)}
           onAnimationComplete={() => setHidden(!isOpen)}
-          animate={{ width: isOpen ? "100%" : 0 }}
+          animate={{ width: isOpen ? '100%' : 0 }}
           style={{
-            overflow: "hidden",
-            whiteSpace: "nowrap",
-            position: "fixed",
-            right: "0",
-            top: "0",
-            fontSize: "40px",
+            overflow: 'hidden',
+            whiteSpace: 'nowrap',
+            position: 'fixed',
+            right: '0',
+            top: '0',
+            fontSize: '40px',
             color: text,
-            gap: "32px",
-            fontFamily: "Grotesk",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            height: "100vh",
+            gap: '32px',
+            fontFamily: 'Grotesk',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            height: '100vh',
             backgroundColor: backgroundBurger,
-            zIndex: "3",
+            zIndex: '3',
           }}
         >
           <Flex
             as="header"
             w="full"
             display={[
-              hidden ? "none" : "flex",
-              hidden ? "none" : "flex",
-              hidden ? "none" : "flex",
-              "none",
-              "none",
+              hidden ? 'none' : 'flex',
+              hidden ? 'none' : 'flex',
+              hidden ? 'none' : 'flex',
+              'none',
+              'none',
             ]}
             justify="space-between"
             p={[
-              "32px 16px",
-              "32px 16px",
-              "32px 32px",
-              "32px 16px",
-              "32px 16px",
+              '32px 16px',
+              '32px 16px',
+              '32px 32px',
+              '32px 16px',
+              '32px 16px',
             ]}
           >
             <Img src={logoMob} zIndex="4" />
@@ -233,19 +245,19 @@ export const Header = () => {
           >
             <Img
               src={lightModeMob}
-              onClick={() => setColorMode("light")}
+              onClick={() => setColorMode('light')}
               rounded="20px"
-              fill={colorMode === "dark" ? "#fff" : "#000"}
+              fill={colorMode === 'dark' ? '#fff' : '#000'}
             />
             <Img
               src={darkModeMob}
-              onClick={() => setColorMode("dark")}
+              onClick={() => setColorMode('dark')}
               rounded="20px"
             />
           </Flex>
           <motion.img
             animate={{ rotate: 360 }}
-            transition={{ ease: "linear", duration: 8, repeat: Infinity }}
+            transition={{ ease: 'linear', duration: 8, repeat: Infinity }}
             src={startWithGoby}
           />
         </motion.div>

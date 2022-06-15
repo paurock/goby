@@ -1,17 +1,17 @@
-import type { AppProps } from "next/app";
-import { ChakraProvider } from "@chakra-ui/react";
-import { extendTheme } from "@chakra-ui/react";
-import Head from "next/head";
+import type { AppProps } from 'next/app';
+import { ChakraProvider } from '@chakra-ui/react';
+import { extendTheme } from '@chakra-ui/react';
+import Head from 'next/head';
 
 const colors = {
   brand: {
-    900: "coral",
-    800: "coral",
-    700: "coral",
+    700: 'red',
   },
 };
 
-const theme = extendTheme({ colors });
+const theme = extendTheme({
+  colors,
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

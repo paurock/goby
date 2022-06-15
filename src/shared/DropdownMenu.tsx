@@ -1,56 +1,68 @@
 import React, { useState } from 'react';
+import { ChevronDownIcon } from '@chakra-ui/icons';
 import {
-  IconButton, Menu, MenuButton, MenuItem, MenuList, Flex, Img,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Flex,
+  Img,
+  Button,
 } from '@chakra-ui/react';
 import { useAssets } from 'shared';
 
 interface MenuProps {
-    entries: {
-      imgSrc: string;
-      caption: string;
+  entries: {
+    imgSrc: string;
+    caption: string;
   }[];
 }
 
 export function DropdownMenu({ entries }: MenuProps) {
   const [currency, setCurrency] = useState(entries[0].caption);
-  const currencyInfo = entries.find((({ caption }) => caption === currency));
+  const currencyInfo = entries.find(({ caption }) => caption === currency);
   const { select, toggleCurrency } = useAssets();
   return (
-    <Menu isLazy styleConfig={{ display: 'flex', bgColor: 'none', width: '160px' }}>
-      <Flex gap="8px" px="16px">
-        <Flex width="fit-content">
-          {currency}
-        </Flex>
-        <Img src={currencyInfo?.imgSrc} sizes="20px 20px" />
-      </Flex>
+    <Menu>
       <MenuButton
-        as={IconButton}
-        aria-label="Options"
-        icon={<Img src={toggleCurrency} sizes="20px 20px" />}
-        variant="outline"
-        p="0"
-        m="0"
-        border="0"
-      />
-      <MenuList border="none" borderRadius="none" marginLeft="-120px">
-        {entries.filter(({ caption }) => caption !== currency).map(({ imgSrc, caption }) => (
-          <MenuItem
-            w="160px"
-            display="flex"
-            justifyContent="space-between"
-            gap="8px"
-            key={caption}
-            onClick={() => setCurrency(caption)}
-            bgColor={select}
-            m="0"
-            p="12px"
+        as={Button}
+        rightIcon={<ChevronDownIcon />}
+        sx={{
+          minWidth: '145px',
+          borderRadius: '20px',
+          padding: '5px 16px',
+        }}
+      >
+        {/* Initial Currency start */}
+        <Flex gap="8px">
+          <Img src={currencyInfo?.imgSrc} sizes="20px 20px" />
+          <Flex
+            width="fit-content"
+            sx={{ fontSize: '14px', alignItems: 'center' }}
           >
-            {caption}
-            <Img src={imgSrc} />
-          </MenuItem>
-        ))}
+            {currency}
+          </Flex>
+        </Flex>
+        {/* Initial Currency end */}
+      </MenuButton>
+
+      <MenuList border="none" borderRadius="5px">
+        {entries
+          .filter(({ caption }) => caption !== currency)
+          .map(({ imgSrc, caption }) => (
+            <MenuItem
+              w="160px"
+              gap="8px"
+              key={caption}
+              onClick={() => setCurrency(caption)}
+              bgColor={select}
+              m="0"
+            >
+              {caption}
+              <Img src={imgSrc} />
+            </MenuItem>
+          ))}
       </MenuList>
     </Menu>
-
   );
 }
