@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { Header, Footer } from "../app";
+import Heading from "../sections/heading";
 import { Container } from "@chakra-ui/react";
 
 const Home: NextPage = () => {
@@ -12,10 +13,11 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main>
-        <Container h="calc(90vh)"></Container>
+      <main height="calc(90vh)">
+        <Container maxW={["none", "750px", "970px", "1100px", "1440px"]} px={0}>
+          <Heading />
+        </Container>
       </main>
-      <Footer />
     </div>
   );
 };

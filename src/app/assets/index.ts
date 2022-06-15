@@ -17,6 +17,8 @@ import toggleCurrency from "./toggleCurrency.svg";
 import toggleCurrencyDark from "./toggleCurrencyDark.svg";
 import Polygon from "./poligon.svg";
 import bnbChain from "./bnb-chain.svg";
+import collateral from "./collateral.svg";
+import loans from "./loans.svg";
 
 export const assetsList = {
   logo: [LogoLight, LogoDark],
@@ -30,6 +32,8 @@ export const assetsList = {
   toggleCurrency: [toggleCurrencyDark, toggleCurrency],
   startWithGoby: [StartWtihGobyDark, StartWithGoby],
   bellLight: [bellDarksvg, bellLight],
+  collateral: [collateral, collateral],
+  loans: [loans, loans],
 };
 export const colorsList = {
   text: ["E7FFF1", "010504"],
