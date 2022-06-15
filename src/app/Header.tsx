@@ -89,7 +89,16 @@ export const Header = () => {
               <Flex
                 key={link}
                 mt="2"
-                _hover={{ opacity: "0.8", textDecor: "underline" }}
+                _hover={{
+                  opacity: "0.8",
+                  textDecor: "none",
+                  borderBottom: "2px solid #6334B1",
+                }}
+                sx={{
+                  height: "80px",
+                  display: "flex",
+                  alignItems: "center",
+                }}
               >
                 <Link href="#">{link}</Link>
               </Flex>
