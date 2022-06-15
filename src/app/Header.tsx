@@ -71,7 +71,6 @@ export const Header = () => {
         <Flex
           as="header"
           gap="32px"
-          mt="20px"
           justify="space-between"
           align="center"
           display={["none", "none", "none", "flex", "flex"]}
@@ -80,9 +79,10 @@ export const Header = () => {
           lineHeight="6"
           color={text}
           w="full"
+          h="80px"
         >
           <Link href="#">
-            <Img src={logo} sx={{ marginTop: "-10px" }} />
+            <Img src={logo} />
           </Link>
           <Flex as="nav" gap="32px" sx={{ alignItems: "center" }}>
             {links.map((link) => (
@@ -96,7 +96,7 @@ export const Header = () => {
             ))}
             <Flex as="div" gap="20px" sx={{ alignItems: "center" }}>
               {/* Devider  */}
-              <Center height="50px">
+              <Center height="80px">
                 <Divider orientation="vertical" />
               </Center>
               <IconButton
@@ -106,7 +106,7 @@ export const Header = () => {
                 icon={<Img src={toggler} onClick={toggleColorMode} />}
               />
               {/* Devider  */}
-              <Center height="50px">
+              <Center height="80px">
                 <Divider orientation="vertical" />
               </Center>
               <IconButton
@@ -116,7 +116,7 @@ export const Header = () => {
                 icon={<Img src={bellLight} />}
               />
               {/* Devider  */}
-              <Center height="50px">
+              <Center height="80px">
                 <Divider orientation="vertical" />
               </Center>
 
