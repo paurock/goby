@@ -1,4 +1,15 @@
-import { Flex, Container, Box, Icon, useColorMode } from '@chakra-ui/react';
+import {
+  Flex,
+  Container,
+  Box,
+  Icon,
+  useColorMode,
+  Tabs,
+  TabList,
+  Tab,
+  TabPanels,
+  TabPanel,
+} from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { VFlex, useAssets } from '../../../shared';
@@ -55,89 +66,125 @@ const TitleSection = () => {
             Offer loans to other users on their non-fungible tokens
           </Flex>
         </Box>
-        <Tabs text={text} colorMode={colorMode} />
+        <TabsComp text={text} colorMode={colorMode} />
       </VFlex>
     </Container>
   );
 };
 export default TitleSection;
 
-const Tabs = ({ text, colorMode }) => {
+const TabsComp = ({ text, colorMode }) => {
   const hoverHandler = () => {
     return colorMode === 'light' ? '#6334B1' : '#28FF98';
   };
   const [isHover, setIsHover] = useState(0);
+
   return (
     <Flex maxH="36px" justify="start" gap="32px">
-      <motion.div
-        style={{
-          ...tabsStyle,
-          color: text,
-        }}
-        whileHover={
-          colorMode === 'light'
-            ? { borderBottom: '2px solid #6334B1' }
-            : { borderBottom: '2px solid #28FF98' }
-        }
-        onMouseEnter={() => setIsHover(1)}
-        onMouseLeave={() => setIsHover(0)}
-      >
-        <Icon
-          as={collatIcon}
-          w="25px"
-          h="25px"
-          stroke={isHover === 1 ? hoverHandler() : text}
-        />
-        Collateral
-      </motion.div>
-      <motion.div
-        style={{
-          ...tabsStyle,
-          color: text,
-        }}
-        whileHover={
-          colorMode === 'light'
-            ? { borderBottom: '2px solid #6334B1' }
-            : { borderBottom: '2px solid #28FF98' }
-        }
-        onMouseEnter={() => setIsHover(2)}
-        onMouseLeave={() => setIsHover(0)}
-      >
-        <Icon
-          as={cardIcon}
-          w="25px"
-          h="25px"
-          stroke={isHover === 2 ? hoverHandler() : text}
-        />
-        Loans
-      </motion.div>
-      <motion.div
-        style={{
-          ...tabsStyle,
-          color: text,
-        }}
-        whileHover={
-          colorMode === 'light'
-            ? { borderBottom: '2px solid #6334B1' }
-            : { borderBottom: '2px solid #28FF98' }
-        }
-        onMouseEnter={() => setIsHover(3)}
-        onMouseLeave={() => setIsHover(0)}
-      >
-        <Icon
-          as={flagIcon}
-          w="25px"
-          h="25px"
-          stroke={isHover === 3 ? hoverHandler() : text}
-        />
-        My offers
-      </motion.div>
+      <Tabs isFitted isLazy align="start">
+        <TabList>
+          <motion.div
+            style={{
+              ...tabsStyle,
+              color: text,
+            }}
+            whileHover={
+              colorMode === 'light'
+                ? { borderBottom: '2px solid #6334B1' }
+                : { borderBottom: '2px solid #28FF98' }
+            }
+            onMouseEnter={() => setIsHover(1)}
+            onMouseLeave={() => setIsHover(0)}
+          >
+            <Tab
+              sx={{
+                justifyContent: 'space-around',
+              }}
+            >
+              <Icon
+                as={collatIcon}
+                w="25px"
+                h="25px"
+                stroke={isHover === 1 ? hoverHandler() : text}
+              />
+              Collateral
+            </Tab>
+          </motion.div>
+
+          <motion.div
+            style={{
+              ...tabsStyle,
+              color: text,
+            }}
+            whileHover={
+              colorMode === 'light'
+                ? { borderBottom: '2px solid #6334B1' }
+                : { borderBottom: '2px solid #28FF98' }
+            }
+            onMouseEnter={() => setIsHover(2)}
+            onMouseLeave={() => setIsHover(0)}
+          >
+            <Tab
+              sx={{
+                justifyContent: 'space-around',
+              }}
+            >
+              <Icon
+                as={cardIcon}
+                w="25px"
+                h="25px"
+                stroke={isHover === 2 ? hoverHandler() : text}
+              />
+              Loans
+            </Tab>
+          </motion.div>
+
+          <motion.div
+            style={{
+              ...tabsStyle,
+              color: text,
+            }}
+            whileHover={
+              colorMode === 'light'
+                ? { borderBottom: '2px solid #6334B1' }
+                : { borderBottom: '2px solid #28FF98' }
+            }
+            onMouseEnter={() => setIsHover(3)}
+            onMouseLeave={() => setIsHover(0)}
+          >
+            <Tab
+              sx={{
+                justifyContent: 'space-around',
+              }}
+            >
+              <Icon
+                as={flagIcon}
+                w="25px"
+                h="25px"
+                stroke={isHover === 3 ? hoverHandler() : text}
+              />
+              My offers
+            </Tab>
+          </motion.div>
+        </TabList>
+        <TabPanels>
+          <TabPanel>
+            <p>one!</p>
+          </TabPanel>
+          <TabPanel>
+            <p>two!</p>
+          </TabPanel>
+          <TabPanel>
+            <p>three!</p>
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
     </Flex>
   );
 };
 
 //Collateral Icon
-export const collatIcon = (props) => (
+const collatIcon = (props) => (
   <svg
     {...props}
     viewBox="0 0 20 20"
@@ -170,7 +217,7 @@ export const collatIcon = (props) => (
 
 //SVG ICONS
 //CARDICON
-export const cardIcon = (props) => (
+const cardIcon = (props) => (
   <svg
     {...props}
     viewBox="0 0 20 20"
@@ -195,7 +242,7 @@ export const cardIcon = (props) => (
 );
 
 //FLAG ICON
-export const flagIcon = (props) => (
+const flagIcon = (props) => (
   <svg
     {...props}
     fill="none"
