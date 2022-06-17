@@ -1,12 +1,29 @@
-import type { AppProps } from 'next/app';
-import { ChakraProvider } from '@chakra-ui/react';
-import { extendTheme } from '@chakra-ui/react';
-import Head from 'next/head';
+import type { AppProps } from "next/app";
+import { ChakraProvider } from "@chakra-ui/react";
+import { extendTheme } from "@chakra-ui/react";
+import Head from "next/head";
 
-const colors = {};
+const colors = {
+  purple: "#6334B1",
+  green: "#28FF98",
+};
+const styles = {
+  global: {
+    // styles for the `a`
+    a: {
+      _hover: {
+        textDecoration: "none",
+      },
+    },
+  },
+};
+
+const components = {};
 
 const theme = extendTheme({
   colors,
+  styles,
+  components,
 });
 
 function MyApp({ Component, pageProps }: AppProps) {

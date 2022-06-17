@@ -9,25 +9,30 @@ import {
   Tab,
   TabPanels,
   TabPanel,
-} from '@chakra-ui/react';
-import { motion } from 'framer-motion';
-import { useState } from 'react';
-import { VFlex, useAssets } from '../../../shared';
+} from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { VFlex, useAssets } from "../../../shared";
 
 const tabsStyle = {
-  display: 'flex',
-  fontFamily: 'Inter',
+  display: "flex",
+  fontFamily: "Inter",
   fontWeight: 500,
-  fontSize: '16px',
-  width: 'fit-content',
-  whiteSpace: 'nowrap',
-  height: '36px',
-  gap: '12px',
-  cursor: 'pointer',
+  fontSize: "16px",
+  width: "fit-content",
+  whiteSpace: "nowrap",
+  height: "36px",
+  cursor: "pointer",
+};
+
+const tabStyle = {
+  justifyContent: "space-around",
+  maxWidth: "104px",
+  borderBottom: "none",
 };
 
 const TitleSection = () => {
-  const { text, background } = useAssets();
+  const { text, textPurple, textGreen, background } = useAssets();
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
@@ -35,13 +40,13 @@ const TitleSection = () => {
       bg={background}
       maxW="full"
       maxH="249px"
-      h={['fit-content', '847px', '847px', '847px', '860px']}
-      px={['16px', '16px', '16px', '30px', '120px']}
-      pt={['32px', '32px', '32px', '64px', '64px']}
+      h={["fit-content", "847px", "847px", "847px", "860px"]}
+      px={["16px", "16px", "16px", "30px", "120px"]}
+      pt={["32px", "32px", "32px", "64px", "64px"]}
       color={text}
     >
       <VFlex
-        mx={['16px', '16px', '16px', '80px', '80px', '195px']}
+        mx={["16px", "16px", "16px", "80px", "80px", "195px"]}
         justify="space-between"
         h="185px"
       >
@@ -66,102 +71,88 @@ const TitleSection = () => {
             Offer loans to other users on their non-fungible tokens
           </Flex>
         </Box>
-        <TabsComp text={text} colorMode={colorMode} />
+        <TabsComp
+          text={text}
+          textPurple={textPurple}
+          textGreen={textGreen}
+          colorMode={colorMode}
+        />
       </VFlex>
     </Container>
   );
 };
 export default TitleSection;
 
-const TabsComp = ({ text, colorMode }) => {
-  const hoverHandler = () => {
-    return colorMode === 'light' ? '#6334B1' : '#28FF98';
-  };
+const TabsComp = ({ text, textPurple, textGreen, colorMode }) => {
   const [isHover, setIsHover] = useState(0);
+
+  const modeColorSelector = () => {
+    return colorMode === "light" ? "purple" : "green";
+  };
+
+  const showBottomBorder = () =>
+    colorMode === "light"
+      ? { borderBottom: "2px solid purple" }
+      : { borderBottom: "2px solid green" };
 
   return (
     <Flex maxH="36px" justify="start" gap="32px">
-      <Tabs isFitted isLazy align="start">
-        <TabList>
+      <Tabs isFitted isLazy variant="unstyled" align="start">
+        <TabList gap="10px">
           <motion.div
-            style={{
-              ...tabsStyle,
-              color: text,
-            }}
-            whileHover={
-              colorMode === 'light'
-                ? { borderBottom: '2px solid #6334B1' }
-                : { borderBottom: '2px solid #28FF98' }
-            }
+            style={tabsStyle}
+            whileHover={showBottomBorder()}
             onMouseEnter={() => setIsHover(1)}
             onMouseLeave={() => setIsHover(0)}
           >
             <Tab
-              sx={{
-                justifyContent: 'space-around',
-              }}
+              sx={tabStyle}
+              _hover={{ color: modeColorSelector() }}
+              _selected={{ color: modeColorSelector() }}
             >
               <Icon
                 as={collatIcon}
                 w="25px"
                 h="25px"
-                stroke={isHover === 1 ? hoverHandler() : text}
+                sx={{ marginRight: "10px" }}
+                _hover={{ color: "purple" }}
+                stroke={isHover === 1 ? modeColorSelector() : text}
               />
               Collateral
             </Tab>
           </motion.div>
 
           <motion.div
-            style={{
-              ...tabsStyle,
-              color: text,
-            }}
-            whileHover={
-              colorMode === 'light'
-                ? { borderBottom: '2px solid #6334B1' }
-                : { borderBottom: '2px solid #28FF98' }
-            }
+            style={tabsStyle}
+            whileHover={showBottomBorder()}
             onMouseEnter={() => setIsHover(2)}
             onMouseLeave={() => setIsHover(0)}
           >
-            <Tab
-              sx={{
-                justifyContent: 'space-around',
-              }}
-            >
+            <Tab sx={tabStyle} _selected={{ color: modeColorSelector() }}>
               <Icon
                 as={cardIcon}
                 w="25px"
                 h="25px"
-                stroke={isHover === 2 ? hoverHandler() : text}
+                sx={{ marginRight: "10px" }}
+                stroke={isHover === 2 ? modeColorSelector() : text}
               />
               Loans
             </Tab>
           </motion.div>
 
           <motion.div
-            style={{
-              ...tabsStyle,
-              color: text,
-            }}
-            whileHover={
-              colorMode === 'light'
-                ? { borderBottom: '2px solid #6334B1' }
-                : { borderBottom: '2px solid #28FF98' }
-            }
+            style={tabsStyle}
+            whileHover={showBottomBorder()}
             onMouseEnter={() => setIsHover(3)}
             onMouseLeave={() => setIsHover(0)}
           >
-            <Tab
-              sx={{
-                justifyContent: 'space-around',
-              }}
-            >
+            <Tab sx={tabStyle} _selected={{ color: modeColorSelector() }}>
               <Icon
                 as={flagIcon}
                 w="25px"
                 h="25px"
-                stroke={isHover === 3 ? hoverHandler() : text}
+                sx={{ marginRight: "10px" }}
+                stroke={isHover === 3 ? modeColorSelector() : text}
               />
               My offers
             </Tab>
