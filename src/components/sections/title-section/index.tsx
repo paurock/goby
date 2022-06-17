@@ -13,6 +13,7 @@ import {
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { VFlex, useAssets } from "../../../shared";
+import Toolbar from "../../Toolbar";
 
 const tabsStyle = {
   display: "flex",
@@ -96,84 +97,79 @@ const TabsComp = ({ text, textPurple, textGreen, colorMode }) => {
       : { borderBottom: "2px solid green" };
 
   return (
-    <Flex maxH="36px" justify="start" gap="32px">
-      <Tabs isFitted isLazy variant="unstyled" align="start">
-        <TabList gap="10px">
-          <motion.div
-            style={tabsStyle}
-            whileHover={showBottomBorder()}
-            onMouseEnter={() => setIsHover(1)}
-            onMouseLeave={() => setIsHover(0)}
-          >
-            <Tab
-              sx={tabStyle}
-              _hover={{ color: modeColorSelector() }}
-              _selected={{ color: modeColorSelector() }}
-            >
-              <Icon
-                as={collatIcon}
-                w="25px"
-                h="25px"
-                sx={{ marginRight: "10px" }}
-                _hover={{ color: "purple" }}
-                stroke={isHover === 1 ? modeColorSelector() : text}
-              />
-              Collateral
-            </Tab>
-          </motion.div>
+    <Tabs maxH="36px" isFitted isLazy variant="unstyled" align="start" w="full">
+      <TabList gap="10px">
+        <motion.div
+          style={tabsStyle}
+          whileHover={showBottomBorder()}
+          onMouseEnter={() => setIsHover(1)}
+          onMouseLeave={() => setIsHover(0)}
+        >
+          <Tab sx={tabStyle} _selected={{ color: modeColorSelector() }}>
+            <Icon
+              as={collatIcon}
+              w="25px"
+              h="25px"
+              sx={{ marginRight: "10px" }}
+              _hover={{ color: "purple" }}
+              stroke={isHover === 1 ? modeColorSelector() : text}
+            />
+            Collateral
+          </Tab>
+        </motion.div>
 
-          <motion.div
-            style={tabsStyle}
-            whileHover={showBottomBorder()}
-            onMouseEnter={() => setIsHover(2)}
-            onMouseLeave={() => setIsHover(0)}
-          >
-            <Tab sx={tabStyle} _selected={{ color: modeColorSelector() }}>
-              <Icon
-                as={cardIcon}
-                w="25px"
-                h="25px"
-                sx={{ marginRight: "10px" }}
-                stroke={isHover === 2 ? modeColorSelector() : text}
-              />
-              Loans
-            </Tab>
-          </motion.div>
+        <motion.div
+          style={tabsStyle}
+          whileHover={showBottomBorder()}
+          onMouseEnter={() => setIsHover(2)}
+          onMouseLeave={() => setIsHover(0)}
+        >
+          <Tab sx={tabStyle} _selected={{ color: modeColorSelector() }}>
+            <Icon
+              as={cardIcon}
+              w="25px"
+              h="25px"
+              sx={{ marginRight: "10px" }}
+              stroke={isHover === 2 ? modeColorSelector() : text}
+            />
+            Loans
+          </Tab>
+        </motion.div>
 
-          <motion.div
-            style={tabsStyle}
-            whileHover={showBottomBorder()}
-            onMouseEnter={() => setIsHover(3)}
-            onMouseLeave={() => setIsHover(0)}
-          >
-            <Tab sx={tabStyle} _selected={{ color: modeColorSelector() }}>
-              <Icon
-                as={flagIcon}
-                w="25px"
-                h="25px"
-                sx={{ marginRight: "10px" }}
-                stroke={isHover === 3 ? modeColorSelector() : text}
-              />
-              My offers
-            </Tab>
-          </motion.div>
-        </TabList>
-        <TabPanels>
-          <TabPanel>
-            <p>one!</p>
-          </TabPanel>
-          <TabPanel>
-            <p>two!</p>
-          </TabPanel>
-          <TabPanel>
-            <p>three!</p>
-          </TabPanel>
-        </TabPanels>
-      </Tabs>
-    </Flex>
+        <motion.div
+          style={tabsStyle}
+          whileHover={showBottomBorder()}
+          onMouseEnter={() => setIsHover(3)}
+          onMouseLeave={() => setIsHover(0)}
+        >
+          <Tab sx={tabStyle} _selected={{ color: modeColorSelector() }}>
+            <Icon
+              as={flagIcon}
+              w="25px"
+              h="25px"
+              sx={{ marginRight: "10px" }}
+              stroke={isHover === 3 ? modeColorSelector() : text}
+            />
+            My offers
+          </Tab>
+        </motion.div>
+      </TabList>
+      <TabPanels>
+        <TabPanel px={0}>
+          <Toolbar />
+        </TabPanel>
+        <TabPanel px={0}>
+          <p>two!</p>
+        </TabPanel>
+        <TabPanel px={0}>
+          <p>three!</p>
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
   );
 };
 
+/////////////////SVG ICONS///////////////////////
 //Collateral Icon
 const collatIcon = (props) => (
   <svg
@@ -206,7 +202,6 @@ const collatIcon = (props) => (
   </svg>
 );
 
-//SVG ICONS
 //CARDICON
 const cardIcon = (props) => (
   <svg
