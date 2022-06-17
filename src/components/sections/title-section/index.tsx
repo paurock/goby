@@ -1,14 +1,7 @@
-import {
-  Flex,
-  Container,
-  Box,
-  Icon,
-  background,
-  useColorMode,
-} from '@chakra-ui/react';
+import { Flex, Container, Box, Icon, useColorMode } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { VFlex, useAssets } from '../../shared';
+import { VFlex, useAssets } from '../../../shared';
 
 const tabsStyle = {
   display: 'flex',

@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { Header, Footer } from '../app';
-import TitleSection from '../sections/title-section';
+import TitleSection from '../components/sections/title-section';
 import { Container } from '@chakra-ui/react';
 
 const Home: NextPage = () => {
