@@ -3,11 +3,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { extendTheme } from '@chakra-ui/react';
 import Head from 'next/head';
 
-const colors = {
-  brand: {
-    700: 'red',
-  },
-};
+const colors = {};
 
 const theme = extendTheme({
   colors,
