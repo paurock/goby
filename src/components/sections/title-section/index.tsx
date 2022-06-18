@@ -188,7 +188,7 @@ const TabsComp = ({ text, colorMode }) => {
 
   return (
     <Tabs maxH="36px" isFitted isLazy variant="unstyled" align="start" w="full">
-      <TabList gap="30px">
+      <TabList gap="10px">
         {tabNames.map((tab, i) => (
           <motion.div
             style={tabsStyle}
