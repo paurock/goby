@@ -11,7 +11,7 @@ import {
   IconButton,
 } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
-import { useAssets, VFlex } from 'shared';
+import { useAssets } from 'shared';
 import { svgProps } from 'components/types';
 import { modeColorSelector } from 'components/utils';
 
@@ -37,7 +37,11 @@ const Toolbar = () => {
           />
         </InputGroup>
       </GridItem>
-      <GridItem w="100%" h="10" />
+      <GridItem
+        w="100%"
+        h="10"
+        display={['none', 'none', 'none', 'flex', 'flex']}
+      />
       <GridItem
         w="100%"
         h="10"
@@ -48,7 +52,7 @@ const Toolbar = () => {
         }}
       >
         <Flex
-          w="86px"
+          minW="86px"
           h="50px"
           sx={{
             justifyContent: 'space-around',

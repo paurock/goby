@@ -31,6 +31,7 @@ export const Header = () => {
     logo,
     toggler,
     text,
+    background,
     select,
     burger,
     logoMob,
@@ -150,6 +151,7 @@ export const Header = () => {
           w="100%"
           p={['32px 16px', '32px 16px', '32px 32px', '32px 16px', '32px 16px']}
           zIndex="228"
+          sx={{ backgroundColor: 'background' }}
         >
           <Div
             pos="absolute"

@@ -10,10 +10,11 @@ import {
   TabPanels,
   TabPanel,
 } from '@chakra-ui/react';
+import { TabContent } from 'components/content';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { VFlex, useAssets } from '../../../shared';
-import Toolbar from '../../Toolbar';
+import Toolbar from '../../toolbar';
 
 const tabsStyle = {
   display: 'flex',
@@ -214,6 +215,7 @@ const TabsComp = ({ text, colorMode }) => {
       <TabPanels>
         <TabPanel px={0}>
           <Toolbar />
+          <TabContent />
         </TabPanel>
         <TabPanel px={0}>
           <p>two!</p>
