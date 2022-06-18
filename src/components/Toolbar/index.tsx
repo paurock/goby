@@ -12,6 +12,8 @@ import {
 } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
 import { useAssets, VFlex } from 'shared';
+import { svgProps } from 'components/types';
+import { modeColorSelector } from 'components/utils';
 
 const Toolbar = () => {
   const { text, background } = useAssets();
@@ -55,7 +57,13 @@ const Toolbar = () => {
             borderRadius: '10px',
           }}
         >
-          <Icon as={heartIcon} w="25px" h="25px" _hover={{ color: 'purple' }} />
+          <Icon
+            as={heartIcon}
+            stroke={text}
+            w="25px"
+            h="25px"
+            _hover={{ color: 'purple' }}
+          />
           34
         </Flex>
         <Flex
@@ -73,7 +81,7 @@ const Toolbar = () => {
             sx={{ borderRight: '1px solid lightBlue', borderRadius: '0' }}
             variant="outlined"
             aria-label="Grid mode"
-            icon={gridIcon()}
+            icon={gridIcon(modeColorSelector(colorMode))}
             _active={{ background: 'lightBlue' }}
             _selected={{ background: 'lightBlue' }}
           />
@@ -82,7 +90,7 @@ const Toolbar = () => {
             h="50px"
             variant="outlined"
             aria-label="List mode"
-            icon={listIcon()}
+            icon={listIcon(modeColorSelector(colorMode))}
             _active={{ background: 'lightBlue' }}
             _selected={{ background: 'lightBlue' }}
           />
@@ -93,8 +101,9 @@ const Toolbar = () => {
 };
 export default Toolbar;
 
-const heartIcon = (props) => (
+const heartIcon = (props: svgProps) => (
   <svg
+    {...props}
     width="20"
     height="20"
     viewBox="0 0 20 20"
@@ -103,7 +112,7 @@ const heartIcon = (props) => (
   >
     <path
       d="M17.3667 3.84166C16.941 3.41583 16.4357 3.07803 15.8795 2.84757C15.3232 2.6171 14.7271 2.49847 14.125 2.49847C13.5229 2.49847 12.9268 2.6171 12.3705 2.84757C11.8143 3.07803 11.309 3.41583 10.8833 3.84166L10 4.725L9.11666 3.84166C8.25692 2.98192 7.09086 2.49892 5.875 2.49892C4.65914 2.49892 3.49307 2.98192 2.63333 3.84166C1.77359 4.70141 1.29059 5.86747 1.29059 7.08333C1.29059 8.29919 1.77359 9.46525 2.63333 10.325L3.51666 11.2083L10 17.6917L16.4833 11.2083L17.3667 10.325C17.7925 9.89937 18.1303 9.39401 18.3608 8.83779C18.5912 8.28158 18.7099 7.6854 18.7099 7.08333C18.7099 6.48126 18.5912 5.88508 18.3608 5.32887C18.1303 4.77265 17.7925 4.26729 17.3667 3.84166V3.84166Z"
-      stroke="#010504"
+      stroke={props.stroke}
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -111,7 +120,7 @@ const heartIcon = (props) => (
   </svg>
 );
 
-const gridIcon = () => (
+const gridIcon = (text) => (
   <svg
     width="20"
     height="20"
@@ -121,28 +130,28 @@ const gridIcon = () => (
   >
     <path
       d="M8.75 2.5H2.5V6.25H8.75V2.5Z"
-      stroke="#6334B1"
+      stroke={text}
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M17.5 2.5H11.25V10H17.5V2.5Z"
-      stroke="#6334B1"
+      stroke={text}
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M17.5 12.5H11.25V17.5H17.5V12.5Z"
-      stroke="#6334B1"
+      stroke={text}
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M8.75 8.75H2.5V17.5H8.75V8.75Z"
-      stroke="#6334B1"
+      stroke={text}
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -150,7 +159,7 @@ const gridIcon = () => (
   </svg>
 );
 
-const listIcon = () => (
+const listIcon = (text) => (
   <svg
     width="20"
     height="20"
@@ -167,35 +176,35 @@ const listIcon = () => (
     />
     <path
       d="M2.5 5H2.50833"
-      stroke="#010504"
+      stroke={text}
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M6.66669 10H17.5"
-      stroke="#010504"
+      stroke={text}
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M2.5 10H2.50833"
-      stroke="#010504"
+      stroke={text}
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M6.66669 15H17.5"
-      stroke="#010504"
+      stroke={text}
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M2.5 15H2.50833"
-      stroke="#010504"
+      stroke={text}
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"

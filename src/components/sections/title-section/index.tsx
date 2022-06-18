@@ -118,7 +118,7 @@ export const flagIcon = (props) => (
 );
 
 const TitleSection = () => {
-  const { text, textPurple, textGreen, background } = useAssets();
+  const { text, background } = useAssets();
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
@@ -157,12 +157,7 @@ const TitleSection = () => {
             Offer loans to other users on their non-fungible tokens
           </Flex>
         </Box>
-        <TabsComp
-          text={text}
-          textPurple={textPurple}
-          textGreen={textGreen}
-          colorMode={colorMode}
-        />
+        <TabsComp text={text} colorMode={colorMode} />
       </VFlex>
     </Container>
   );
