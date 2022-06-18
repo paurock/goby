@@ -214,42 +214,6 @@ const TabsComp = ({ text, colorMode }) => {
             </Tab>
           </motion.div>
         ))}
-
-        {/* <motion.div
-          style={tabsStyle}
-          whileHover={showBottomBorder()}
-          onMouseEnter={() => setIsHover(2)}
-          onMouseLeave={() => setIsHover(0)}
-        >
-          <Tab sx={tabStyle} _selected={{ color: modeColorSelector() }}>
-            <Icon
-              as={cardIcon}
-              w="25px"
-              h="25px"
-              mr="10px"
-              stroke={isHover === 2 ? modeColorSelector() : text}
-            />
-            Loans
-          </Tab>
-        </motion.div>
-
-        <motion.div
-          style={tabsStyle}
-          whileHover={showBottomBorder()}
-          onMouseEnter={() => setIsHover(3)}
-          onMouseLeave={() => setIsHover(0)}
-        >
-          <Tab sx={tabStyle} _selected={{ color: modeColorSelector() }}>
-            <Icon
-              as={flagIcon}
-              w="25px"
-              h="25px"
-              mr="10px"
-              stroke={isHover === 3 ? modeColorSelector() : text}
-            />
-            My offers
-          </Tab>
-        </motion.div> */}
       </TabList>
       <TabPanels>
         <TabPanel px={0}>
