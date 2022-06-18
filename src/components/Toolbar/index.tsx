@@ -31,10 +31,9 @@ const Toolbar = () => {
       <GridItem>
         <InputGroup>
           <Input type="search" placeholder="Search project" />
-          <InputRightElement
-            pointerEvents="none"
-            children={<SearchIcon color="gray.300" />}
-          />
+          <InputRightElement pointerEvents="none">
+            <SearchIcon color="gray.300" />
+          </InputRightElement>
         </InputGroup>
       </GridItem>
       <GridItem
@@ -124,7 +123,7 @@ const heartIcon = (props: svgProps) => (
   </svg>
 );
 
-const gridIcon = (text) => (
+const gridIcon = (text: string) => (
   <svg
     width="20"
     height="20"
@@ -163,7 +162,7 @@ const gridIcon = (text) => (
   </svg>
 );
 
-const listIcon = (text) => (
+const listIcon = (text: string) => (
   <svg
     width="20"
     height="20"

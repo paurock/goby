@@ -1,17 +1,24 @@
-import { Flex, Grid, SimpleGrid } from '@chakra-ui/react';
+import { Grid } from '@chakra-ui/react';
+import { StaticImageData } from 'next/image';
 import { Img } from 'shared';
-import { img1 } from '../../app/assets/rectangle_240x229.png';
-import { img2 } from '../../app/assets/rectangle_240x319.png';
-export const TabContent = () => {
+import image1 from '../../app/assets/rectangle_240x229.png';
+import imgage2 from '../../app/assets/rectangle_240x319.png';
+
+export interface imageInf {
+  src: string | StaticImageData;
+  className?: string;
+}
+
+export const TabContent: React.FC = () => {
   return (
     <Grid templateColumns="repeat(4, 1fr)" gap="5" mt="24px">
-      <Img src={img1} w="full" h="229px"></Img>
-      <Img src={img1} w="full" h="229px"></Img>
-      <Img src={img2} w="full" h="319px"></Img>
-      <Img src={img1} w="full" h="229px"></Img>
-      <Img src={img2} w="full" h="319px"></Img>
-      <Img src={img1} w="full" h="229px"></Img>
-      <Img src={img2} w="full" h="319px"></Img>
+      <Img src={image1.src} w="full" h="229px"></Img>
+      <Img src={image1.src} w="full" h="229px"></Img>
+      <Img src={imgage2.src} w="full" h="319px"></Img>
+      <Img src={image1.src} w="full" h="229px"></Img>
+      <Img src={imgage2.src} w="full" h="319px"></Img>
+      <Img src={image1.src} w="full" h="229px"></Img>
+      <Img src={imgage2.src} w="full" h="319px"></Img>
     </Grid>
   );
 };

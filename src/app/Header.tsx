@@ -46,7 +46,6 @@ export const Header = () => {
     mobileHeaderBg,
     startWithGoby,
     bellLight,
-    bellDarksvg,
   } = useAssets();
 
   const currencies = [

@@ -9,24 +9,14 @@ import {
   Tab,
   TabPanels,
   TabPanel,
+  ColorMode,
 } from '@chakra-ui/react';
 import { TabContent } from 'components/content';
+import { svgProps } from 'components/types';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { VFlex, useAssets } from '../../../shared';
 import Toolbar from '../../toolbar';
-
-const tabsStyle = {
-  display: 'flex',
-  justifyContent: 'space-between',
-  fontFamily: 'Inter',
-  fontWeight: 500,
-  fontSize: '16px',
-  width: 'fit-content',
-  whiteSpace: 'nowrap',
-  height: '36px',
-  cursor: 'pointer',
-};
 
 const tabStyle = {
   justifyContent: 'space-around',
@@ -37,7 +27,7 @@ const tabStyle = {
 
 /////////////////SVG ICONS///////////////////////
 //Collateral Icon
-export const collatIcon = (props) => (
+export const collatIcon = (props: svgProps) => (
   <svg
     {...props}
     viewBox="0 0 20 20"
@@ -69,7 +59,7 @@ export const collatIcon = (props) => (
 );
 
 //CARDICON
-export const cardIcon = (props) => (
+export const cardIcon = (props: svgProps) => (
   <svg
     {...props}
     viewBox="0 0 20 20"
@@ -94,7 +84,7 @@ export const cardIcon = (props) => (
 );
 
 //FLAG ICON
-export const flagIcon = (props) => (
+export const flagIcon = (props: svgProps) => (
   <svg
     {...props}
     fill="none"
@@ -171,7 +161,11 @@ const tabNames = [
   { name: 'My Offers', icon: flagIcon },
 ];
 
-const TabsComp = ({ text, colorMode }) => {
+type TabsCompType = {
+  text: string;
+  colorMode: ColorMode;
+};
+const TabsComp = ({ text, colorMode }: TabsCompType) => {
   const [isHover, setIsHover] = useState(0);
 
   const modeColorSelector = () => {
@@ -188,7 +182,18 @@ const TabsComp = ({ text, colorMode }) => {
       <TabList gap="10px">
         {tabNames.map((tab, i) => (
           <motion.div
-            style={tabsStyle}
+            key={i}
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              fontFamily: 'Inter',
+              fontWeight: 500,
+              fontSize: '16px',
+              width: 'fit-content',
+              whiteSpace: 'nowrap',
+              height: '36px',
+              cursor: 'pointer',
+            }}
             whileHover={showBottomBorder()}
             onMouseEnter={() => setIsHover(i)}
             onMouseLeave={() => setIsHover(0)}
