@@ -31,6 +31,7 @@ const tabStyle = {
   justifyContent: 'space-around',
   maxWidth: '115px',
   borderBottom: 'none',
+  marginBottom: '14px',
 };
 
 /////////////////SVG ICONS///////////////////////
