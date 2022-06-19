@@ -31,8 +31,6 @@ export const Header = () => {
     logo,
     toggler,
     text,
-    background,
-    select,
     burger,
     logoMob,
     burgerClose,
