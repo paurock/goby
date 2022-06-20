@@ -2,22 +2,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import {
   Container,
-} from '@chakra-ui/react';
-
-import {
-  VFlex, useAssets,
-} from 'shared';
-import { Copyrights } from './Copyrights';
+} from '@chakra-ui/react'; 
+import { VFlex } from 'shared';
+ 
 import { MainFooter } from './MainFooter';
-import { OurParners } from './OurPartners';
-
-export const Footer = () => {
-  const {
-    animoca, maven, pantera, binance,
-  } = useAssets();
-
-  const slides = [animoca, maven, pantera, binance];
-
+export const Footer = () => { 
   return (
     <Container w="full" minW="100%" px="0" background="#191921">
       <VFlex pt="120px" w="full" justify="space-between" align="center">
@@ -26,11 +15,8 @@ export const Footer = () => {
           maxW={['none', '750px', '970px', '1100px', '1440px']}
           px={['16px', '16px', '20px', '80px', '120px']}
           opacity="1"
-        >
-          {/* Our partners */}
-          <OurParners slides={slides} />
-          <MainFooter />
-          <Copyrights />
+        > 
+          <MainFooter /> 
         </Container>
       </VFlex>
       );

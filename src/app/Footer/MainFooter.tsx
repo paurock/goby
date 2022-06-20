@@ -22,12 +22,13 @@ export const MainFooter = () => (
       maxW="1050px"
       minH="332px"
     >
-      {/* Left Column Logo */}
+      {/* Left Column block */}
       <Flex
-        w={['full', 'full', 'full', '50%', '50%']}
-        flexDirection="column"
-        mt={['15px', '25px', '35px', '55px', '75px']}
+        w={['full', 'full', 'full', '45%', '45%']} 
+        flexDirection="column" 
         justifyContent={['center', 'center', 'center', 'flex-start']}
+        alignItems={['center', 'center', 'center', 'flex-start']}
+
       >
         <Flex
           mb="18px"
@@ -39,12 +40,13 @@ export const MainFooter = () => (
             </Link>
           </NextLink>
         </Flex>
-        <Flex pr={[0, 0, 0, '50px']}>
+        <Flex pr={[0, 0, 0, '50px']} mb={['20px', '30px', '40px', '50px']}>
           <Text
             color="#E7FFF1"
             w="full"
+            maxW="50vw"  
             justifyContent={['center', 'center', 'center', 'flex-start']}
-            textAlign={['center', 'center', 'center', 'left', 'left']}
+            textAlign={['center', 'center', 'center', 'left' ]}
           >
             American online non-fungible token (NFT) marketplace
             headquartered in New York City.
@@ -53,9 +55,9 @@ export const MainFooter = () => (
       </Flex>
       {/* Right Column Links */}
       <Flex
-        ml="35px"
-        mt={['10px', '15px', '20px', '75px']}
-        w={['full', 'full', 'full', '43%', '43%']}
+        pl="15%" 
+        mt="-5px"
+        w={['full', 'full', 'full', '45%', '45%']}
         justifyContent={['center', 'center', 'center', 'flex-start']}
       >
         {/* 0 column */}
