@@ -6,10 +6,14 @@ import Head from 'next/head';
 const colors = {
   purple: '#6334B1',
   green: '#28FF98',
+  lightGreen: '#E7FFF1',
   lightBlue: '#CECFEA',
 };
 const styles = {
   global: {
+    ul: {
+      listStyleType: 'none',
+    },
     // styles for the `a`
     a: {
       _hover: {

@@ -1,7 +1,7 @@
 import { Flex, Container, Box, useColorMode } from '@chakra-ui/react';
 import { VFlex, useAssets } from '../../../shared';
 
-import { TabsComponent } from '../TabsComponent';
+import { TabsComponent } from './TabsComponent';
 
 const TitleSection = () => {
   const { text, background } = useAssets();

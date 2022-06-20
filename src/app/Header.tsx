@@ -61,7 +61,7 @@ export const Header = () => {
   };
 
   return (
-    <Container maxW={'1600px'} px={['16px', '16px', '20px', '32px']}>
+    <Container maxW="1600px" px={['16px', '16px', '20px', '32px']}>
       <Flex minH="80px">
         <Flex
           as="header"
