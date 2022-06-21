@@ -1,47 +1,11 @@
-import type { AppProps } from 'next/app';
-import { ChakraProvider } from '@chakra-ui/react';
-import { extendTheme } from '@chakra-ui/react';
-import Head from 'next/head';
-
-const colors = {
-  purple: '#6334B1',
-  green: '#28FF98',
-  lightGreen: '#E7FFF1',
-  lightBlue: '#CECFEA',
-};
-const styles = {
-  global: {
-    ul: {
-      listStyleType: 'none',
-    },
-    // styles for the `a`
-    a: {
-      _hover: {
-        textDecoration: 'none',
-      },
-    },
-  },
-};
-
-const components = {};
-
-const theme = extendTheme({
-  colors,
-  styles,
-  components,
-});
+import type { AppProps } from "next/app";
+import Layout from "../app/Layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider resetCSS theme={theme}>
-      <Head>
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
-        />
-      </Head>
+    <Layout>
       <Component {...pageProps} />
-    </ChakraProvider>
+    </Layout>
   );
 }
 

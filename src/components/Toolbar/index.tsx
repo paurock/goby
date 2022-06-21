@@ -9,97 +9,111 @@ import {
   useColorMode,
   Icon,
   IconButton,
-} from '@chakra-ui/react';
-import { SearchIcon } from '@chakra-ui/icons';
-import { useAssets } from 'shared';
-import { svgProps } from 'components/types';
-import { modeColorSelector } from 'components/utils';
+} from "@chakra-ui/react";
+import { SearchIcon } from "@chakra-ui/icons";
+import { useAssets } from "shared";
+import { svgProps } from "components/types";
+import { modeColorSelector } from "components/utils";
 
 const Toolbar = () => {
   const { text, background } = useAssets();
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Grid templateColumns="repeat(4, 1fr)" gap="5">
-      <GridItem w="100%" h="10">
-        <Select placeholder="Collections">
-          <option value="option1">Option 1</option>
-          <option value="option2">Option 2</option>
-          <option value="option3">Option 3</option>
-        </Select>
-      </GridItem>
-      <GridItem>
-        <InputGroup>
-          <Input type="search" placeholder="Search project" />
-          <InputRightElement pointerEvents="none">
-            <SearchIcon color="gray.300" />
-          </InputRightElement>
-        </InputGroup>
-      </GridItem>
-      <GridItem
-        w="100%"
-        h="10"
-        display={['none', 'none', 'none', 'flex', 'flex']}
-      />
-      <GridItem
-        w="100%"
-        h="10"
-        gap="5px"
-        sx={{
-          display: 'flex',
-          justifyContent: 'flex-end',
-        }}
+    <Flex
+      minH="100%"
+      maxW="full"
+      px={["16px", "16px", "16px", "30px", "120px"]}
+      p="0"
+      m="0"
+      mt="30px"
+      sx={{ justifyContent: "center" }}
+    >
+      <Grid
+        templateColumns="repeat(4, 1fr)"
+        gap="5"
+        mx={["16px", "16px", "16px", "80px", "80px", "195px"]}
       >
-        <Flex
-          minW="86px"
-          h="50px"
+        <GridItem w="100%" h="10">
+          <Select placeholder="Collections">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+          </Select>
+        </GridItem>
+        <GridItem>
+          <InputGroup>
+            <Input type="search" placeholder="Search project" />
+            <InputRightElement pointerEvents="none">
+              <SearchIcon color="gray.300" />
+            </InputRightElement>
+          </InputGroup>
+        </GridItem>
+        <GridItem
+          w="100%"
+          h="10"
+          display={["none", "none", "none", "flex", "flex"]}
+        />
+        <GridItem
+          w="100%"
+          h="10"
+          gap="5px"
           sx={{
-            justifyContent: 'space-around',
-            alignItems: 'center',
-            border: '1px solid lightBlue',
-            borderRadius: '10px',
+            display: "flex",
+            justifyContent: "flex-end",
           }}
         >
-          <Icon
-            as={heartIcon}
-            stroke={text}
-            w="25px"
-            h="25px"
-            _hover={{ color: 'purple' }}
-          />
-          34
-        </Flex>
-        <Flex
-          sx={{
-            justifyContent: 'center',
-            alignItems: 'center',
-            border: '1px solid lightBlue',
-            borderRadius: '10px',
-            maxWidth: '100px',
-          }}
-        >
-          <IconButton
-            w="50px"
-            h="50px"
-            sx={{ borderRight: '1px solid lightBlue', borderRadius: '0' }}
-            variant="outlined"
-            aria-label="Grid mode"
-            icon={gridIcon(modeColorSelector(colorMode))}
-            _active={{ background: 'lightBlue' }}
-            _selected={{ background: 'lightBlue' }}
-          />
-          <IconButton
-            w="50px"
-            h="50px"
-            variant="outlined"
-            aria-label="List mode"
-            icon={listIcon(modeColorSelector(colorMode))}
-            _active={{ background: 'lightBlue' }}
-            _selected={{ background: 'lightBlue' }}
-          />
-        </Flex>
-      </GridItem>
-    </Grid>
+          <Flex
+            minW="86px"
+            minH="40px"
+            sx={{
+              justifyContent: "space-around",
+              alignItems: "center",
+              border: "1px solid lightBlue",
+              borderRadius: "10px",
+            }}
+          >
+            <Icon
+              as={heartIcon}
+              stroke={text}
+              w="25px"
+              h="25px"
+              _hover={{ color: "purple" }}
+            />
+            34
+          </Flex>
+          <Flex
+            sx={{
+              justifyContent: "center",
+              alignItems: "center",
+              border: "1px solid lightBlue",
+              borderRadius: "10px",
+              maxWidth: "100px",
+            }}
+          >
+            <IconButton
+              w="40px"
+              minH="40px"
+              sx={{ borderRight: "1px solid lightBlue", borderRadius: "0" }}
+              variant="outlined"
+              aria-label="Grid mode"
+              icon={gridIcon(modeColorSelector(colorMode))}
+              _active={{ background: "lightBlue" }}
+              _selected={{ background: "lightBlue" }}
+            />
+            <IconButton
+              w="40px"
+              h="40px"
+              variant="outlined"
+              aria-label="List mode"
+              icon={listIcon(modeColorSelector(colorMode))}
+              _active={{ background: "lightBlue" }}
+              _selected={{ background: "lightBlue" }}
+            />
+          </Flex>
+        </GridItem>
+      </Grid>
+    </Flex>
   );
 };
 export default Toolbar;

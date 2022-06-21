@@ -1,17 +1,10 @@
-import {
-  Icon,
-  Tabs,
-  TabList,
-  Tab,
-  TabPanels,
-  TabPanel,
-  ColorMode,
-} from "@chakra-ui/react";
+import { Icon, ColorMode, Flex } from "@chakra-ui/react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { TabContent } from "components/Tabcontent";
 import { svgProps } from "components/types";
 import Toolbar from "../../Toolbar";
+import NextLink from "next/link";
 
 /////////////////SVG ICONS///////////////////////
 //Collateral Icon
@@ -127,8 +120,8 @@ export const TabsComponent = ({ text, colorMode }: TabsCompType) => {
       : { borderBottom: "2px solid green" };
 
   return (
-    <Tabs maxH="36px" isFitted isLazy variant="unstyled" align="start" w="full">
-      <TabList gap="10px">
+    <Flex maxH="36px" w="full">
+      <Flex gap="32px">
         {tabNames.map((tab, i) => (
           <motion.div
             key={i}
@@ -147,7 +140,7 @@ export const TabsComponent = ({ text, colorMode }: TabsCompType) => {
             onMouseEnter={() => setIsHover(i)}
             onMouseLeave={() => setIsHover(0)}
           >
-            <Tab
+            <Flex
               key={i}
               sx={tabStyle}
               _selected={{ color: modeColorSelector() }}
@@ -161,23 +154,11 @@ export const TabsComponent = ({ text, colorMode }: TabsCompType) => {
                 _hover={{ color: "purple" }}
                 stroke={isHover === i ? modeColorSelector() : text}
               />
-              {tab.name}
-            </Tab>
+              <NextLink href={`/${tab.name}`}>{tab.name}</NextLink>
+            </Flex>
           </motion.div>
         ))}
-      </TabList>
-      <TabPanels>
-        <TabPanel px={0}>
-          <Toolbar />
-          <TabContent />
-        </TabPanel>
-        <TabPanel px={0}>
-          <p>two!</p>
-        </TabPanel>
-        <TabPanel px={0}>
-          <p>three!</p>
-        </TabPanel>
-      </TabPanels>
-    </Tabs>
+      </Flex>
+    </Flex>
   );
 };
