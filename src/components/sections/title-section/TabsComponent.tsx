@@ -1,10 +1,11 @@
-import { Icon, ColorMode, Flex } from "@chakra-ui/react";
+import { Icon, ColorMode, Flex, Text } from "@chakra-ui/react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { TabContent } from "components/Tabcontent";
 import { svgProps } from "components/types";
 import Toolbar from "../../Toolbar";
 import NextLink from "next/link";
+import { useRouter } from "next/router";
 
 /////////////////SVG ICONS///////////////////////
 //Collateral Icon
@@ -108,7 +109,8 @@ type TabsCompType = {
 };
 
 export const TabsComponent = ({ text, colorMode }: TabsCompType) => {
-  const [isHover, setIsHover] = useState(0);
+  const [isHover, setIsHover] = useState(-1);
+  const router = useRouter();
 
   const modeColorSelector = () => {
     return colorMode === "light" ? "purple" : "green";
@@ -138,23 +140,34 @@ export const TabsComponent = ({ text, colorMode }: TabsCompType) => {
             }}
             whileHover={showBottomBorder()}
             onMouseEnter={() => setIsHover(i)}
-            onMouseLeave={() => setIsHover(0)}
+            onMouseLeave={() => setIsHover(-1)}
           >
-            <Flex
-              key={i}
-              sx={tabStyle}
-              _selected={{ color: modeColorSelector() }}
-            >
+            <Flex key={i} sx={tabStyle}>
               <Icon
                 key={i}
                 as={tab.icon}
                 w="25px"
                 h="25px"
                 mr="10px"
-                _hover={{ color: "purple" }}
-                stroke={isHover === i ? modeColorSelector() : text}
+                stroke={
+                  isHover === i ||
+                  router.pathname.replace(/\s+/g, "") ==
+                    `/${tab.name}`.replace(/\s+/g, "")
+                    ? modeColorSelector()
+                    : text
+                }
               />
-              <NextLink href={`/${tab.name}`}>{tab.name}</NextLink>
+
+              {router.pathname.replace(/\s+/g, "") ==
+              `/${tab.name}`.replace(/\s+/g, "") ? (
+                <NextLink href={`/${tab.name}`.replace(/\s+/g, "")}>
+                  <Text sx={{ color: modeColorSelector() }}> {tab.name}</Text>
+                </NextLink>
+              ) : (
+                <NextLink href={`/${tab.name}`.replace(/\s+/g, "")}>
+                  {tab.name}
+                </NextLink>
+              )}
             </Flex>
           </motion.div>
         ))}

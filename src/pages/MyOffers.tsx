@@ -21,14 +21,9 @@ const MyOffers: NextPage = () => {
           gap="5"
           mt="24px"
           mx={["16px", "16px", "16px", "80px", "80px", "195px"]}
+          minH="50vh"
         >
-          <Img src={image1.src} w="full" h="229px"></Img>
-          <Img src={image1.src} w="full" h="229px"></Img>
-          <Img src={imgage2.src} w="full" h="319px"></Img>
-          <Img src={image1.src} w="full" h="229px"></Img>
-          <Img src={imgage2.src} w="full" h="319px"></Img>
-          <Img src={image1.src} w="full" h="229px"></Img>
-          <Img src={imgage2.src} w="full" h="319px"></Img>
+          My Offers Page Content
         </Grid>
       </Flex>
     </>
