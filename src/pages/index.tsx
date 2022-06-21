@@ -1,7 +1,7 @@
-import TitleSection from 'components/sections/title-section';
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import { Header, Footer } from '../app';
+import TitleSection from "components/sections/title-section";
+import type { NextPage } from "next";
+import Head from "next/head";
+import { Header, Footer } from "../app";
 
 const Home: NextPage = () => {
   return (

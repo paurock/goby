@@ -6,12 +6,12 @@ import {
   TabPanels,
   TabPanel,
   ColorMode,
-} from '@chakra-ui/react';
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { TabContent } from 'components/Tabcontent';
-import { svgProps } from 'components/types';
-import Toolbar from 'components/toolbar';
+} from "@chakra-ui/react";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { TabContent } from "components/Tabcontent";
+import { svgProps } from "components/types";
+import Toolbar from "../../Toolbar";
 
 /////////////////SVG ICONS///////////////////////
 //Collateral Icon
@@ -97,16 +97,16 @@ export const flagIcon = (props: svgProps) => (
 );
 
 const tabNames = [
-  { name: 'Collateral', icon: collatIcon },
-  { name: 'Loan', icon: cardIcon },
-  { name: 'My Offers', icon: flagIcon },
+  { name: "Collateral", icon: collatIcon },
+  { name: "Loan", icon: cardIcon },
+  { name: "My Offers", icon: flagIcon },
 ];
 
 const tabStyle = {
-  justifyContent: 'space-around',
-  maxWidth: '115px',
-  borderBottom: 'none',
-  marginBottom: '14px',
+  justifyContent: "space-around",
+  maxWidth: "115px",
+  borderBottom: "none",
+  marginBottom: "14px",
 };
 
 type TabsCompType = {
@@ -118,30 +118,30 @@ export const TabsComponent = ({ text, colorMode }: TabsCompType) => {
   const [isHover, setIsHover] = useState(0);
 
   const modeColorSelector = () => {
-    return colorMode === 'light' ? 'purple' : 'green';
+    return colorMode === "light" ? "purple" : "green";
   };
 
   const showBottomBorder = () =>
-    colorMode === 'light'
-      ? { borderBottom: '2px solid purple' }
-      : { borderBottom: '2px solid green' };
+    colorMode === "light"
+      ? { borderBottom: "2px solid purple" }
+      : { borderBottom: "2px solid green" };
 
   return (
-    <Tabs  maxH="36px" isFitted isLazy variant="unstyled" align="start" w="full">
+    <Tabs maxH="36px" isFitted isLazy variant="unstyled" align="start" w="full">
       <TabList gap="10px">
         {tabNames.map((tab, i) => (
           <motion.div
             key={i}
             style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              fontFamily: 'Inter',
+              display: "flex",
+              justifyContent: "space-between",
+              fontFamily: "Inter",
               fontWeight: 500,
-              fontSize: '16px',
-              width: 'fit-content',
-              whiteSpace: 'nowrap',
-              height: '36px',
-              cursor: 'pointer',
+              fontSize: "16px",
+              width: "fit-content",
+              whiteSpace: "nowrap",
+              height: "36px",
+              cursor: "pointer",
             }}
             whileHover={showBottomBorder()}
             onMouseEnter={() => setIsHover(i)}
@@ -158,7 +158,7 @@ export const TabsComponent = ({ text, colorMode }: TabsCompType) => {
                 w="25px"
                 h="25px"
                 mr="10px"
-                _hover={{ color: 'purple' }}
+                _hover={{ color: "purple" }}
                 stroke={isHover === i ? modeColorSelector() : text}
               />
               {tab.name}
