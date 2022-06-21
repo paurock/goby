@@ -7,7 +7,7 @@ import { MainFooter } from "./MainFooter";
 
 export const Footer = () => {
   return (
-    <Container w="full" px="0" background="#191921">
+    <Container w="100%" maxW="full" px="0" background="#191921">
       <MainFooter />
     </Container>
   );

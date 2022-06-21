@@ -26,6 +26,7 @@ export const MainFooter = () => (
         flexDirection="column"
         justifyContent={["center", "center", "center", "flex-start"]}
         alignItems={["center", "center", "center", "flex-start"]}
+        mt="75px"
       >
         <Flex
           mb="18px"
@@ -53,7 +54,7 @@ export const MainFooter = () => (
       {/* Right Column Links */}
       <Flex
         pl="15%"
-        mt="-5px"
+        mt="70px"
         w={["full", "full", "full", "45%", "45%"]}
         justifyContent={["center", "center", "center", "flex-start"]}
       >
