@@ -12,8 +12,7 @@ const TitleSection = () => {
       minH="100%"
       maxW="full"
       p="0"
-      m="0"
-      sx={{ border: '1px solid red' }}
+      m="0" 
     >
       <Flex
         bg={background}

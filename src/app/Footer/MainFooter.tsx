@@ -16,7 +16,7 @@ export const MainFooter = () => (
         justify: 'space-around',
         fontFamily: 'body',
         margin: '0 auto',
-        flexWrap: 'wrap',
+        flexWrap: 'wrap', 
       }}
       w="full"
       maxW="1050px"

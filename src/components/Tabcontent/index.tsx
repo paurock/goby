@@ -11,7 +11,7 @@ export interface imageInf {
 
 export const TabContent: React.FC = () => {
   return (
-    <Grid templateColumns="repeat(4, 1fr)" gap="5" mt="24px">
+    <Grid templateColumns="repeat(4, 1fr)" border="1px solid red" gap="5" mt="24px" height="fit-content">
       <Img src={image1.src} w="full" h="229px"></Img>
       <Img src={image1.src} w="full" h="229px"></Img>
       <Img src={imgage2.src} w="full" h="319px"></Img>

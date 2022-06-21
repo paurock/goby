@@ -8,7 +8,7 @@ import { VFlex } from 'shared';
 import { MainFooter } from './MainFooter';
 export const Footer = () => { 
   return (
-    <Container w="full" minW="100%" px="0" background="#191921">
+    <Container w="full" px="0" background="#191921">
       <VFlex pt="120px" w="full" justify="space-between" align="center">
 
         <Container

@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { TabContent } from 'components/content';
+import { TabContent } from 'components/Tabcontent';
 import { svgProps } from 'components/types';
 import Toolbar from 'components/toolbar';
 
@@ -127,7 +127,7 @@ export const TabsComponent = ({ text, colorMode }: TabsCompType) => {
       : { borderBottom: '2px solid green' };
 
   return (
-    <Tabs maxH="36px" isFitted isLazy variant="unstyled" align="start" w="full">
+    <Tabs  maxH="36px" isFitted isLazy variant="unstyled" align="start" w="full">
       <TabList gap="10px">
         {tabNames.map((tab, i) => (
           <motion.div
@@ -166,7 +166,7 @@ export const TabsComponent = ({ text, colorMode }: TabsCompType) => {
           </motion.div>
         ))}
       </TabList>
-      <TabPanels sx={{ border: '1px solid purple' }}>
+      <TabPanels>
         <TabPanel px={0}>
           <Toolbar />
           <TabContent />

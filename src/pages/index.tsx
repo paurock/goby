@@ -1,3 +1,4 @@
+import TitleSection from 'components/sections/title-section';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import { Header, Footer } from '../app';
@@ -13,9 +14,9 @@ const Home: NextPage = () => {
       <header>
         <Header />
       </header>
-      {/* <main>
+      <main>
         <TitleSection />
-      </main> */}
+      </main>
       <footer>
         <Footer />
       </footer>
