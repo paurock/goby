@@ -1,7 +1,7 @@
 import { Icon, ColorMode, Flex, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import { motion } from "framer-motion"; 
-import { svgProps } from "components/types"; 
+import { motion } from "framer-motion";
+import { svgProps } from "components/types";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 
@@ -91,7 +91,7 @@ export const flagIcon = (props: svgProps) => (
 const tabNames = [
   { name: "Collateral", icon: collatIcon },
   { name: "Loan", icon: cardIcon },
-  { name: "My Offers", icon: flagIcon },
+  // { name: "My Offers", icon: flagIcon },
 ];
 
 const tabStyle = {
@@ -120,7 +120,7 @@ export const TabsComponent = ({ text, colorMode }: TabsCompType) => {
       : { borderBottom: "2px solid green" };
 
   return (
-    <Flex maxW="1600px" maxH="36px" w="full" >
+    <Flex maxW="1600px" maxH="36px" w="full">
       <Flex gap="32px">
         {tabNames.map((tab, i) => (
           <motion.div
@@ -162,7 +162,9 @@ export const TabsComponent = ({ text, colorMode }: TabsCompType) => {
                   <Text sx={{ color: modeColorSelector() }}> {tab.name}</Text>
                 </NextLink>
               ) : (
-                <NextLink href={`/${tab.name.toLocaleLowerCase()}`.replace(/\s+/g, "")}>
+                <NextLink
+                  href={`/${tab.name.toLocaleLowerCase()}`.replace(/\s+/g, "")}
+                >
                   {tab.name}
                 </NextLink>
               )}

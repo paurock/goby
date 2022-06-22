@@ -6,16 +6,16 @@ import imgage2 from "../app/assets/rectangle_240x319.png";
 import Toolbar from "../components/Toolbar";
 import { NextPage } from "next";
 
-export interface imageInf {
-  src: string | StaticImageData;
-  className?: string;
-}
-
 const Collateral: NextPage = () => {
   return (
     <>
       <Toolbar />
-      <Flex maxW="1600px" m="0 auto" px={['16px', '16px', '16px', '120px', '120px']} pb={["10px", "20px", "40px", "60px"]}>
+      <Flex
+        maxW="1600px"
+        m="0 auto"
+        px={["16px", "16px", "16px", "120px", "120px"]}
+        pb={["10px", "20px", "40px", "60px"]}
+      >
         <Grid
           templateColumns="repeat(4, 1fr)"
           gap="30px"
@@ -23,11 +23,11 @@ const Collateral: NextPage = () => {
           mx={["16px", "16px", "16px", "80px", "80px", "195px"]}
         >
           <Img src={image1.src} w="full" maxH="229px"></Img>
-          <Img src={image1.src} w="full"  maxH="229px"></Img>
-          <Img src={imgage2.src} w="full"  maxH="319px"></Img>
-          <Img src={image1.src} w="full"  maxH="229px"></Img>
-          <Img src={imgage2.src} w="full"  maxH="319px"></Img>
-          <Img src={image1.src} w="full"  maxH="229px"></Img>
+          <Img src={image1.src} w="full" maxH="229px"></Img>
+          <Img src={imgage2.src} w="full" maxH="319px"></Img>
+          <Img src={image1.src} w="full" maxH="229px"></Img>
+          <Img src={imgage2.src} w="full" maxH="319px"></Img>
+          <Img src={image1.src} w="full" maxH="229px"></Img>
           <Img src={imgage2.src} w="full" maxH="319px"></Img>
         </Grid>
       </Flex>
