@@ -6,7 +6,7 @@ const MyOffers: NextPage = () => {
   return (
     <>
       <Toolbar />
-      <Flex px={["16px", "16px", "16px", "120px", "120px"]}>
+      <Flex maxW="1600px" m="0 auto" px={["16px", "16px", "16px", "120px", "120px"]}>
         <Grid
           templateColumns="repeat(4, 1fr)"
           gap="5"

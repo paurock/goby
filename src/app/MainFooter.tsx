@@ -6,20 +6,20 @@ import { MainFooterLeft } from "./MainFooterLeft";
 export const MainFooter:React.FC = () => (
   <>
     <Flex 
-      gap="32px"
+      gap="32px" 
+      w="full" 
+      minH="332px"
+      pl={["16px", "16px", "16px", "120px", "120px"]} 
       sx={{
         justify: "space-around",
         fontFamily: "body",
         margin: "0 auto",
         flexWrap: "wrap",
       }}
-      w="full" 
-      minH="332px"
-      pl={["16px", "16px", "16px", "120px", "120px"]} 
     >
      <Flex
  mx={['0', '0', '0', '80px', '80px', '195px']}
- w={["full", "full", "full", "35%", "35%"]}
+ w={["full", "full", "full", "5%", "25%"]}
  flexDirection="column"
  justifyContent={["flex-start", "center", "center", "flex-start"]}
  alignItems={["center", "center", "center", "flex-start"]}
@@ -29,7 +29,7 @@ export const MainFooter:React.FC = () => (
   <Flex 
   gap="30px"
    mt={["0", "0", "0", "70px", "70px"]}
-   w={["full", "full", "full", "35%", "35%"]}
+   w={["full", "full", "full", "35%", "25%"]}
    pl={['0', '10%', '10%', '0', '0', '0']} 
    mr={['0', '0', '0', '0', '80px', '195px']} 
    justifyContent={["center", "center", "center", "flex-start"]}

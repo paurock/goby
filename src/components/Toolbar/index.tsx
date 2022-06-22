@@ -20,14 +20,14 @@ const Toolbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Flex
-      minH="100%"
-      maxW="full"
+    <Flex 
+      maxW="1600px"
+      minH="100%" 
       px={['16px', '16px', '16px', '120px', '120px']}
       p="0"
-      m="0"
+      m="0 auto"
       mt="30px"
-      sx={{ justifyContent: "center" }}
+      sx={{ justifyContent: "center"}} 
     >
       <Grid
         templateColumns="repeat(4, 1fr)"

@@ -7,23 +7,18 @@ const TitleSection = () => {
   const { text, background } = useAssets();
   const { colorMode, toggleColorMode } = useColorMode();
 
-  return (
-    <Container
-      minH="100%"
-      maxW="full"
-      p="0"
-      m="0" 
-    >
+  return ( 
       <Flex
         bg={background}
-        maxW="full"
+        maxW="1600px"
         maxH="249px"
         h={['fit-content', '847px', '847px', '847px', '860px']}
         px={['16px', '16px', '16px', '120px', '120px']}
-        pt={['32px', '32px', '32px', '64px', '64px']}
+        pt={['32px', '64px', '64px', '64px', '64px']}
         color={text}
+        margin="0 auto"
       >
-        <VFlex
+        <VFlex 
           mx={['16px', '16px', '16px', '80px', '80px', '195px']}
           justify="space-between"
           maxH="185px" 
@@ -51,8 +46,7 @@ const TitleSection = () => {
           </Box>
           <TabsComponent text={text} colorMode={colorMode} />
         </VFlex>
-      </Flex>
-    </Container>
+      </Flex> 
   );
 };
 export default TitleSection;

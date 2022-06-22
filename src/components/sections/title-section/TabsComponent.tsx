@@ -120,7 +120,7 @@ export const TabsComponent = ({ text, colorMode }: TabsCompType) => {
       : { borderBottom: "2px solid green" };
 
   return (
-    <Flex maxH="36px" w="full" >
+    <Flex maxW="1600px" maxH="36px" w="full" >
       <Flex gap="32px">
         {tabNames.map((tab, i) => (
           <motion.div
