@@ -33,8 +33,8 @@ const theme = extendTheme({
   components,
 });
 import { ReactNode } from "react";
-
-const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
+ 
+const Layout: React.FC = ({ children }: { children?: ReactNode }): JSX.Element => {
   return (
     <ChakraProvider resetCSS theme={theme}>
       <Head>

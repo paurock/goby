@@ -3,7 +3,7 @@ import { VFlex, useAssets } from '../../../shared';
 
 import { TabsComponent } from './TabsComponent';
 
-const TitleSection = () => {
+const TitleSection:React.FC = () => {
   const { text, background } = useAssets();
   const { colorMode, toggleColorMode } = useColorMode();
 

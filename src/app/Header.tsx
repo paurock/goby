@@ -24,7 +24,7 @@ import { useRouter } from "next/router";
 
 import { links, useAssets, VFlex, DropdownMenu } from "shared";
 
-export const Header = () => {
+export const Header: React.FC = () => {
   const { route } = useRouter();
 
   const {
