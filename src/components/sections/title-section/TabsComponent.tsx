@@ -164,7 +164,7 @@ export const TabsComponent = ({ text, colorMode }: TabsCompType) => {
                   <Text sx={{ color: modeColorSelector() }}> {tab.name}</Text>
                 </NextLink>
               ) : (
-                <NextLink href={`/${tab.name}`.replace(/\s+/g, "")}>
+                <NextLink href={`/${tab.name.toLocaleLowerCase()}`.replace(/\s+/g, "")}>
                   {tab.name}
                 </NextLink>
               )}

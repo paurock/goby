@@ -6,16 +6,11 @@ import imgage2 from "../app/assets/rectangle_240x319.png";
 import Toolbar from "../components/Toolbar";
 import { NextPage } from "next";
 
-export interface imageInf {
-  src: string | StaticImageData;
-  className?: string;
-}
-
 const Loan: NextPage = () => {
   return (
     <>
       <Toolbar />
-      <Flex px={["16px", "16px", "16px", "30px", "120px"]}>
+      <Flex px={["16px", "16px", "16px", "120px", "120px"]}>
         <Grid
           templateColumns="repeat(4, 1fr)"
           gap="5"

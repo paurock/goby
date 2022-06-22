@@ -15,10 +15,10 @@ const Collateral: NextPage = () => {
   return (
     <>
       <Toolbar />
-      <Flex px={["16px", "16px", "16px", "30px", "120px"]}>
+      <Flex px={['16px', '16px', '16px', '120px', '120px']} pb={["10px", "20px", "40px", "60px"]}>
         <Grid
           templateColumns="repeat(4, 1fr)"
-          gap="5"
+          gap="30px"
           mt="24px"
           mx={["16px", "16px", "16px", "80px", "80px", "195px"]}
         >

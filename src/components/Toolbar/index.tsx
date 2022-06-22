@@ -23,7 +23,7 @@ const Toolbar = () => {
     <Flex
       minH="100%"
       maxW="full"
-      px={["16px", "16px", "16px", "30px", "120px"]}
+      px={['16px', '16px', '16px', '120px', '120px']}
       p="0"
       m="0"
       mt="30px"
