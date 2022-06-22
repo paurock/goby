@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import {
   Flex,
   Grid,
@@ -18,16 +19,31 @@ import { modeColorSelector } from "components/utils";
 const Toolbar = () => {
   const { text, background } = useAssets();
   const { colorMode, toggleColorMode } = useColorMode();
+  const [likes, setLikes] = useState(0);
+  const [isLiked, setIsLiked] = useState(false);
+
+  useEffect(() => {
+    localStorage.getItem("isLiked") &&
+      setIsLiked(localStorage.getItem("isLiked"));
+    localStorage.getItem("likes") && setLikes(localStorage.getItem("likes"));
+  }, []);
+
+  const handleClick = () => {
+    setLikes(likes + 1);
+    setIsLiked(true);
+    localStorage.setItem("isLiked", JSON.stringify(isLiked));
+    localStorage.setItem("likes", likes + 1);
+  };
 
   return (
-    <Flex 
+    <Flex
       maxW="1600px"
-      minH="100%" 
-      px={['16px', '16px', '16px', '120px', '120px']}
+      minH="100%"
+      px={["16px", "16px", "16px", "120px", "120px"]}
       p="0"
       m="0 auto"
       mt="30px"
-      sx={{ justifyContent: "center"}} 
+      sx={{ justifyContent: "center" }}
     >
       <Grid
         templateColumns="repeat(4, 1fr)"
@@ -78,9 +94,15 @@ const Toolbar = () => {
               stroke={text}
               w="25px"
               h="25px"
-              _hover={{ color: "purple" }}
+              _hover={{ fill: "red", stroke: "red" }}
+              sx={{
+                cursor: "pointer",
+                fill: `${isLiked ? "red" : null}`,
+                stroke: `${isLiked ? "red" : null}`,
+              }}
+              onClick={() => handleClick()}
             />
-            34
+            {likes}
           </Flex>
           <Flex
             sx={{
