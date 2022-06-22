@@ -22,13 +22,13 @@ const Collateral: NextPage = () => {
           mt="24px"
           mx={["16px", "16px", "16px", "80px", "80px", "195px"]}
         >
-          <Img src={image1.src} w="full" h="229px"></Img>
-          <Img src={image1.src} w="full" h="229px"></Img>
-          <Img src={imgage2.src} w="full" h="319px"></Img>
-          <Img src={image1.src} w="full" h="229px"></Img>
-          <Img src={imgage2.src} w="full" h="319px"></Img>
-          <Img src={image1.src} w="full" h="229px"></Img>
-          <Img src={imgage2.src} w="full" h="319px"></Img>
+          <Img src={image1.src} w="full" maxH="229px"></Img>
+          <Img src={image1.src} w="full"  maxH="229px"></Img>
+          <Img src={imgage2.src} w="full"  maxH="319px"></Img>
+          <Img src={image1.src} w="full"  maxH="229px"></Img>
+          <Img src={imgage2.src} w="full"  maxH="319px"></Img>
+          <Img src={image1.src} w="full"  maxH="229px"></Img>
+          <Img src={imgage2.src} w="full" maxH="319px"></Img>
         </Grid>
       </Flex>
     </>

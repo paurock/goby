@@ -1,9 +1,7 @@
 import { Icon, ColorMode, Flex, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import { motion } from "framer-motion";
-import { TabContent } from "components/Tabcontent";
-import { svgProps } from "components/types";
-import Toolbar from "../../Toolbar";
+import { motion } from "framer-motion"; 
+import { svgProps } from "components/types"; 
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 
@@ -122,7 +120,7 @@ export const TabsComponent = ({ text, colorMode }: TabsCompType) => {
       : { borderBottom: "2px solid green" };
 
   return (
-    <Flex maxH="36px" w="full">
+    <Flex maxH="36px" w="full" >
       <Flex gap="32px">
         {tabNames.map((tab, i) => (
           <motion.div

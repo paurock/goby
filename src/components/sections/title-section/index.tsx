@@ -26,7 +26,7 @@ const TitleSection = () => {
         <VFlex
           mx={['16px', '16px', '16px', '80px', '80px', '195px']}
           justify="space-between"
-          h="185px" 
+          maxH="185px" 
         >
           <Box>
             <Flex
