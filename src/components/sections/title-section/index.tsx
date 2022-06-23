@@ -1,7 +1,7 @@
 import { Flex, Container, Box, useColorMode } from '@chakra-ui/react';
 import { VFlex, useAssets } from '../../../shared';
 
-import { TabsComponent } from './TabsComponent';
+import { TabsMenu } from './TabsMenu';
 
 const TitleSection:React.FC = () => {
   const { text, background } = useAssets();
@@ -44,7 +44,7 @@ const TitleSection:React.FC = () => {
               Offer loans to other users on their non-fungible tokens
             </Flex>
           </Box>
-          <TabsComponent text={text} colorMode={colorMode} />
+          <TabsMenu text={text} colorMode={colorMode} />
         </VFlex>
       </Flex> 
   );

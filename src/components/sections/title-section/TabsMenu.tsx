@@ -106,7 +106,7 @@ type TabsCompType = {
   colorMode: ColorMode;
 };
 
-export const TabsComponent = ({ text, colorMode }: TabsCompType) => {
+export const TabsMenu = ({ text, colorMode }: TabsCompType) => {
   const [isHover, setIsHover] = useState(-1);
   const router = useRouter();
 
