@@ -2,7 +2,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react";
 import TitleSection from "../components/sections/title-section";
 import { Header } from "./Header";
-import { Footer } from "./Footer";
+import { Footer } from "./Footers/Footer";
 import Head from "next/head";
 
 const colors = {

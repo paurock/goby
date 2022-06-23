@@ -1,6 +1,6 @@
 import { Flex, Text, Link  } from "@chakra-ui/react";
 import { Img } from "shared";
-import logo from "./assets/logo.svg";
+import logo from "../assets/logo.svg";
 import NextLink from "next/link";
 
  {/* Left Logo block */}

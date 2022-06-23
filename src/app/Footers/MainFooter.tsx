@@ -19,7 +19,7 @@ export const MainFooter:React.FC = () => (
     >
      <Flex
  mx={['0', '0', '0', '80px', '80px', '195px']}
- w={["full", "full", "full", "5%", "25%"]}
+ w={["full", "full", "full", "35%", "25%"]}
  flexDirection="column"
  justifyContent={["flex-start", "center", "center", "flex-start"]}
  alignItems={["center", "center", "center", "flex-start"]}
