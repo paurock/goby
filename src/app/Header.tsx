@@ -25,7 +25,7 @@ import { useRouter } from "next/router";
 import { links, useAssets, VFlex, DropdownMenu } from "shared";
 
 export const Header: React.FC = () => {
-  const { route } = useRouter();
+  const { route } = useRouter(); 
 
   const {
     logo,

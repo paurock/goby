@@ -1,4 +1,4 @@
-import { Icon, ColorMode, Flex, Text } from "@chakra-ui/react";
+import { Icon, ColorMode, Flex, Text, useColorModeValue, Link } from "@chakra-ui/react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { svgProps } from "components/types";
@@ -105,26 +105,25 @@ type TabsCompType = {
   text: string;
   colorMode: ColorMode;
 };
-
-export const TabsMenu = ({ text, colorMode }: TabsCompType) => {
+ 
+export const TabsMenu = ({ text }: TabsCompType) => {
   const [isHover, setIsHover] = useState(-1);
   const router = useRouter();
+  const color = useColorModeValue('purple', 'green') 
 
-  const modeColorSelector = () => {
-    return colorMode === "light" ? "purple" : "green";
-  };
+  const showBottomBorder = ():object => ({borderBottom: `2px solid ${color}` })
 
-  const showBottomBorder = () =>
-    colorMode === "light"
-      ? { borderBottom: "2px solid purple" }
-      : { borderBottom: "2px solid green" };
+  const pathName = ():string => router.pathname.replace(/\s+/g, "").toLocaleLowerCase()
+  const linkName = (linkName:string):string => `/${linkName}`.replace(/\s+/g, "").toLocaleLowerCase()
 
+  const isActiveLink = (tabName:string):boolean => pathName() === linkName(tabName)
+  
   return (
     <Flex maxW="1600px" maxH="36px" w="full">
       <Flex gap="32px">
         {tabNames.map((tab, i) => (
           <motion.div
-            key={i}
+            key={i} 
             style={{
               display: "flex",
               justifyContent: "space-between",
@@ -134,12 +133,12 @@ export const TabsMenu = ({ text, colorMode }: TabsCompType) => {
               width: "fit-content",
               whiteSpace: "nowrap",
               height: "36px",
-              cursor: "pointer",
+              cursor: "pointer",  
             }}
             whileHover={showBottomBorder()}
             onMouseEnter={() => setIsHover(i)}
             onMouseLeave={() => setIsHover(-1)}
-          >
+          > 
             <Flex key={i} sx={tabStyle}>
               <Icon
                 key={i}
@@ -151,23 +150,13 @@ export const TabsMenu = ({ text, colorMode }: TabsCompType) => {
                   isHover === i ||
                   router.pathname.replace(/\s+/g, "") ==
                     `/${tab.name}`.replace(/\s+/g, "")
-                    ? modeColorSelector()
+                    ? color
                     : text
                 }
-              />
-
-              {router.pathname.replace(/\s+/g, "") ==
-              `/${tab.name}`.replace(/\s+/g, "") ? (
-                <NextLink href={`/${tab.name}`.replace(/\s+/g, "")}>
-                  <Text sx={{ color: modeColorSelector() }}> {tab.name}</Text>
-                </NextLink>
-              ) : (
-                <NextLink
-                  href={`/${tab.name.toLocaleLowerCase()}`.replace(/\s+/g, "")}
-                >
-                  {tab.name}
-                </NextLink>
-              )}
+              /> 
+                <NextLink href={`/${tab.name}`.replace(/\s+/g, "")} passHref>
+                  <Link color={isActiveLink (tab.name) ? color : null}>{tab.name}</Link>
+                </NextLink> 
             </Flex>
           </motion.div>
         ))}
