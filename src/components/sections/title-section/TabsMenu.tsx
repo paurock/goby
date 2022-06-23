@@ -1,4 +1,11 @@
-import { Icon, ColorMode, Flex, Text, useColorModeValue, Link } from "@chakra-ui/react";
+import {
+  Icon,
+  ColorMode,
+  Flex,
+  Text,
+  useColorModeValue,
+  Link,
+} from "@chakra-ui/react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { svgProps } from "components/types";
@@ -87,43 +94,54 @@ export const flagIcon = (props: svgProps) => (
     />
   </svg>
 );
-
-const tabNames = [
+type TabType = {
+  name: string;
+  icon: object;
+};
+const tabNames: Array<TabType> = [
   { name: "Collateral", icon: collatIcon },
   { name: "Loan", icon: cardIcon },
   // { name: "My Offers", icon: flagIcon },
 ];
 
-const tabStyle = {
+const tabStyle: object = {
   justifyContent: "space-around",
   maxWidth: "115px",
   borderBottom: "none",
   marginBottom: "14px",
+  "a:hover ": {
+    textDecoration: "none",
+  },
 };
 
 type TabsCompType = {
   text: string;
   colorMode: ColorMode;
 };
- 
-export const TabsMenu = ({ text }: TabsCompType) => {
+
+export const TabsMenu = ({ text }: TabsCompType): JSX.Element => {
   const [isHover, setIsHover] = useState(-1);
   const router = useRouter();
-  const color = useColorModeValue('purple', 'green') 
+  const color = useColorModeValue("purple", "green");
 
-  const showBottomBorder = ():object => ({borderBottom: `2px solid ${color}` })
+  const showBottomBorder = (): object => ({
+    borderBottom: `2px solid ${color}`,
+  });
 
-  const pathName = ():string => router.pathname.replace(/\s+/g, "").toLocaleLowerCase()
-  const linkName = (linkName:string):string => `/${linkName}`.replace(/\s+/g, "").toLocaleLowerCase()
+  const pathName = (): string =>
+    router.pathname.replace(/\s+/g, "").toLocaleLowerCase();
+  const linkName = (linkName: string): string =>
+    `/${linkName}`.replace(/\s+/g, "").toLocaleLowerCase();
 
-  const isActiveLink = (tabName:string):boolean => pathName() === linkName(tabName)
-  
+  const isActiveLink = (tabName: string): boolean =>
+    pathName() === linkName(tabName);
+
   return (
     <Flex maxW="1600px" maxH="36px" w="full">
       <Flex gap="32px">
         {tabNames.map((tab, i) => (
           <motion.div
-            key={i} 
+            key={i}
             style={{
               display: "flex",
               justifyContent: "space-between",
@@ -133,31 +151,34 @@ export const TabsMenu = ({ text }: TabsCompType) => {
               width: "fit-content",
               whiteSpace: "nowrap",
               height: "36px",
-              cursor: "pointer",  
+              cursor: "pointer",
+              textDecoration: "none",
             }}
             whileHover={showBottomBorder()}
             onMouseEnter={() => setIsHover(i)}
             onMouseLeave={() => setIsHover(-1)}
-          > 
-            <Flex key={i} sx={tabStyle}>
-              <Icon
-                key={i}
-                as={tab.icon}
-                w="25px"
-                h="25px"
-                mr="10px"
-                stroke={
-                  isHover === i ||
-                  router.pathname.replace(/\s+/g, "") ==
-                    `/${tab.name}`.replace(/\s+/g, "")
-                    ? color
-                    : text
-                }
-              /> 
-                <NextLink href={`/${tab.name}`.replace(/\s+/g, "")} passHref>
-                  <Link color={isActiveLink (tab.name) ? color : null}>{tab.name}</Link>
-                </NextLink> 
-            </Flex>
+          >
+            <NextLink href={linkName(tab.name)} passHref>
+              <Link color={isActiveLink(tab.name) ? color : null}>
+                <Flex key={i} sx={tabStyle}>
+                  <Icon
+                    key={i}
+                    as={tab.icon}
+                    w="25px"
+                    h="25px"
+                    mr="10px"
+                    stroke={
+                      isHover === i ||
+                      router.pathname.replace(/\s+/g, "") ==
+                        `/${tab.name}`.replace(/\s+/g, "")
+                        ? color
+                        : text
+                    }
+                  />
+                  {tab.name}
+                </Flex>
+              </Link>
+            </NextLink>
           </motion.div>
         ))}
       </Flex>

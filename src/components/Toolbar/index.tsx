@@ -16,23 +16,30 @@ import { useAssets } from "shared";
 import { svgProps } from "components/types";
 import { modeColorSelector } from "components/utils";
 
-const Toolbar = () => {
+const Toolbar = (): JSX.Element => {
   const { text, background } = useAssets();
   const { colorMode, toggleColorMode } = useColorMode();
   const [likes, setLikes] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
 
   useEffect(() => {
-    localStorage.getItem("isLiked") &&
-      setIsLiked(localStorage.getItem("isLiked"));
-    localStorage.getItem("likes") && setLikes(localStorage.getItem("likes"));
+    const likeD_LS = localStorage.getItem("isLiked") || "";
+
+    const likeS_LS = localStorage.getItem("likes") || "";
+
+    if (likeD_LS && likeD_LS !== "") {
+      setIsLiked(likeD_LS);
+    }
+    if (likeS_LS && likeS_LS !== "") {
+      setLikes(likeS_LS);
+    }
   }, []);
 
   const handleClick = () => {
     setLikes(likes + 1);
     setIsLiked(true);
     localStorage.setItem("isLiked", JSON.stringify(isLiked));
-    localStorage.setItem("likes", likes + 1);
+    localStorage.setItem("likes", JSON.stringify(likes + 1));
   };
 
   return (

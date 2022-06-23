@@ -25,7 +25,7 @@ import { useRouter } from "next/router";
 import { links, useAssets, VFlex, DropdownMenu } from "shared";
 
 export const Header: React.FC = () => {
-  const { route } = useRouter(); 
+  const { route } = useRouter();
 
   const {
     logo,
@@ -76,7 +76,7 @@ export const Header: React.FC = () => {
           w="full"
           h="80px"
         >
-          <Link href="#">
+          <Link href="/">
             <Img src={logo} sx={{ cursor: "pointer" }} />
           </Link>
           <Flex as="nav" gap="32px" sx={{ alignItems: "center" }}>
