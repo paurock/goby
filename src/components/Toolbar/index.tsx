@@ -22,7 +22,6 @@ const Toolbar = (): JSX.Element => {
   const [isLiked, setIsLiked] = useState(false);
   const [likes, setLikes] = useState(0);
 
-
   useEffect(() => {
     const likeD_LS = JSON.parse(localStorage.getItem("isLiked") || "false");
 
@@ -39,7 +38,7 @@ const Toolbar = (): JSX.Element => {
   const handleClick = () => {
     setLikes(likes + 1);
     setIsLiked(true);
-    localStorage.setItem("isLiked", JSON.stringify(isLiked));
+    localStorage.setItem("isLiked", JSON.stringify(true));
     localStorage.setItem("likes", JSON.stringify(likes + 1));
   };
 
@@ -106,10 +105,11 @@ const Toolbar = (): JSX.Element => {
               sx={{
                 cursor: "pointer",
                 fill: `${isLiked ? "red" : null}`,
-                stroke: `${isLiked ? "red" : null}`,
+                stroke: `${isLiked ? "red" : "black"}`,
               }}
               onClick={() => handleClick()}
             />
+            {console.log(isLiked)}
             {likes}
           </Flex>
           <Flex
