@@ -1,8 +1,7 @@
 import {
   Icon,
   ColorMode,
-  Flex,
-  Text,
+  Flex, 
   useColorModeValue,
   Link,
 } from "@chakra-ui/react";
@@ -160,9 +159,10 @@ export const TabsMenu = ({ text }: TabsCompType): JSX.Element => {
           >
             <NextLink href={linkName(tab.name)} passHref>
               <Link color={isActiveLink(tab.name) ? color : null}>
-                <Flex key={i} sx={tabStyle}>
+                <Flex key={i} sx={tabStyle}> 
                   <Icon
-                    key={i}
+                    key={i} 
+                    //@ts-ignore
                     as={tab.icon}
                     w="25px"
                     h="25px"

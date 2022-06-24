@@ -19,13 +19,14 @@ import { modeColorSelector } from "components/utils";
 const Toolbar = (): JSX.Element => {
   const { text, background } = useAssets();
   const { colorMode, toggleColorMode } = useColorMode();
-  const [likes, setLikes] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
+  const [likes, setLikes] = useState(0);
+
 
   useEffect(() => {
-    const likeD_LS = localStorage.getItem("isLiked") || "";
+    const likeD_LS = JSON.parse(localStorage.getItem("isLiked") || "false");
 
-    const likeS_LS = localStorage.getItem("likes") || "";
+    const likeS_LS = JSON.parse(localStorage.getItem("likes") || "0");
 
     if (likeD_LS && likeD_LS !== "") {
       setIsLiked(likeD_LS);
