@@ -57,14 +57,14 @@ const Toolbar = (): JSX.Element => {
         gap="5"
         mx={["16px", "16px", "16px", "80px", "80px", "195px"]}
       >
-        <GridItem w="100%" h="10">
+        <GridItem w="100%" h="10" rowStart={[2, 1]} colSpan={[3, 1]}>
           <Select placeholder="Collections">
             <option value="option1">Option 1</option>
             <option value="option2">Option 2</option>
             <option value="option3">Option 3</option>
           </Select>
         </GridItem>
-        <GridItem>
+        <GridItem rowStart={[1, 1]} colSpan={[4, 1]}>
           <InputGroup>
             <Input type="search" placeholder="Search project" />
             <InputRightElement pointerEvents="none">
@@ -109,7 +109,6 @@ const Toolbar = (): JSX.Element => {
               }}
               onClick={() => handleClick()}
             />
-            {console.log(isLiked)}
             {likes}
           </Flex>
           <Flex
