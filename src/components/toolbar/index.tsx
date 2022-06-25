@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, SVGProps } from "react";
 import {
   Flex,
   Grid,
@@ -95,6 +95,7 @@ const Toolbar = (): JSX.Element => {
             }}
           >
             <Icon
+              //@ts-ignore
               as={heartIcon} 
               w="25px"
               h="25px"
@@ -124,6 +125,7 @@ const Toolbar = (): JSX.Element => {
               sx={{ borderRight: "1px solid lightBlue", borderRadius: "0" }}
               variant="outlined"
               aria-label="Grid mode"
+              //@ts-ignore
               icon={gridIcon(color)}
               _active={{ background: "lightBlue" }}
               _selected={{ background: "lightBlue" }}
@@ -133,6 +135,7 @@ const Toolbar = (): JSX.Element => {
               h="40px"
               variant="outlined"
               aria-label="List mode"
+              //@ts-ignore
               icon={listIcon(color)}
               _active={{ background: "lightBlue" }}
               _selected={{ background: "lightBlue" }}
@@ -145,7 +148,7 @@ const Toolbar = (): JSX.Element => {
 };
 export default Toolbar;
 
-const heartIcon = (props: svgProps) => (
+export const heartIcon = (props: svgProps):SVGProps<SVGSVGElement> => (
   <svg
     {...props}
     width="20"
@@ -164,7 +167,7 @@ const heartIcon = (props: svgProps) => (
   </svg>
 );
 
-const gridIcon = (text: string) => (
+const gridIcon = (text: string):SVGProps<SVGSVGElement> => (
   <svg
     width="20"
     height="20"
@@ -203,7 +206,7 @@ const gridIcon = (text: string) => (
   </svg>
 );
 
-const listIcon = (text: string) => (
+const listIcon = (text: string):SVGProps<SVGSVGElement> => (
   <svg
     width="20"
     height="20"

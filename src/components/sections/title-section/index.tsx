@@ -1,4 +1,4 @@
-import { Flex, Box, useColorMode } from "@chakra-ui/react";
+import { Flex, Box, useColorMode, Heading } from "@chakra-ui/react";
 import { VFlex, useAssets } from "../../../shared";
 
 import { TabsMenu } from "./TabsMenu";
@@ -24,16 +24,18 @@ const TitleSection: React.FC = () => {
         maxH="185px"
       >
         <Box>
-          <Flex
-            fontFamily="Inter"
-            fontWeight="400"
-            fontSize="48px"
-            lineHeight="100%"
-            color={text}
-            mt="12px"
-            mb="12px"
-          >
-            Lend
+          <Flex>
+            <Heading 
+              fontFamily="Inter"
+              fontWeight="400"
+              fontSize="48px"
+              lineHeight="100%"
+              color={text}
+              mt="12px"
+              mb="12px" 
+              as="h1">
+                Lend
+            </Heading>
           </Flex>
           <Flex
             mt="12px"

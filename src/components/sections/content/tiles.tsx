@@ -4,6 +4,8 @@ import { Img } from "shared";
 import image1 from "/src/app/assets/rectangle_240x229.png";
 import imgage2 from "/src/app/assets/rectangle_240x319.png";
 import TileHover from "./tileHover";
+import UnderTiles from "components/sections/content/underTiles";
+
 
 export default function Tiles() {
   return (
@@ -29,13 +31,15 @@ export default function Tiles() {
         <Img src={image1.src} w="full" maxH="229px" />
         <Flex
           sx={{
-            position: "relative",
-            border: "1px solid yellow",
+            flexWrap: "wrap",
+            position: "relative", 
           }}
         >
-          <Img src={imgage2.src} w="full" maxH="319px" />
-          <TileHover />
-        </Flex>
+          <Img src={imgage2.src} w="full" maxH="319px" /> 
+          {/* <TileHover /> */}
+          <UnderTiles/>
+         
+        </Flex> 
       </SimpleGrid>
     </Flex>
   );
