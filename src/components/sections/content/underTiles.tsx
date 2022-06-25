@@ -28,7 +28,7 @@ export const shareIcon = (props: svgProps):SVGProps<SVGSVGElement> => (
 export default function UnderTiles() {
     const { text, background } = useAssets();
   return (
-    <VStack w="full" maxW="335px" boxShadow="rgba(99, 99, 99, 0.1) 0px 1px 8px 0px;">
+    <VStack w="full" sx={{boxShadow:"rgba(99, 99, 99, 0.1) 0px 1px 8px 0px}}"}}>
         <VStack w="full" p="24px" >
             <Box w="full" h="22px"><Heading as="h5" sx={{fontSize: "16px", fontWeight: 500, color: text}}>Asset ID</Heading></Box>
             <Box w="full" h="22px"><Text sx={{fontSize: "14px", color: text, opacity:0.4}}>Name project</Text></Box>
