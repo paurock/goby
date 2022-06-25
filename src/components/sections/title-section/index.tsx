@@ -1,4 +1,4 @@
-import { Flex, Container, Box, useColorMode } from "@chakra-ui/react";
+import { Flex, Box, useColorMode } from "@chakra-ui/react";
 import { VFlex, useAssets } from "../../../shared";
 
 import { TabsMenu } from "./TabsMenu";

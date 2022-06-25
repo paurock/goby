@@ -5,15 +5,17 @@ import {
   useColorModeValue,
   Link,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { SVGProps, useState } from "react";
 import { motion } from "framer-motion";
 import { svgProps } from "components/types";
 import NextLink from "next/link";
-import { useRouter } from "next/router";
+import { useRouter,  NextRouter } from "next/router";
+
+ 
 
 /////////////////SVG ICONS///////////////////////
 //Collateral Icon
-export const collatIcon = (props: svgProps) => (
+export const collatIcon = (props: svgProps):SVGProps<SVGSVGElement> => (
   <svg
     {...props}
     viewBox="0 0 20 20"
@@ -45,7 +47,7 @@ export const collatIcon = (props: svgProps) => (
 );
 
 //CARDICON
-export const cardIcon = (props: svgProps) => (
+export const cardIcon = (props: svgProps):SVGProps<SVGSVGElement> => (
   <svg
     {...props}
     viewBox="0 0 20 20"
@@ -70,7 +72,7 @@ export const cardIcon = (props: svgProps) => (
 );
 
 //FLAG ICON
-export const flagIcon = (props: svgProps) => (
+export const flagIcon = (props: svgProps):SVGProps<SVGSVGElement> => (
   <svg
     {...props}
     fill="none"
@@ -107,10 +109,7 @@ const tabStyle: object = {
   justifyContent: "space-around",
   maxWidth: "115px",
   borderBottom: "none",
-  marginBottom: "14px",
-  "a:hover ": {
-    textDecoration: "none",
-  },
+  marginBottom: "14px", 
 };
 
 type TabsCompType = {
@@ -119,9 +118,9 @@ type TabsCompType = {
 };
 
 export const TabsMenu = ({ text }: TabsCompType): JSX.Element => {
-  const [isHover, setIsHover] = useState(-1);
-  const router = useRouter();
-  const color = useColorModeValue("purple", "green");
+  const [isHover, setIsHover] = useState<number>(-1);
+  const router:NextRouter = useRouter();
+  const color:string = useColorModeValue("purple", "green");
 
   const showBottomBorder = (): object => ({
     borderBottom: `2px solid ${color}`,
@@ -158,9 +157,9 @@ export const TabsMenu = ({ text }: TabsCompType): JSX.Element => {
             onMouseLeave={() => setIsHover(-1)}
           >
             <NextLink href={linkName(tab.name)} passHref>
-              <Link color={isActiveLink(tab.name) ? color : null}>
+              
                 <Flex key={i} sx={tabStyle}> 
-                  <Icon
+                <Icon
                     key={i} 
                     //@ts-ignore
                     as={tab.icon}
@@ -174,10 +173,11 @@ export const TabsMenu = ({ text }: TabsCompType): JSX.Element => {
                         ? color
                         : text
                     }
-                  />
+                  /> <Link _hover={{textDecoration: "none", color }} color={isActiveLink(tab.name) ? color : null}>
                   {tab.name}
+                  </Link>
                 </Flex>
-              </Link>
+            
             </NextLink>
           </motion.div>
         ))}
