@@ -19,7 +19,7 @@ export default function Tiles() {
         columns={[1, 2, 3, 4]}
         gap="30px"
         mt="24px"
-        mx={["16px", "16px", "16px", "80px", "80px", "195px"]}
+        mx={["0", "16px", "16px", "80px", "80px", "195px"]}
       >
         <Img src={image1.src} w="full" maxH="229px" />
         <Img src={image1.src} w="full" maxH="229px" />

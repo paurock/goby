@@ -10,8 +10,7 @@ export default function TileHover() {
       spacing="16px"
       align="stretch"
       bg="white"
-      sx={{
-        border: "1px solid blue",
+      sx={{ 
         borderRadius: "4px",
         position: "absolute",
         bottom: "12px",
@@ -26,7 +25,7 @@ export default function TileHover() {
             </Text>
           </Box>
           <Box h="16px">
-            <Text sx={{ fontSize: "20px" }}>154.00 ETH</Text>
+            <Text sx={{ fontSize: "20px", color: "black" }}>154.00 ETH</Text>
           </Box>
         </VStack>
       </Box>

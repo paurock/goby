@@ -73,9 +73,9 @@ const Toolbar = (): JSX.Element => {
         <GridItem
           w="100%"
           h="10"
-          display={["none", "none", "none", "flex", "flex"]}
+          display={["none", "flex", "flex", "flex", "flex"]}
         />
-        <GridItem
+        <GridItem 
           w="100%"
           h="10"
           gap="5px"
@@ -95,21 +95,21 @@ const Toolbar = (): JSX.Element => {
             }}
           >
             <Icon
-              as={heartIcon}
-              stroke={text}
+              as={heartIcon} 
               w="25px"
               h="25px"
               _hover={{ fill: "red", stroke: "red" }}
               sx={{
                 cursor: "pointer",
                 fill: `${isLiked ? "red" : null}`,
-                stroke: `${isLiked ? "red" : "black"}`,
+                stroke: `${isLiked ? "red" : color}`,
               }}
-              onClick={() => handleClick()}
+              onClick={() => {!isLiked && handleClick()}}
             />
             {likes}
           </Flex>
           <Flex
+          display={["none", "flex", "flex", "flex", "flex"]}
             sx={{
               justifyContent: "center",
               alignItems: "center",
