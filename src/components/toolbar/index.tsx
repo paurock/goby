@@ -6,25 +6,23 @@ import {
   Select,
   Input,
   InputGroup,
-  InputRightElement,
-  useColorMode,
+  InputRightElement, 
   Icon,
   IconButton,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import { useAssets } from "shared";
 import { svgProps } from "components/types";
-import { modeColorSelector } from "components/utils";
-
+ 
 const Toolbar = (): JSX.Element => {
   const { text, background } = useAssets();
-  const { colorMode, toggleColorMode } = useColorMode();
   const [isLiked, setIsLiked] = useState(false);
   const [likes, setLikes] = useState(0);
+  const color = useColorModeValue("purple", "green");
 
   useEffect(() => {
-    const likeD_LS = JSON.parse(localStorage.getItem("isLiked") || "false");
-
+    const likeD_LS = JSON.parse(localStorage.getItem("isLiked") || "false"); 
     const likeS_LS = JSON.parse(localStorage.getItem("likes") || "0");
 
     if (likeD_LS && likeD_LS !== "") {
@@ -126,7 +124,7 @@ const Toolbar = (): JSX.Element => {
               sx={{ borderRight: "1px solid lightBlue", borderRadius: "0" }}
               variant="outlined"
               aria-label="Grid mode"
-              icon={gridIcon(modeColorSelector(colorMode))}
+              icon={gridIcon(color)}
               _active={{ background: "lightBlue" }}
               _selected={{ background: "lightBlue" }}
             />
@@ -135,7 +133,7 @@ const Toolbar = (): JSX.Element => {
               h="40px"
               variant="outlined"
               aria-label="List mode"
-              icon={listIcon(modeColorSelector(colorMode))}
+              icon={listIcon(color)}
               _active={{ background: "lightBlue" }}
               _selected={{ background: "lightBlue" }}
             />
