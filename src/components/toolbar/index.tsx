@@ -6,7 +6,7 @@ import {
   Select,
   Input,
   InputGroup,
-  InputRightElement, 
+  InputRightElement,
   Icon,
   IconButton,
   useColorModeValue,
@@ -14,7 +14,7 @@ import {
 import { SearchIcon } from "@chakra-ui/icons";
 import { useAssets } from "shared";
 import { svgProps } from "components/types";
- 
+
 const Toolbar = (): JSX.Element => {
   const { text, background } = useAssets();
   const [isLiked, setIsLiked] = useState(false);
@@ -22,7 +22,7 @@ const Toolbar = (): JSX.Element => {
   const color = useColorModeValue("purple", "green");
 
   useEffect(() => {
-    const likeD_LS = JSON.parse(localStorage.getItem("isLiked") || "false"); 
+    const likeD_LS = JSON.parse(localStorage.getItem("isLiked") || "false");
     const likeS_LS = JSON.parse(localStorage.getItem("likes") || "0");
 
     if (likeD_LS && likeD_LS !== "") {
@@ -75,7 +75,7 @@ const Toolbar = (): JSX.Element => {
           h="10"
           display={["none", "flex", "flex", "flex", "flex"]}
         />
-        <GridItem 
+        <GridItem
           w="100%"
           h="10"
           gap="5px"
@@ -96,7 +96,7 @@ const Toolbar = (): JSX.Element => {
           >
             <Icon
               //@ts-ignore
-              as={heartIcon} 
+              as={heartIcon}
               w="25px"
               h="25px"
               _hover={{ fill: "red", stroke: "red" }}
@@ -105,12 +105,14 @@ const Toolbar = (): JSX.Element => {
                 fill: `${isLiked ? "red" : null}`,
                 stroke: `${isLiked ? "red" : color}`,
               }}
-              onClick={() => {!isLiked && handleClick()}}
+              onClick={() => {
+                !isLiked && handleClick();
+              }}
             />
             {likes}
           </Flex>
           <Flex
-          display={["none", "flex", "flex", "flex", "flex"]}
+            display={["none", "flex", "flex", "flex", "flex"]}
             sx={{
               justifyContent: "center",
               alignItems: "center",
@@ -148,7 +150,7 @@ const Toolbar = (): JSX.Element => {
 };
 export default Toolbar;
 
-export const heartIcon = (props: svgProps):SVGProps<SVGSVGElement> => (
+export const heartIcon = (props: svgProps): SVGProps<SVGSVGElement> => (
   <svg
     {...props}
     width="20"
@@ -167,7 +169,7 @@ export const heartIcon = (props: svgProps):SVGProps<SVGSVGElement> => (
   </svg>
 );
 
-const gridIcon = (text: string):SVGProps<SVGSVGElement> => (
+const gridIcon = (text: string): SVGProps<SVGSVGElement> => (
   <svg
     width="20"
     height="20"
@@ -206,7 +208,7 @@ const gridIcon = (text: string):SVGProps<SVGSVGElement> => (
   </svg>
 );
 
-const listIcon = (text: string):SVGProps<SVGSVGElement> => (
+const listIcon = (text: string): SVGProps<SVGSVGElement> => (
   <svg
     width="20"
     height="20"
@@ -216,7 +218,7 @@ const listIcon = (text: string):SVGProps<SVGSVGElement> => (
   >
     <path
       d="M6.66669 5H17.5"
-      stroke="#010504"
+      stroke={text}
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
