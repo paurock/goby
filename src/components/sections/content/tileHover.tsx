@@ -6,14 +6,15 @@ export default function TileHover() {
     <VStack
       maxW="full"
       p="12px"
-      ml="16px"
       spacing="16px"
       align="stretch"
       bg="white"
-      sx={{ 
+      sx={{
+        width: "90%",
+        margin: "0 11px 0 11px",
         borderRadius: "4px",
         position: "absolute",
-        bottom: "12px",
+        top: "35%",
         left: "0",
       }}
     >
