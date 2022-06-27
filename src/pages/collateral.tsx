@@ -7,7 +7,6 @@ const Collateral: NextPage = () => {
     <>
       <Toolbar />
       <Tiles />
-      
     </>
   );
 };

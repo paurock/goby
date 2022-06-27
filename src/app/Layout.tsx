@@ -58,10 +58,7 @@ const Layout = ({ children }: { children?: ReactNode }): JSX.Element => {
       <header>
         <Header />
       </header>
-      <main>
-        <TitleSection />
-        {children}
-      </main>
+      <main>{children}</main>
       <footer>
         <Footer />
       </footer>
