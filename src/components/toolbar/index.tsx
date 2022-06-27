@@ -2,21 +2,19 @@ import { useState, useEffect, SVGProps } from "react";
 import {
   Flex,
   Grid,
-  GridItem,
-  Select,
+  GridItem, 
   Input,
   InputGroup,
   InputRightElement,
   Icon,
   IconButton,
-  useColorModeValue,
+  useColorModeValue, 
 } from "@chakra-ui/react";
-import { SearchIcon } from "@chakra-ui/icons";
-import { useAssets } from "shared";
+import { SearchIcon } from "@chakra-ui/icons"; 
 import { svgProps } from "components/types";
+import ProjDropdown from "./ProjDropdown";
 
-const Toolbar = (): JSX.Element => {
-  const { text, background } = useAssets();
+const Toolbar = (): JSX.Element => { 
   const [isLiked, setIsLiked] = useState(false);
   const [likes, setLikes] = useState(0);
   const color = useColorModeValue("purple", "green");
@@ -55,12 +53,8 @@ const Toolbar = (): JSX.Element => {
         gap="5"
         mx={["16px", "16px", "16px", "80px", "80px", "195px"]}
       >
-        <GridItem w="100%" h="10" rowStart={[2, 1]} colSpan={[3, 1]}>
-          <Select placeholder="Collections">
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
-          </Select>
+        <GridItem w="100%" h="10" rowStart={[2, 1]} colSpan={[3, 1]}> 
+            <ProjDropdown/>  
         </GridItem>
         <GridItem rowStart={[1, 1]} colSpan={[4, 1]}>
           <InputGroup>

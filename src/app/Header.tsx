@@ -19,14 +19,11 @@ import {
 import { motion } from "framer-motion";
 
 import Link from "next/link";
-import React, { useState } from "react";
-import { useRouter } from "next/router";
+import React, { useState } from "react"; 
 
 import { links, useAssets, VFlex, DropdownMenu } from "shared";
 
-export const Header: React.FC = () => {
-  const { route } = useRouter();
-
+export const Header: React.FC = () => { 
   const {
     logo,
     toggler,

@@ -170,8 +170,7 @@ export const TabsMenu = ({ text }: TabsCompType): JSX.Element => {
                       ? color
                       : text
                   }
-                />
-
+                /> 
                 <Link
                   _hover={{ textDecoration: "none", color }}
                   color={isActiveLink(tab.name) ? color : text}
