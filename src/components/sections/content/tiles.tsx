@@ -12,7 +12,7 @@ export default function Tiles():JSX.Element {
       w="full"
       maxW="1600px"
       m="0 auto"
-      px={["16px", "16px", "16px", "120px", "120px"]}
+      px={["16px", "0"]}
       pb={["10px", "20px", "40px", "60px"]}
     >
       <SimpleGrid

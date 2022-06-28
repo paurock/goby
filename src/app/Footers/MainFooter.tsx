@@ -8,7 +8,7 @@ export const MainFooter  = ():JSX.Element => (
       gap="32px" 
       w="full" 
       minH="332px"
-      pl={["16px", "16px", "16px", "120px", "120px"]} 
+      px={["16px", "0"]}
       sx={{
         justify: "space-around",
         fontFamily: "body",

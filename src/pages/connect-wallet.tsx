@@ -1,4 +1,3 @@
-import { SVGProps } from "react";
 import { NextPage } from "next";
 import Image from "next/image";
 import {
@@ -11,7 +10,9 @@ import {
   HStack,
   Icon,
   Divider,
-  Button, 
+  Button,
+  useColorModeValue,
+  Center, 
 } from "@chakra-ui/react";
 import image from "/src/app/assets/mock_cw.png";
 import imageBg from "/src/app/assets/mock_gray_bg.png";
@@ -20,7 +21,8 @@ import { OpenSeaIcon } from "components/common/OpenSeaIcon";
 import { Listed } from "components/common/Listed";
 import { ViewsCount } from "components/common/ViewsCount";
 import { LikesCount } from "components/common/LikesCount";
-import { BackIcon, ethereum } from "app/assets/Icons";
+import { BackIcon, ethereum, heartIcon, shareIcon } from "app/assets/Icons";
+import { SquareButton } from "app/theme/components/SquareButton";
 
 const lightGray = {
   fontSize: "14px",
@@ -29,6 +31,8 @@ const lightGray = {
 } as const;
 
 const ConnectWallet: NextPage = () => {
+  const colors = useColorModeValue("black", "lightGreen");
+
   return (
     <Flex
     bg="#F4F5FF"
@@ -84,7 +88,7 @@ const ConnectWallet: NextPage = () => {
       </VStack>
 
       <VStack w="full" maxW="50%" mx="15px">
-        <VStack w="full" mt="64px" mx="15px">
+        <VStack w="full" mt="64px" mx="15px" maxW="510px">
           <VStack w="full">
             <Box w="full">
               <IconButton aria-label="Go Back" icon={<BackIcon />} bg="white" _hover={{backgroundColor:"none"}} />
@@ -120,29 +124,53 @@ const ConnectWallet: NextPage = () => {
           </VStack>
           <VStack w="full">
             <HStack w="full">
-              <Text w="full" sx={lightGray}>
+              <Text w="30%" sx={lightGray}>
                 Desired price
               </Text>
-              <Text w="full" sx={lightGray}>
+              <Text w="20%" sx={lightGray}>
                 Desired dates
               </Text>
-              <Text w="full" sx={lightGray}>
+              <Text w="25%" sx={lightGray}>
                 Desired APR
               </Text>
             </HStack>
             <HStack w="full" py="24px">
-              <HStack w="full">
+              <HStack w="30%">
                 <Icon
                   //@ts-ignore
                   as={ethereum}
                 />
                 <Text w="full">154.00 ETH</Text>
               </HStack>
-              <Text w="full">40 days</Text>
-              <Text w="full">0.5%</Text>
+              <Text w="20%">40 days</Text>
+              <Text w="25%">0.5%</Text>
             </HStack>
             <HStack w="full">
               <Button maxW="382px" w="full" bg="green" colorScheme='green'>Make Offer</Button>
+              <Center w="57px" h="48px" bg="white" borderRadius="4px">
+                <SquareButton
+                  bg="white"
+                  widthBtn="20px"
+                  heightBtn="20px"
+                  ariaLabel="Like"
+                  icon={heartIcon} 
+                  stroke={colors} 
+                  hoverColorStroke={"black"}
+                  action={()=> console.log("clicked")} 
+                />
+              </Center>
+              <Center w="57px" h="48px" bg="white" borderRadius="4px">
+                <SquareButton
+                  bg="white"
+                  widthBtn="20px"
+                  heightBtn="20px"
+                  ariaLabel="Share"
+                  icon={shareIcon} 
+                  stroke={colors} 
+                  hoverColorStroke={"black"}
+                  action={()=> console.log("clicked")} 
+                />
+                </Center>
             </HStack>
           </VStack>
         </VStack>
