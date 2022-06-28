@@ -10,12 +10,15 @@ import {
   IconButton,
   HStack,
   Icon,
-  Divider,
-  Button,
+  Divider, 
 } from "@chakra-ui/react";
 import image from "/src/app/assets/mock_cw.png";
 import imageBg from "/src/app/assets/mock_gray_bg.png";
 import { svgProps } from "components/types";
+import { OpenSeaIcon } from "components/etc/OpenSeaIcon";
+import { Listed } from "components/etc/Listed";
+import { ViewsCount } from "components/etc/ViewsCount";
+import { LikesCount } from "components/etc/LikesCount";
 
 const lightGray = {
   fontSize: "14px",
@@ -26,14 +29,14 @@ const lightGray = {
 const ConnectWallet: NextPage = () => {
   return (
     <Flex
-      bg="gray"
+    bg="#F4F5FF"
       w="full"
       maxW="1600px"
       m="0 auto"
       px={["16px", "16px", "16px", "120px", "120px"]}
       pb={["10px", "20px", "40px", "60px"]}
     >
-      <VStack maxW="50%" bg="White" mx="15px">
+      <VStack maxW="50%" mx="15px">
         <Box mt="64px" mx="15px">
           <Image alt="image" width="510px" height="647px" src={image.src} />
         </Box>
@@ -78,7 +81,7 @@ const ConnectWallet: NextPage = () => {
         </Box>
       </VStack>
 
-      <VStack w="full" maxW="50%" mx="15px" bg="white">
+      <VStack w="full" maxW="50%" mx="15px">
         <VStack w="full" mt="64px" mx="15px">
           <VStack w="full">
             <Box w="full">
@@ -94,7 +97,23 @@ const ConnectWallet: NextPage = () => {
             >
               Asset ID
             </Heading>
-            <Flex w="full">три горизонт кнопки</Flex>
+            <Flex w="full">
+              <HStack w="full">
+                <Box  >
+                  <OpenSeaIcon /> 
+                </Box>
+                <Box>
+                  <Listed />
+                </Box> 
+                <Box w="full"></Box>
+                <Box>
+                  <ViewsCount/>
+                </Box> 
+                <Box>
+                  <LikesCount/>
+                </Box>
+              </HStack>
+            </Flex>
             <Divider />
           </VStack>
           <VStack w="full">

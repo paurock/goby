@@ -10,7 +10,7 @@ import { Button } from "./theme/components/Button";
 
 const colors = {
   purple: "#6334B1",
-  green: "#28FF98",
+  green: "#28FF98", 
   lightGreen: "#E7FFF1",
   lightBlue: "#CECFEA",
   black: { 100: "#010504" },
