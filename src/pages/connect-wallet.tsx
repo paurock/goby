@@ -16,7 +16,6 @@ import {
 } from "@chakra-ui/react";
 import image from "/src/app/assets/mock_cw.png";
 import imageBg from "/src/app/assets/mock_gray_bg.png";
-import { svgProps } from "components/types";
 import { OpenSeaIcon } from "components/common/OpenSeaIcon";
 import { Listed } from "components/common/Listed";
 import { ViewsCount } from "components/common/ViewsCount";
@@ -34,16 +33,20 @@ const ConnectWallet: NextPage = () => {
   const colors = useColorModeValue("black", "lightGreen");
 
   return (
-    <Flex
-    bg="#F4F5FF"
+    // CONTAINER 
+    <>
+  <Box w="full" h="432px" bg="lightGray" sx={{position: "absolute", zIndex:"0" }}></Box>
+  <VStack gap="24px" bg="white" zIndex="10">
+    <Flex 
       w="full"
-      maxW="1600px"
-      m="0 auto"
-      px={["16px", "16px", "16px", "120px", "120px"]}
-      pb={["10px", "20px", "40px", "60px"]}
-    >
-      <VStack maxW="50%" mx="15px">
-        <Box mt="64px" mx="15px">
+      maxW="1050px" 
+      px={["16px", "0"]}
+      pb={["10px"]}
+      flexWrap="wrap" 
+    > 
+      {/* LEFT COLUMN  */}
+      <VStack maxW={["100%","50%"]} pr="15px">
+        <Box mt="64px">
           <Image alt="image" width="510px" height="647px" src={image.src} />
         </Box>
         <Box mt="24px">
@@ -86,8 +89,9 @@ const ConnectWallet: NextPage = () => {
           </VStack>
         </Box>
       </VStack>
-
-      <VStack w="full" maxW="50%" mx="15px">
+      {/* RIGHT COLUMN  */}
+      <VStack w="full" maxW={["100%","50%"]} pl="15px">
+        {/* TOP SIDE  */}
         <VStack w="full" mt="64px" mx="15px" maxW="510px">
           <VStack w="full">
             <Box w="full">
@@ -174,10 +178,27 @@ const ConnectWallet: NextPage = () => {
             </HStack>
           </VStack>
         </VStack>
-
-        <VStack></VStack>
-      </VStack>
+        {/* LOW SIDE  */}
+        <VStack>
+          <Box pt="22px">
+            <Image  alt="image" width="510px" height="647px" src={imageBg.src} /> 
+          </Box>
+          <Box pt="22px">
+            <Image  alt="image" width="510px" height="647px" src={imageBg.src} /> 
+          </Box> 
+        </VStack>
+      </VStack> 
     </Flex>
+    <Divider w="full" maxW="1050px"/>
+      {/* ADVERT BLOCK  */}
+      <Box 
+      w="full" h="238px" maxW="1050px" 
+      maxH="238px" bg="gray"> 
+      </Box>
+      {/* EMPTY GAP BOX  */}
+      <Box h="64px"></Box>
+  </VStack>
+  </>
   );
 };
 export default ConnectWallet;

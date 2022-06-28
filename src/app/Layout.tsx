@@ -13,6 +13,7 @@ const colors = {
   green: "#28FF98", 
   lightGreen: "#E7FFF1",
   lightBlue: "#CECFEA",
+  lightGray: "#E5E5E5",
   black: { 100: "#010504" },
   text: {
     100: "#010504",

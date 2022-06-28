@@ -4,7 +4,7 @@ import ConnectWallet from "./connect-wallet";
 
 const Home: NextPage = () => {
   return <>
-  <Collateral /> 
+  <ConnectWallet /> 
   </>
 };
 
