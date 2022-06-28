@@ -36,7 +36,7 @@ const ConnectWallet: NextPage = () => {
     // CONTAINER 
     <>
   <Box w="full" h="432px" bg="lightGray" sx={{position: "absolute", zIndex:"0" }}></Box>
-  <VStack gap="24px" bg="white" zIndex="10">
+  <VStack gap="24px" bg="white" zIndex="100">
     <Flex 
       w="full"
       maxW="1050px" 
@@ -45,7 +45,7 @@ const ConnectWallet: NextPage = () => {
       flexWrap="wrap" 
     > 
       {/* LEFT COLUMN  */}
-      <VStack maxW={["100%","50%"]} pr="15px">
+      <VStack maxW={["100%","50%"]} pr="15px" zIndex="100">
         <Box mt="64px">
           <Image alt="image" width="510px" height="647px" src={image.src} />
         </Box>
@@ -90,12 +90,12 @@ const ConnectWallet: NextPage = () => {
         </Box>
       </VStack>
       {/* RIGHT COLUMN  */}
-      <VStack w="full" maxW={["100%","50%"]} pl="15px">
+      <VStack w="full" maxW={["100%","50%"]} pl="15px" zIndex="100">
         {/* TOP SIDE  */}
         <VStack w="full" mt="64px" mx="15px" maxW="510px">
           <VStack w="full">
             <Box w="full">
-              <IconButton aria-label="Go Back" icon={<BackIcon />} bg="white" _hover={{backgroundColor:"none"}} />
+              <IconButton aria-label="Go Back" icon={<BackIcon />} bg="none" _hover={{backgroundColor:"none"}} />
             </Box>
             <Text w="full" sx={{ color: "purple" }}>
               Project name
