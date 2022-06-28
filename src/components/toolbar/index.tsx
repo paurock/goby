@@ -31,7 +31,7 @@ const Toolbar = (): JSX.Element => {
     }
   }, []);
 
-  const handleClick = () => {
+  const handleClick = ():void => {
     setLikes(likes + 1);
     setIsLiked(true);
     localStorage.setItem("isLiked", JSON.stringify(true));

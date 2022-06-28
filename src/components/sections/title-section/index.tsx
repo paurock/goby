@@ -3,7 +3,7 @@ import { VFlex, useAssets } from "../../../shared";
 
 import { TabsMenu } from "./TabsMenu";
 
-const TitleSection: React.FC = () => {
+const TitleSection  = ():JSX.Element => {
   const { text, background } = useAssets();
   const { colorMode, toggleColorMode } = useColorMode();
 

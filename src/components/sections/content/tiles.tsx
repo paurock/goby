@@ -6,7 +6,7 @@ import imgage2 from "/src/app/assets/rectangle_240x319.png";
 import UnderTiles from "components/sections/content/underTiles";
 import TileHover from "components/sections/content/tileHover";
 
-export default function Tiles() {
+export default function Tiles():JSX.Element {
   return (
     <Flex
       w="full"

@@ -4,7 +4,7 @@ import logo from "../assets/logo.svg";
 import NextLink from "next/link";
 
  {/* Left Logo block */}
-export const MainFooterLeft:React.FC = () => <><Flex
+export const MainFooterLeft = ():JSX.Element => <><Flex
    mb="18px" 
    w="full" 
    justifyContent={["flex-start", "center", "center", "flex-start"]}

@@ -42,8 +42,9 @@ const borderStyle = {
   fontSize: "16px",
   outline: `2px solid transparent`,
   border: "1px solid var(--chakra-colors-chakra-border-color)",
-};
-export default function ProjDropdown() {
+} as const;
+
+export default function ProjDropdown():JSX.Element {
   const bgColor: string = useColorModeValue("white", "black");
   return (
     <Menu>

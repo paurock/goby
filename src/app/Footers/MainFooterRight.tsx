@@ -1,7 +1,7 @@
 import { Box, Flex, Text, Link  } from "@chakra-ui/react";
 import NextLink from "next/link";
  {/* Column Links */}
- export const MainFooterRight:React.FC = () =>
+ export const MainFooterRight = ():JSX.Element =>
  <>
    {/* 0 column */}
    <Box

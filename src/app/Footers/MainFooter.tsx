@@ -1,9 +1,8 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Flex, chakra } from "@chakra-ui/react";
 import { MainFooterRight } from "./MainFooterRight";
 import { MainFooterLeft } from "./MainFooterLeft";
-// eslint-disable-next-line max-lines-per-function
-export const MainFooter:React.FC = () => (
+
+export const MainFooter  = ():JSX.Element => (
   <>
     <Flex 
       gap="32px" 

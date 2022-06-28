@@ -77,7 +77,7 @@ export const moreHorizontal = (props: svgProps): SVGProps<SVGSVGElement> => (
   </svg>
 );
 
-export default function UnderTiles() {
+export default function UnderTiles():JSX.Element {
   const { text, background } = useAssets();
   const colors = useColorModeValue("black", "lightGreen");
   const bgColors = useColorModeValue("white", "black");
