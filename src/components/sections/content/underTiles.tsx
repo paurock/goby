@@ -10,6 +10,7 @@ import {
   IconButton,
 } from "@chakra-ui/react";
 import { heartIcon, moreHorizontal, shareIcon } from "app/assets/Icons"; 
+import { SquareButton } from "app/theme/components/SquareButton";
 import React  from "react";
 import { useAssets } from "shared"; 
 
@@ -43,48 +44,41 @@ export default function UnderTiles():JSX.Element {
       <Box w="full" h="48px">
         <SimpleGrid w="full" h="48px" columns={3}>
           <Center maxW="111px" maxH="48px">
-            <IconButton 
-              aria-label="like"
-              //@ts-ignore
-              as={heartIcon}
-              w="14px"
-              h="14px"
-              stroke={colors}
-              _hover={{ fill: "red", stroke: "red" }}
-              sx={{
-                cursor: "pointer",
-                fill: "none",
-              }}
-              onClick={() => console.log("pressed")}
-            />
+          <SquareButton
+                bg="none"
+                widthBtn="14px"
+                heightBtn="14px"
+                ariaLabel="Like" 
+                icon={heartIcon} 
+                stroke={colors} 
+                hoverColorStroke={"red"}
+                hoverColorFill={"red"}
+                action={()=> console.log("clicked")}
+              /> 
           </Center>
           <Center maxW="111px" maxH="48px">
-            <IconButton
-              //@ts-ignore
-              as={shareIcon}
-              w="14px"
-              h="14px"
-              stroke={colors}
-              _hover={{ stroke: "black" }}
-              sx={{
-                cursor: "pointer",
-              }}
-              onClick={() => console.log("pressed")}
-            />
-          </Center>
+            <SquareButton
+                bg="none"
+                widthBtn="14px"
+                heightBtn="14px"
+                ariaLabel="Share" 
+                icon={shareIcon} 
+                stroke={colors} 
+                hoverColorStroke={"black"}
+                action={()=> console.log("clicked")}
+              />
+         </Center> 
           <Center maxW="111px" maxH="48px">
-            <IconButton
-              //@ts-ignore
-              as={moreHorizontal}
-              w="14px"
-              h="14px"
-              stroke={colors}
-              _hover={{ stroke: "black" }}
-              sx={{
-                cursor: "pointer",
-              }}
-              onClick={() => console.log("pressed")}
-            />
+          <SquareButton
+                bg="none"
+                widthBtn="14px"
+                heightBtn="14px"
+                ariaLabel="More " 
+                icon={moreHorizontal} 
+                stroke={colors} 
+                hoverColorStroke={"black"}
+                action={()=> console.log("clicked")}
+              /> 
           </Center>
         </SimpleGrid>
       </Box>

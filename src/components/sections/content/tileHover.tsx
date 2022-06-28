@@ -14,7 +14,7 @@ export default function TileHover():JSX.Element {
         margin: "0 11px 0 11px",
         borderRadius: "4px",
         position: "absolute",
-        top: "35%",
+        top: "25%",
         left: "0",
       }}
     >
