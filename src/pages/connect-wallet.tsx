@@ -10,15 +10,17 @@ import {
   IconButton,
   HStack,
   Icon,
-  Divider, 
+  Divider,
+  Button, 
 } from "@chakra-ui/react";
 import image from "/src/app/assets/mock_cw.png";
 import imageBg from "/src/app/assets/mock_gray_bg.png";
 import { svgProps } from "components/types";
-import { OpenSeaIcon } from "components/etc/OpenSeaIcon";
-import { Listed } from "components/etc/Listed";
-import { ViewsCount } from "components/etc/ViewsCount";
-import { LikesCount } from "components/etc/LikesCount";
+import { OpenSeaIcon } from "components/common/OpenSeaIcon";
+import { Listed } from "components/common/Listed";
+import { ViewsCount } from "components/common/ViewsCount";
+import { LikesCount } from "components/common/LikesCount";
+import { BackIcon, ethereum } from "app/assets/Icons";
 
 const lightGray = {
   fontSize: "14px",
@@ -128,7 +130,7 @@ const ConnectWallet: NextPage = () => {
                 Desired APR
               </Text>
             </HStack>
-            <HStack w="full">
+            <HStack w="full" py="24px">
               <HStack w="full">
                 <Icon
                   //@ts-ignore
@@ -139,7 +141,9 @@ const ConnectWallet: NextPage = () => {
               <Text w="full">40 days</Text>
               <Text w="full">0.5%</Text>
             </HStack>
-            <HStack w="full"></HStack>
+            <HStack w="full">
+              <Button maxW="382px" w="full" bg="green" colorScheme='green'>Make Offer</Button>
+            </HStack>
           </VStack>
         </VStack>
 
@@ -149,108 +153,3 @@ const ConnectWallet: NextPage = () => {
   );
 };
 export default ConnectWallet;
-
-const ethereum = (props: svgProps): SVGProps<SVGSVGElement> => (
-  <svg
-    {...props}
-    width="20"
-    height="20"
-    viewBox="0 0 20 20"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <circle cx="10" cy="10" r="10" fill="#627EEA" />
-    <g opacity="0.6">
-      <path
-        opacity="0.6"
-        d="M9.92647 8.26309L5.83331 10.1246L9.92647 12.5429L14.018 10.1246L9.92647 8.26309Z"
-        fill="white"
-      />
-    </g>
-    <g opacity="0.45">
-      <path
-        opacity="0.45"
-        d="M5.83331 10.1247L9.92647 12.5429V3.33333L5.83331 10.1247Z"
-        fill="white"
-      />
-    </g>
-    <g opacity="0.8">
-      <path
-        opacity="0.8"
-        d="M9.92645 3.33328V12.5429L14.018 10.1246L9.92645 3.33328Z"
-        fill="white"
-      />
-    </g>
-    <g opacity="0.45">
-      <path
-        opacity="0.45"
-        d="M5.83331 10.9001L9.92647 16.6666V13.3184L5.83331 10.9001Z"
-        fill="white"
-      />
-    </g>
-    <g opacity="0.8">
-      <path
-        opacity="0.8"
-        d="M9.92645 13.3184V16.6666L14.0212 10.9001L9.92645 13.3184Z"
-        fill="white"
-      />
-    </g>
-  </svg>
-);
-
-const BackIcon = (props: svgProps): JSX.Element => (
-  <svg
-    width="48"
-    height="48"
-    viewBox="0 0 48 48"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <g filter="url(#filter0_d_640_4550)">
-      <circle cx="24" cy="22" r="20" fill="white" />
-    </g>
-    <path
-      d="M25.5 27L20.5 22L25.5 17"
-      stroke="black"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <defs>
-      <filter
-        id="filter0_d_640_4550"
-        x="0"
-        y="0"
-        width="48"
-        height="48"
-        filterUnits="userSpaceOnUse"
-        colorInterpolationFilters="sRGB"
-      >
-        <feFlood floodOpacity="0" result="BackgroundImageFix" />
-        <feColorMatrix
-          in="SourceAlpha"
-          type="matrix"
-          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-          result="hardAlpha"
-        />
-        <feOffset dy="2" />
-        <feGaussianBlur stdDeviation="2" />
-        <feComposite in2="hardAlpha" operator="out" />
-        <feColorMatrix
-          type="matrix"
-          values="0 0 0 0 0.805903 0 0 0 0 0.812825 0 0 0 0 0.916667 0 0 0 0.24 0"
-        />
-        <feBlend
-          mode="normal"
-          in2="BackgroundImageFix"
-          result="effect1_dropShadow_640_4550"
-        />
-        <feBlend
-          mode="normal"
-          in="SourceGraphic"
-          in2="effect1_dropShadow_640_4550"
-          result="shape"
-        />
-      </filter>
-    </defs>
-  </svg>
-);

@@ -1,7 +1,8 @@
 import { Flex, Box, useColorMode, Heading } from "@chakra-ui/react";
 import { VFlex, useAssets } from "../../../shared";
-
 import { TabsMenu } from "./TabsMenu";
+
+ 
 
 const TitleSection  = ():JSX.Element => {
   const { text, background } = useAssets();

@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, SimpleGrid, Box } from "@chakra-ui/react";
+import { Flex, SimpleGrid } from "@chakra-ui/react";
 import { Img } from "shared";
 import image1 from "/src/app/assets/rectangle_240x229.png";
 import imgage2 from "/src/app/assets/rectangle_240x319.png";

@@ -1,9 +1,6 @@
 /* eslint-disable max-lines-per-function */
 /* eslint-disable max-len */
-/* eslint-disable react/button-has-type */
-/* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable import/prefer-default-export */
+
 import {
   Flex,
   Button,
