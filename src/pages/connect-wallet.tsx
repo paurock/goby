@@ -97,12 +97,13 @@ const ConnectWallet: NextPage = () => {
             <Box w="full">
               <IconButton aria-label="Go Back" icon={<BackIcon />} bg="none" _hover={{backgroundColor:"none"}} />
             </Box>
-            <Text w="full" sx={{ color: "purple" }}>
+            <Text w="full" maxH="20px" mb="0" pb="0" sx={{ color: "purple" }}>
               Project name
             </Text>
             <Heading
               as="h2"
               w="full"
+              maxH="44px" 
               sx={{ fontSize: "40px", fontWeight: "400" }}
             >
               Asset ID
@@ -138,7 +139,7 @@ const ConnectWallet: NextPage = () => {
                 Desired APR
               </Text>
             </HStack>
-            <HStack w="full" py="24px">
+            <HStack w="full" pt="10px" pb="24px">
               <HStack w="30%">
                 <Icon
                   //@ts-ignore
