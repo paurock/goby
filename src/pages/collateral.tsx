@@ -1,5 +1,5 @@
-import Toolbar from "../components/toolbar";
-import Tiles from "../components/sections/content/tiles";
+import Toolbar from "../components/Toolbar";
+import Tiles from "../components/sections/Content/Tiles";
 import { NextPage } from "next";
 
 const Collateral: NextPage = () => {

@@ -35,7 +35,7 @@ const ConnectWallet: NextPage = () => {
     >
       <VStack maxW="50%" bg="White" mx="15px">
         <Box mt="64px" mx="15px">
-          <Image width="510px" height="647px" src={image.src} />
+          <Image alt="image" width="510px" height="647px" src={image.src} />
         </Box>
         <Box mt="24px">
           <VStack
@@ -82,7 +82,7 @@ const ConnectWallet: NextPage = () => {
         <VStack w="full" mt="64px" mx="15px">
           <VStack w="full">
             <Box w="full">
-              <IconButton aria-label="Go Back" icon={<BackIcon />} />
+              <IconButton aria-label="Go Back" icon={<BackIcon />} bg="white" _hover={{backgroundColor:"none"}} />
             </Box>
             <Text w="full" sx={{ color: "purple" }}>
               Project name

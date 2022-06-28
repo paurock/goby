@@ -8,7 +8,7 @@ import {
   VStack,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { heartIcon } from "components/toolbar";
+import { heartIcon } from "components/Toolbar";
 import { svgProps } from "components/types";
 import React, { SVGProps } from "react";
 import { useAssets } from "shared";

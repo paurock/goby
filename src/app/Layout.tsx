@@ -2,7 +2,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react";
 import { breakpoints } from "./theme/breakpoints";
 import { fonts } from "./theme/fonts";
-import TitleSection from "../components/sections/title-section";
+import TitleSection from "../components/sections/Title-section";
 import { Header } from "./Header";
 import { Footer } from "./Footers/Footer";
 import Head from "next/head";
