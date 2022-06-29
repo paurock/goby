@@ -15,6 +15,10 @@ const colors = {
     100: "#E7FFF1",
     300: "#30BE7A",
   },
+  redcolor: {
+    100: "#EB4E611A",
+    900: "#EB4E61" 
+  },
   lightBlue: "#CECFEA",
   lightGray: "#F4F5FF",
   black: { 100: "#010504" },
