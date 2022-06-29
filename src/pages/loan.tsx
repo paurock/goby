@@ -1,27 +1,80 @@
-import { Grid, Flex } from "@chakra-ui/react";
-import Toolbar from "../components/Toolbar";
+import {
+  Box,
+  Button,
+  Divider,
+  Heading,
+  HStack,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
+import { LoanTable } from "components/sections/content/LoanTable";
 import { NextPage } from "next";
+import React, { useState } from "react";
 
-const Loan: NextPage = () => {
+const fontStyle = {
+  fontWeight: "400",
+  color: "black",
+};
+
+const Loans: NextPage = () => {
+  const [active, setActive] = useState<boolean>(true);
   return (
     <>
-      <Toolbar />
-      <Flex
-        maxW="1600px"
+      <VStack
+        w="full"
+        maxW="1050px"
         m="0 auto"
-        px={["16px", "16px", "16px", "120px", "120px"]}
+        px={["16px", "0"]}
+        pb={["10px"]}
+        flexWrap="wrap"
       >
-        <Grid
-          templateColumns="repeat(4, 1fr)"
-          gap="5"
-          mt="24px"
-          mx={["16px", "16px", "16px", "80px", "80px", "195px"]}
-          minH="50vh"
+        <Heading as="h2" w="full" sx={{ ...fontStyle, fontSize: "24px" }}>
+          My Loans
+        </Heading>
+        <Text
+          as="h5"
+          w="full"
+          sx={{ ...fontStyle, fontSize: "24px", opacity: 0.4 }}
         >
-          Loan Page Content
-        </Grid>
-      </Flex>
+          2 loans
+        </Text>
+        <HStack w="full">
+          <Button
+            maxW="67px"
+            maxH="32px"
+            variant="outline"
+            sx={
+              active
+                ? {
+                    borderColor: "purple",
+                    borderRadius: "3px",
+                    fontSize: "16px",
+                  }
+                : {
+                    borderColor: "initial",
+                    borderRadius: "3px",
+                    fontSize: "16px",
+                  }
+            }
+          >
+            Open
+          </Button>
+          <Button
+            maxW="67px"
+            maxH="32px"
+            variant="outline"
+            sx={{ borderRadius: "2px", fontSize: "16px" }}
+          >
+            Closed
+          </Button>
+        </HStack>
+        <LoanTable status={"Open"} />
+        <Divider />
+        <LoanTable status={"Closed"} getAsset={true} />
+        <Box h="104px"></Box>
+      </VStack>
     </>
   );
 };
-export default Loan;
+
+export default Loans;
