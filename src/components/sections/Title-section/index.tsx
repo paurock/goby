@@ -2,9 +2,7 @@ import { Flex, Box, useColorMode, Heading } from "@chakra-ui/react";
 import { VFlex, useAssets } from "../../../shared";
 import { TabsMenu } from "./TabsMenu";
 
- 
-
-const TitleSection  = ():JSX.Element => {
+const TitleSection = (): JSX.Element => {
   const { text, background } = useAssets();
   const { colorMode, toggleColorMode } = useColorMode();
 
@@ -26,16 +24,17 @@ const TitleSection  = ():JSX.Element => {
       >
         <Box>
           <Flex>
-            <Heading 
+            <Heading
               fontFamily="Inter"
               fontWeight="400"
               fontSize="48px"
               lineHeight="100%"
               color={text}
               mt="12px"
-              mb="12px" 
-              as="h1">
-                Lend
+              mb="12px"
+              as="h1"
+            >
+              Lend
             </Heading>
           </Flex>
           <Flex

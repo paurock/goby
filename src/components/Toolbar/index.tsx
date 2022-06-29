@@ -31,7 +31,7 @@ const Toolbar = (): JSX.Element => {
     }
   }, []);
 
-  const handleClick = ():void => {
+  const handleClick = (): void => {
     setLikes(likes + 1);
     setIsLiked(true);
     localStorage.setItem("isLiked", JSON.stringify(true));
@@ -143,5 +143,3 @@ const Toolbar = (): JSX.Element => {
   );
 };
 export default Toolbar;
-
-

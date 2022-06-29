@@ -1,12 +1,16 @@
-import { Grid, Flex } from "@chakra-ui/react"; 
+import { Grid, Flex } from "@chakra-ui/react";
 import Toolbar from "../components/Toolbar";
 import { NextPage } from "next";
 
 const Loan: NextPage = () => {
   return (
     <>
-      <Toolbar /> 
-      <Flex maxW="1600px" m="0 auto" px={["16px", "16px", "16px", "120px", "120px"]}>
+      <Toolbar />
+      <Flex
+        maxW="1600px"
+        m="0 auto"
+        px={["16px", "16px", "16px", "120px", "120px"]}
+      >
         <Grid
           templateColumns="repeat(4, 1fr)"
           gap="5"

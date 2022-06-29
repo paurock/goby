@@ -3,10 +3,10 @@ import { Flex, SimpleGrid } from "@chakra-ui/react";
 import { Img } from "shared";
 import image1 from "/src/app/assets/rectangle_240x229.png";
 import imgage2 from "/src/app/assets/rectangle_240x319.png";
-import UnderTiles from "components/sections/Content/UnderTiles";
-import TileHover from "components/sections/Content/TileHover";
+import UnderTiles from "components/sections/content/UnderTiles";
+import TileHover from "components/sections/content/TileHover";
 
-export default function Tiles():JSX.Element {
+export default function Tiles(): JSX.Element {
   return (
     <Flex
       w="full"

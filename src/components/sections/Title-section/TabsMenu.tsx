@@ -7,11 +7,10 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { motion } from "framer-motion";
- 
+
 import NextLink from "next/link";
 import { useRouter, NextRouter } from "next/router";
 import { cardIcon, collatIcon, flagIcon } from "app/assets/Icons";
-
 
 type TabType = {
   name: string;
@@ -90,7 +89,7 @@ export const TabsMenu = ({ text }: TabsCompType): JSX.Element => {
                       ? color
                       : text
                   }
-                /> 
+                />
                 <Link
                   _hover={{ textDecoration: "none", color }}
                   color={isActiveLink(tab.name) ? color : text}

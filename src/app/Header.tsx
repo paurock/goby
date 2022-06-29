@@ -16,11 +16,11 @@ import {
 import { motion } from "framer-motion";
 
 import Link from "next/link";
-import React, { useState } from "react"; 
+import React, { useState } from "react";
 
 import { links, useAssets, VFlex, DropdownMenu } from "shared";
 
-export const Header: React.FC = () => { 
+export const Header: React.FC = () => {
   const {
     logo,
     toggler,
@@ -157,13 +157,13 @@ export const Header: React.FC = () => {
             mb="-20px"
           />
           <Img src={logoMob} zIndex="4" />
-          <Flex gap="16px"> 
-              <IconButton
-                aria-label="notifications"
-                rounded="20px"
-                zIndex="4"
-                icon={<Img src={bellLight} />}
-              /> 
+          <Flex gap="16px">
+            <IconButton
+              aria-label="notifications"
+              rounded="20px"
+              zIndex="4"
+              icon={<Img src={bellLight} />}
+            />
             <Img
               src={hidden ? burger : burgerClose}
               onClick={() => setHidden((prev) => !prev)}

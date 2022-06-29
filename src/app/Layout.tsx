@@ -10,14 +10,14 @@ import { Button } from "./theme/components/Button";
 
 const colors = {
   purple: "#6334B1",
-  green: "#28FF98",  
+  green: "#28FF98",
   lightGreen: {
     100: "#E7FFF1",
     300: "#30BE7A",
   },
   redcolor: {
     100: "#EB4E611A",
-    900: "#EB4E61" 
+    900: "#EB4E61",
   },
   lightBlue: "#CECFEA",
   lightGray: "#F4F5FF",
@@ -54,7 +54,7 @@ export const theme = extendTheme({
 });
 import { ReactNode } from "react";
 
-const Layout = ({ children }: { children?: ReactNode }):JSX.Element  => {
+const Layout = ({ children }: { children?: ReactNode }): JSX.Element => {
   return (
     <ChakraProvider resetCSS theme={theme}>
       <Head>

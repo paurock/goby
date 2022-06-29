@@ -1,6 +1,6 @@
 import { ChevronUpIcon } from "@chakra-ui/icons";
-import { 
-  Button, 
+import {
+  Button,
   HStack,
   Icon,
   Image,
@@ -15,8 +15,6 @@ import React, { SVGProps } from "react";
 import icon1 from "/src/app/assets/ic-logo-projects.svg";
 import { folderIcon } from "app/assets/Icons";
 
-
-
 const borderStyle = {
   borderRadius: "4px",
   fontSize: "16px",
@@ -24,7 +22,7 @@ const borderStyle = {
   border: "1px solid var(--chakra-colors-chakra-border-color)",
 } as const;
 
-export default function ProjDropdown():JSX.Element {
+export default function ProjDropdown(): JSX.Element {
   const bgColor: string = useColorModeValue("white", "black");
   return (
     <Menu>

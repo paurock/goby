@@ -1,7 +1,7 @@
 import React from "react";
 import { VStack, Box, Text, SimpleGrid } from "@chakra-ui/react";
 
-export default function TileHover():JSX.Element {
+export default function TileHover(): JSX.Element {
   return (
     <VStack
       maxW="full"
