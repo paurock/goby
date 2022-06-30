@@ -8,7 +8,8 @@ export const MainFooter = (): JSX.Element => (
       gap="32px"
       w="full"
       minH="332px"
-      px={["16px", "0"]}
+      mx={["16px", "16px", "16px", "80px", "80px", "195px"]}
+      px={["16px", "30px", "36px"]}
       sx={{
         justify: "space-around",
         fontFamily: "body",
@@ -38,7 +39,7 @@ export const MainFooter = (): JSX.Element => (
       </Flex>
     </Flex>
     <chakra.hr
-      color="#222228"
+      color="black"
       opacity="0.1"
       display={["none", "none", "none", "block", "block"]}
     />

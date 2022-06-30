@@ -41,10 +41,11 @@ const Toolbar = (): JSX.Element => {
   return (
     <Grid
       maxW="1600px"
-      mt="30px"
+      mt="26px"
       templateColumns="repeat(4, 1fr)"
       gap="5"
       mx={["16px", "16px", "16px", "80px", "80px", "195px"]}
+      px={["16px", "16px", "16px", "30px", "120px"]}
     >
       <GridItem w="100%" h="10" rowStart={[2, 1]} colSpan={[3, 1]}>
         <ProjDropdown />

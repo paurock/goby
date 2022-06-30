@@ -21,6 +21,7 @@ export default function Tiles(): JSX.Element {
         gap="30px"
         mt="24px"
         mx={["0", "16px", "16px", "80px", "80px", "195px"]}
+        px={["16px", "16px", "16px", "30px", "120px"]}
       >
         <Img src={image1.src} w="full" maxH="229px" />
         <Img src={image1.src} w="full" maxH="229px" />

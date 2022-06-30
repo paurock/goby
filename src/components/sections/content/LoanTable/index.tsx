@@ -25,7 +25,8 @@ const Loans = (): JSX.Element => {
         maxW="1050px"
         m="0 auto"
         mt={["26px"]}
-        px={["16px", "0"]}
+        mx={["16px", "16px", "16px", "80px", "80px", "195px"]}
+        px={["16px", "16px", "16px", "30px", "120px"]}
         pb={["10px"]}
         flexWrap="wrap"
       >
