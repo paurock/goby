@@ -32,9 +32,23 @@ const tabStyle: object = {
 type TabsCompType = {
   text: string;
   colorMode: ColorMode;
+  pageName: string;
 };
 
-export const TabsMenu = ({ text }: TabsCompType): JSX.Element => {
+const menuItemStyle = {
+  display: "flex",
+  justifyContent: "space-between",
+  fontFamily: "Inter",
+  fontWeight: 500,
+  fontSize: "16px",
+  width: "fit-content",
+  whiteSpace: "nowrap",
+  height: "36px",
+  cursor: "pointer",
+  textDecoration: "none", 
+}
+
+export const TabsMenu = ({ text, pageName }: TabsCompType): JSX.Element => {
   const [isHover, setIsHover] = useState<number>(-1);
   const router: NextRouter = useRouter();
   const color: string = useColorModeValue("purple", "green");
@@ -43,13 +57,16 @@ export const TabsMenu = ({ text }: TabsCompType): JSX.Element => {
     borderBottom: `2px solid ${color}`,
   });
 
-  const pathName = (): string =>
-    router.pathname.replace(/\s+/g, "").toLocaleLowerCase();
-  const linkName = (linkName: string): string =>
-    `/${linkName}`.replace(/\s+/g, "").toLocaleLowerCase();
+  // const pathName = (): string =>
+  //   router.pathname.replace(/\s+/g, "").toLowerCase();
+
+  const linkName = (tabName: string): string =>
+    `/${tabName}`.replace(/\s+/g, "").toLowerCase();
+
+  const pageNameNormal = (): string => `/${pageName}`.toLowerCase()
 
   const isActiveLink = (tabName: string): boolean =>
-    pathName() === linkName(tabName);
+     pageNameNormal() === linkName(tabName)  
 
   return (
     <Flex maxW="1600px" maxH="36px" w="full">
@@ -57,18 +74,8 @@ export const TabsMenu = ({ text }: TabsCompType): JSX.Element => {
         {tabNames.map((tab, i) => (
           <motion.div
             key={i}
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              fontFamily: "Inter",
-              fontWeight: 500,
-              fontSize: "16px",
-              width: "fit-content",
-              whiteSpace: "nowrap",
-              height: "36px",
-              cursor: "pointer",
-              textDecoration: "none",
-            }}
+            //@ts-ignore
+            style={isActiveLink(tab.name) && {...menuItemStyle, borderBottom: `2px solid ${color}`}} 
             whileHover={showBottomBorder()}
             onMouseEnter={() => setIsHover(i)}
             onMouseLeave={() => setIsHover(-1)}
@@ -82,17 +89,13 @@ export const TabsMenu = ({ text }: TabsCompType): JSX.Element => {
                   w="25px"
                   h="25px"
                   mr="10px"
-                  stroke={
-                    isHover === i ||
-                    router.pathname.replace(/\s+/g, "") ==
-                      `/${tab.name}`.replace(/\s+/g, "")
-                      ? color
-                      : text
+                  stroke={isActiveLink(tab.name) ? color : text
                   }
                 />
                 <Link
                   _hover={{ textDecoration: "none", color }}
                   color={isActiveLink(tab.name) ? color : text}
+                  sx={{fontSize:"16px", fontFamily:"Inter"}}
                 >
                   {tab.name}
                 </Link>

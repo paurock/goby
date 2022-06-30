@@ -1,150 +1,81 @@
 import {
   Box,
   Button,
-  Grid,
+  Divider,
   Heading,
   HStack,
-  Icon,
-  IconButton,
-  Tag,
   Text,
   VStack,
-  Flex,
-  GridItem, 
 } from "@chakra-ui/react";
-import { ethereum, moreRound } from "app/assets/Icons";
-import { loanTableType } from "components/types";
-import Image from "next/image"; 
-import React from "react";
-import { Img } from "shared";
-import image from "/src/app/assets/square_img_150x150.png";
+import { LoanTable } from "components/sections/content/LoanTable/SingleLoan";
+import React, { useState } from "react";
 
-export const LoanTable = ({ status, getAsset = false }: loanTableType) => {
+const myFontStyle = {
+  fontWeight: "400",
+  color: "black",
+  fontStyle:"normal"
+};
+
+const Loans = (): JSX.Element => {
+  const [active, setActive] = useState<boolean>(true);
   return (
-    <Flex w="full" pt="24px" pr={[0, 0, 0, "195px"]} flexWrap={["wrap", "nowrap"]}>
-      {/* IMAGE  */}
-      <Box w="full" maxW={["100%", "150px"]} m={["24px", 0]}>
-        <Img alt="image" width="100%" objectFit='cover' src={image.src} /> 
-      </Box> 
-      <VStack w="full" pl="24px" sx={{ alignItems: "flex-start" }}>
-      {/* NAME AND STATUS  */}
-        <HStack w="full">
-          <Heading as="h3" sx={{ fontSize: "20px" }} minW="fit-content">
-            Asset ID
-          </Heading>
-          <Tag
-            maxH="22px"
-            minW="fit-content"
-            colorScheme={status == "Open" ? "lightGreen" : "redcolor"}
-          >
-            {status ? status : "Close"}
-          </Tag>
-          <Box w="full"></Box>
-          <IconButton
-            bg="none"
-            aria-label="more"
-            //@ts-ignore
-            as={moreRound}
-            w="40px"
-            h="40px"
-            stroke="lightGray" 
-            _hover={{bacground: "none"}}
-            onClick={() => console.log("click")}
-          />
-        </HStack>
-        <HStack w="full" mb="24px">
-          <Text as="span" sx={{ fontSize: "14px", opacity: 0.4 }}>
-            Borrower:
-          </Text>
-          <Text
-            as="span"
-            sx={{
-              fontSize: "14px",
-              color: "purple",
-              textTransform: "lowerCase",
-            }}
-          >
-            Name of Borrower
-          </Text>
-        </HStack>
-        {/* DETAILS  */}
-        <Grid
-          templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)"]} 
+    <>
+      <VStack
+        w="full"
+        maxW="1050px"
+        m="0 auto"
+        mt={["26px"]} 
+        px={["16px", "0"]}
+        pb={["10px"]}
+        flexWrap="wrap"
+      >
+        <Heading as="h2" w="full" sx={{ ...myFontStyle, fontSize: "24px" }}>
+          My Loans
+        </Heading>
+        <Text
+          as="h5"
           w="full"
-        >  
-        {/* LEFT COLUMN  */} 
-        <GridItem w="full"> 
-            {/* table-head  */}
-            <HStack w="full">
-              <Text
-                as="span"
-                w="100px" 
-                sx={{ fontSize: "14px", opacity: 0.4 }}
-              >
-                Duration
-              </Text> 
-              <Text
-                as="span"
-                w="100px" 
-                sx={{ fontSize: "14px", opacity: 0.4 }}
-              >
-                APR
-              </Text> 
-              <Text
-                as="span"
-                w="100px" 
-                sx={{ fontSize: "14px", opacity: 0.4 }}
-              >
-                Loan value
-              </Text>
-            </HStack> 
-             {/* table-content  */}
-            <HStack>
-              <Text
-                as="span"
-                w="100px" 
-                sx={{ fontSize: "20px" }}
-              >
-                90 days
-              </Text> 
-              <Text
-                as="span"
-                w="100px" 
-                sx={{ fontSize: "20px" }}
-              >
-                22%
-              </Text> 
-              <Text as="span" sx={{ fontSize: "20px" }}>
-                7.35 ETH
-              </Text>
-            </HStack> 
-          </GridItem> 
-
-          {/* RIGHT COLUMN  */}
-          <GridItem w="full" display="flex" justifyContent={["space-between", "flex-end"]}>
-            <VStack spacing="0">
-              <Text
-                  as="span" 
-                  sx={{ fontSize: "14px", opacity: 0.4 }}
-              >
-              Repayment
-              </Text>
-              <HStack pr="20px">
-                  <Icon
-                  //@ts-ignore
-                  as={ethereum}
-                  />
-                  <Text>84.00 ETH</Text>
-              </HStack>  
-            </VStack>
-            <HStack w="50%" justifyContent= {["flex-end"]} alignItems={"center"}>
-              <Button bg="green" w="fit-content"  h="48px" p="13px 32px">
-              Get an asset
-              </Button>
-            </HStack>
-          </GridItem> 
-        </Grid>
+          sx={{ ...myFontStyle, fontSize: "24px", opacity: 0.4 }}
+        >
+          2 loans
+        </Text>
+        <HStack w="full">
+          <Button
+            maxW="67px"
+            maxH="32px"
+            variant="outline"
+            sx={
+              active
+                ? {
+                    borderColor: "purple",
+                    borderRadius: "3px",
+                    fontSize: "16px",
+                  }
+                : {
+                    borderColor: "initial",
+                    borderRadius: "3px",
+                    fontSize: "16px",
+                  }
+            }
+          >
+            Open
+          </Button>
+          <Button
+            maxW="67px"
+            maxH="32px"
+            variant="outline"
+            sx={{ borderRadius: "2px", fontSize: "16px" }}
+          >
+            Closed
+          </Button>
+        </HStack>
+        <LoanTable status={"Open"} />
+        <Divider />
+        <LoanTable status={"Closed"} getAsset={false} />
+        <Box h="104px"></Box>
       </VStack>
-    </Flex>
+    </>
   );
 };
+
+export default Loans;

@@ -2,7 +2,7 @@ import { Flex, Box, useColorMode, Heading } from "@chakra-ui/react";
 import { VFlex, useAssets } from "../../../shared";
 import { TabsMenu } from "./TabsMenu";
 
-const TitleSection = ({pageHeading="Lend"}:{pageHeading: string}): JSX.Element => {
+const TitleSection = ({pageName="Collateral"}:{pageName: string}): JSX.Element => {
   const { text, background } = useAssets();
   const { colorMode, toggleColorMode } = useColorMode();
 
@@ -12,7 +12,7 @@ const TitleSection = ({pageHeading="Lend"}:{pageHeading: string}): JSX.Element =
       maxW="1600px"
       maxH="249px"
       h={["fit-content", "847px", "847px", "847px", "860px"]}
-      px={["16px", "16px", "16px", "120px", "120px"]}
+      px={["16px", "0"]}
       pt={["32px", "64px", "64px", "64px", "64px"]}
       color={text}
       margin="0 auto"
@@ -34,7 +34,7 @@ const TitleSection = ({pageHeading="Lend"}:{pageHeading: string}): JSX.Element =
               mb="12px"
               as="h1"
             >
-             {pageHeading}
+             {pageName}
             </Heading>
           </Flex>
           <Flex
@@ -49,7 +49,7 @@ const TitleSection = ({pageHeading="Lend"}:{pageHeading: string}): JSX.Element =
             Offer loans to other users on their non-fungible tokens
           </Flex>
         </Box>
-        <TabsMenu text={text} colorMode={colorMode} />
+        <TabsMenu text={text} colorMode={colorMode} pageName={pageName} />
       </VFlex>
     </Flex>
   );
