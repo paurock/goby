@@ -1,11 +1,11 @@
 import {
   Box,
   Center,
-  Heading, 
+  Heading,
   SimpleGrid,
   Text,
   VStack,
-  useColorModeValue, 
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { heartIcon, moreHorizontal, shareIcon } from "app/assets/Icons";
 import { SquareButton } from "app/theme/components/SquareButton";

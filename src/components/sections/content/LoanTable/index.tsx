@@ -7,13 +7,13 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { LoanTable } from "components/sections/content/LoanTable/SingleLoan";
+import { LoanTable } from "./SingleLoan";
 import React, { useState } from "react";
 
 const myFontStyle = {
   fontWeight: "400",
   color: "black",
-  fontStyle:"normal"
+  fontStyle: "normal",
 };
 
 const Loans = (): JSX.Element => {
@@ -24,7 +24,7 @@ const Loans = (): JSX.Element => {
         w="full"
         maxW="1050px"
         m="0 auto"
-        mt={["26px"]} 
+        mt={["26px"]}
         px={["16px", "0"]}
         pb={["10px"]}
         flexWrap="wrap"

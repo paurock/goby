@@ -6,7 +6,7 @@ import TitleSection from "components/sections/TitleSection";
 const Collateral: NextPage = () => {
   return (
     <>
-      <TitleSection pageName="Collateral"/>
+      <TitleSection pageName="Collateral" />
       <Toolbar />
       <Tiles />
     </>
