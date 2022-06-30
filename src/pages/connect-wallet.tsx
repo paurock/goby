@@ -104,7 +104,6 @@ const ConnectWallet: NextPage = () => {
                     aria-label="Go Back"
                     icon={<BackIcon />}
                     bg="none"
-                    _hover={{ backgroundColor: "none" }}
                   />
                 </Box>
                 <Text

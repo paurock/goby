@@ -7,7 +7,7 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { LoanTable } from "components/sections/content/LoanTable";
+import { LoanTable } from "components/sections/content/loanTable";
 import { NextPage } from "next";
 import React, { useState } from "react";
 
@@ -24,6 +24,7 @@ const Loans: NextPage = () => {
         w="full"
         maxW="1050px"
         m="0 auto"
+        mt={["50px", 0]} 
         px={["16px", "0"]}
         pb={["10px"]}
         flexWrap="wrap"
@@ -70,7 +71,7 @@ const Loans: NextPage = () => {
         </HStack>
         <LoanTable status={"Open"} />
         <Divider />
-        <LoanTable status={"Closed"} getAsset={true} />
+        <LoanTable status={"Closed"} getAsset={false} />
         <Box h="104px"></Box>
       </VStack>
     </>

@@ -5,7 +5,7 @@ import { NextPage } from "next";
 const Collateral: NextPage = () => {
   return (
     <>
-      {/* <Toolbar /> */}
+      <Toolbar />
       <Tiles />
     </>
   );

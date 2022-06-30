@@ -10,19 +10,24 @@ import {
   Text,
   VStack,
   Flex,
-  GridItem,
+  GridItem, 
 } from "@chakra-ui/react";
 import { ethereum, moreRound } from "app/assets/Icons";
 import { loanTableType } from "components/types";
-import Image from "next/image";
+import Image from "next/image"; 
 import React from "react";
+import { Img } from "shared";
 import image from "/src/app/assets/square_img_150x150.png";
 
 export const LoanTable = ({ status, getAsset = false }: loanTableType) => {
   return (
-    <Flex w="full" pt="24px" pr={[0, 0, 0, "195px"]}>
-      <Image alt="image" width="150px" height="150px" src={image.src} />
+    <Flex w="full" pt="24px" pr={[0, 0, 0, "195px"]} flexWrap={["wrap", "nowrap"]}>
+      {/* IMAGE  */}
+      <Box w="full" maxW={["100%", "150px"]} m={["24px", 0]}>
+        <Img alt="image" width="100%" objectFit='cover' src={image.src} /> 
+      </Box> 
       <VStack w="full" pl="24px" sx={{ alignItems: "flex-start" }}>
+      {/* NAME AND STATUS  */}
         <HStack w="full">
           <Heading as="h3" sx={{ fontSize: "20px" }} minW="fit-content">
             Asset ID
@@ -42,10 +47,8 @@ export const LoanTable = ({ status, getAsset = false }: loanTableType) => {
             as={moreRound}
             w="40px"
             h="40px"
-            stroke="lightGray"
-            sx={{
-              cursor: "pointer",
-            }}
+            stroke="lightGray" 
+            _hover={{bacground: "none"}}
             onClick={() => console.log("click")}
           />
         </HStack>
@@ -64,102 +67,82 @@ export const LoanTable = ({ status, getAsset = false }: loanTableType) => {
             Name of Borrower
           </Text>
         </HStack>
-
+        {/* DETAILS  */}
         <Grid
-          templateColumns={getAsset ? "repeat(3, 1fr)" : "repeat(2, 1fr)"}
+          templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)"]} 
           w="full"
-        >
-          <GridItem w="full">
+        >  
+        {/* LEFT COLUMN  */} 
+        <GridItem w="full"> 
+            {/* table-head  */}
             <HStack w="full">
               <Text
                 as="span"
-                minW="fit-content"
-                pr="24px"
+                w="100px" 
                 sx={{ fontSize: "14px", opacity: 0.4 }}
               >
                 Duration
-              </Text>
-
+              </Text> 
               <Text
                 as="span"
-                minW="fit-content"
-                pr="24px"
+                w="100px" 
                 sx={{ fontSize: "14px", opacity: 0.4 }}
               >
                 APR
-              </Text>
-
+              </Text> 
               <Text
                 as="span"
-                minW="full"
-                pr="24px"
+                w="100px" 
                 sx={{ fontSize: "14px", opacity: 0.4 }}
               >
                 Loan value
               </Text>
-            </HStack>
-          </GridItem>
-
-          <GridItem w="full">
-            <HStack w="full" sx={{ justifyContent: "flex-end" }}>
+            </HStack> 
+             {/* table-content  */}
+            <HStack>
               <Text
                 as="span"
-                minW="fit-content"
-                sx={{ fontSize: "14px", opacity: 0.4 }}
-              >
-                Repayment
-              </Text>
-            </HStack>
-          </GridItem>
-          {getAsset ? <GridItem minW="200px"></GridItem> : null}
-        </Grid>
-        <Grid
-          templateColumns={getAsset ? "repeat(3, 1fr)" : "repeat(2, 1fr)"}
-          w="full"
-        >
-          <GridItem w="full">
-            <HStack w="full">
-              <Text
-                as="span"
-                minW="fit-content"
-                pr="24px"
+                w="100px" 
                 sx={{ fontSize: "20px" }}
               >
                 90 days
-              </Text>
-
+              </Text> 
               <Text
                 as="span"
-                minW="fit-content"
-                pr="24px"
+                w="100px" 
                 sx={{ fontSize: "20px" }}
               >
                 22%
-              </Text>
-
-              <Text as="span" minW="full" w="full" sx={{ fontSize: "20px" }}>
+              </Text> 
+              <Text as="span" sx={{ fontSize: "20px" }}>
                 7.35 ETH
               </Text>
+            </HStack> 
+          </GridItem> 
+
+          {/* RIGHT COLUMN  */}
+          <GridItem w="full" display="flex" justifyContent={["space-between", "flex-end"]}>
+            <VStack spacing="0">
+              <Text
+                  as="span" 
+                  sx={{ fontSize: "14px", opacity: 0.4 }}
+              >
+              Repayment
+              </Text>
+              <HStack pr="20px">
+                  <Icon
+                  //@ts-ignore
+                  as={ethereum}
+                  />
+                  <Text>84.00 ETH</Text>
+              </HStack>  
+            </VStack>
+            <HStack w="50%" justifyContent= {["flex-end"]} alignItems={"center"}>
+              <Button bg="green" w="fit-content"  h="48px" p="13px 32px">
+              Get an asset
+              </Button>
             </HStack>
-          </GridItem>
-          <GridItem w="full">
-            <HStack sx={{ justifyContent: "flex-end" }}>
-              <Icon
-                //@ts-ignore
-                as={ethereum}
-              />
-              <Text minW="fit-content">84.00 ETH</Text>
-            </HStack>
-          </GridItem>
-          {getAsset ? (
-            <GridItem>
-              <HStack w="full" sx={{ justifyContent: "flex-end" }}>
-                <Button bg="green" w="fit-content" h="48px" p="13px 32px">
-                  Get an asset
-                </Button>
-              </HStack>
-            </GridItem>
-          ) : null}
+          </GridItem> 
         </Grid>
       </VStack>
     </Flex>

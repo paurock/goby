@@ -42,7 +42,7 @@ const Toolbar = (): JSX.Element => {
     <Flex
       maxW="1600px"
       minH="100%"
-      px={["16px", "16px", "16px", "120px", "120px"]}
+      px={["16px", "0"]}
       p="0"
       m="0 auto"
       mt="30px"

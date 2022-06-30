@@ -2,7 +2,7 @@ import { Flex, Box, useColorMode, Heading } from "@chakra-ui/react";
 import { VFlex, useAssets } from "../../../shared";
 import { TabsMenu } from "./TabsMenu";
 
-const TitleSection = (): JSX.Element => {
+const TitleSection = ({pageHeading="Lend"}:{pageHeading: string}): JSX.Element => {
   const { text, background } = useAssets();
   const { colorMode, toggleColorMode } = useColorMode();
 
@@ -34,7 +34,7 @@ const TitleSection = (): JSX.Element => {
               mb="12px"
               as="h1"
             >
-              Lend
+             {pageHeading}
             </Heading>
           </Flex>
           <Flex

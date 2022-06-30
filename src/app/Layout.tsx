@@ -5,8 +5,7 @@ import { fonts } from "./theme/fonts";
 import TitleSection from "../components/sections/Title-section";
 import { Header } from "./Header";
 import { Footer } from "./Footers/Footer";
-import Head from "next/head";
-import { Button } from "./theme/components/Button";
+import Head from "next/head"; 
 
 const colors = {
   purple: "#6334B1",
@@ -36,13 +35,20 @@ const styles = {
     a: {
       _hover: {
         textDecoration: "none",
-      },
-    },
+        cursor: "pointer"
+      }, 
   },
+    svg: {
+      _hover: { 
+        cursor: "pointer", 
+        background: "none"
+      }
+    }
+  }
 };
 
-const components = {
-  Button,
+const components = { 
+  // components styles  
 };
 
 export const theme = extendTheme({

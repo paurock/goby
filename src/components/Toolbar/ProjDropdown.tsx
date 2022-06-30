@@ -11,7 +11,7 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import React, { SVGProps } from "react";
+import React from "react";
 import icon1 from "/src/app/assets/ic-logo-projects.svg";
 import { folderIcon } from "app/assets/Icons";
 
@@ -31,6 +31,7 @@ export default function ProjDropdown(): JSX.Element {
         as={Button}
         rightIcon={<ChevronUpIcon />}
         sx={borderStyle}
+        bg="none"
       >
         <HStack>
           <Icon
