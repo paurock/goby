@@ -39,100 +39,101 @@ const Toolbar = (): JSX.Element => {
   };
 
   return (
-    <Grid
-      maxW="1600px"
-      mt="26px"
-      templateColumns="repeat(4, 1fr)"
-      gap="5"
-      mx={["16px", "16px", "16px", "80px", "80px", "195px"]}
-      px={["16px", "16px", "16px", "30px", "120px"]}
-    >
-      <GridItem w="100%" h="10" rowStart={[2, 1]} colSpan={[3, 1]}>
-        <ProjDropdown />
-      </GridItem>
-      <GridItem rowStart={[1, 1]} colSpan={[4, 1]}>
-        <InputGroup>
-          <Input type="search" placeholder="Search project" />
-          <InputRightElement pointerEvents="none">
-            <SearchIcon color="gray.300" />
-          </InputRightElement>
-        </InputGroup>
-      </GridItem>
-      <GridItem
-        w="100%"
-        h="10"
-        display={["none", "flex", "flex", "flex", "flex"]}
-      />
-      <GridItem
-        w="100%"
-        h="10"
-        gap="5px"
-        sx={{
-          display: "flex",
-          justifyContent: "flex-end",
-        }}
+    <Flex w="full" justifyContent="center">
+      <Flex
+        w="full"
+        mx={["16px", "16px", "16px", "80px", "195px", "195px"]}
+        maxW="1050px"
       >
-        <Flex
-          minW="86px"
-          minH="40px"
-          sx={{
-            justifyContent: "space-around",
-            alignItems: "center",
-            border: "1px solid lightBlue",
-            borderRadius: "10px",
-          }}
-        >
-          <Icon
-            //@ts-ignore
-            as={heartIcon}
-            w="25px"
-            h="25px"
-            _hover={{ fill: "red", stroke: "red" }}
+        <Grid mt="26px" templateColumns="repeat(4, 1fr)" gap="5">
+          <GridItem w="full" h="10" rowStart={[2, 1]} colSpan={[3, 1]}>
+            <ProjDropdown />
+          </GridItem>
+          <GridItem rowStart={[1, 1]} colSpan={[4, 1]}>
+            <InputGroup>
+              <Input type="search" placeholder="Search project" />
+              <InputRightElement pointerEvents="none">
+                <SearchIcon color="gray.300" />
+              </InputRightElement>
+            </InputGroup>
+          </GridItem>
+          <GridItem
+            w="100%"
+            h="10"
+            display={["none", "flex", "flex", "flex", "flex"]}
+          />
+          <GridItem
+            w="100%"
+            h="10"
+            gap="5px"
             sx={{
-              cursor: "pointer",
-              fill: `${isLiked ? "red" : null}`,
-              stroke: `${isLiked ? "red" : color}`,
+              display: "flex",
+              justifyContent: "flex-end",
             }}
-            onClick={() => {
-              !isLiked && handleClick();
-            }}
-          />
-          {likes}
-        </Flex>
-        <Flex
-          display={["none", "flex", "flex", "flex", "flex"]}
-          sx={{
-            justifyContent: "center",
-            alignItems: "center",
-            border: "1px solid lightBlue",
-            borderRadius: "10px",
-            maxWidth: "100px",
-          }}
-        >
-          <IconButton
-            w="40px"
-            minH="40px"
-            sx={{ borderRight: "1px solid lightBlue", borderRadius: "0" }}
-            variant="outlined"
-            aria-label="Grid mode"
-            //@ts-ignore
-            icon={gridIcon(color)}
-            _active={{ background: "lightBlue" }}
-            _selected={{ background: "lightBlue" }}
-          />
-          <IconButton
-            w="40px"
-            h="40px"
-            variant="outlined"
-            aria-label="List mode"
-            //@ts-ignore
-            icon={listIcon(color)}
-            _active={{ background: "lightBlue" }}
-            _selected={{ background: "lightBlue" }}
-          />
-        </Flex>
-      </GridItem>
-    </Grid>
+          >
+            <Flex
+              minW="86px"
+              minH="40px"
+              sx={{
+                justifyContent: "space-around",
+                alignItems: "center",
+                border: "1px solid lightBlue",
+                borderRadius: "10px",
+              }}
+            >
+              <Icon
+                //@ts-ignore
+                as={heartIcon}
+                w="25px"
+                h="25px"
+                _hover={{ fill: "red", stroke: "red" }}
+                sx={{
+                  cursor: "pointer",
+                  fill: `${isLiked ? "red" : null}`,
+                  stroke: `${isLiked ? "red" : color}`,
+                }}
+                onClick={() => {
+                  !isLiked && handleClick();
+                }}
+              />
+              {likes}
+            </Flex>
+            <Flex
+              display={["none", "flex", "flex", "flex", "flex"]}
+              sx={{
+                justifyContent: "center",
+                alignItems: "center",
+                border: "1px solid lightBlue",
+                borderRadius: "10px",
+                maxWidth: "100px",
+              }}
+            >
+              <IconButton
+                w="40px"
+                minH="40px"
+                // sx={{ borderRight: "1px solid lightBlue", borderRadius: "0" }}
+                variant="outlined"
+                aria-label="Grid mode"
+                //@ts-ignore
+                icon={gridIcon(color)}
+                _active={{ background: "lightBlue" }}
+                _selected={{ background: "lightBlue" }}
+              />
+              {/*<IconButton
+                w="40px"
+                h="40px"
+                variant="outlined"
+                aria-label="List mode"
+                //@ts-ignore
+                icon={listIcon(color)}
+                _active={{ background: "lightBlue" }}
+                _selected={{ background: "lightBlue" }}
+              />*/}
+            </Flex>
+          </GridItem>
+        </Grid>
+      </Flex>
+    </Flex>
   );
 };
 export default Toolbar;

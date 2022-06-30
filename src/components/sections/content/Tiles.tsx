@@ -8,38 +8,31 @@ import UnderTiles from "./UnderTiles";
 
 export default function Tiles(): JSX.Element {
   return (
-    <Flex
-      w="full"
-      maxW="1600px"
-      m="0 auto"
-      px={["16px", "0"]}
-      pb={["10px", "20px", "40px", "60px"]}
-    >
-      <SimpleGrid
+    <Flex w="full" justifyContent="center">
+      <Flex
         w="full"
-        columns={[1, 2, 3, 4]}
-        gap="30px"
-        mt="24px"
-        mx={["0", "16px", "16px", "80px", "80px", "195px"]}
-        px={["16px", "16px", "16px", "30px", "120px"]}
+        mx={["16px", "16px", "16px", "80px", "195px", "195px"]}
+        maxW="1050px"
       >
-        <Img src={image1.src} w="full" maxH="229px" />
-        <Img src={image1.src} w="full" maxH="229px" />
-        <Img src={imgage2.src} w="full" maxH="319px" />
-        <Img src={image1.src} w="full" maxH="229px" />
-        <Img src={imgage2.src} w="full" maxH="319px" />
-        <Img src={image1.src} w="full" maxH="229px" />
-        <Flex
-          sx={{
-            flexWrap: "wrap",
-            position: "relative",
-          }}
-        >
+        <SimpleGrid w="full" columns={[1, 2, 3, 4]} gap="30px" mt="24px">
+          <Img src={image1.src} w="full" maxH="229px" />
+          <Img src={image1.src} w="full" maxH="229px" />
           <Img src={imgage2.src} w="full" maxH="319px" />
-          <TileHover />
-          <UnderTiles />
-        </Flex>
-      </SimpleGrid>
+          <Img src={image1.src} w="full" maxH="229px" />
+          <Img src={imgage2.src} w="full" maxH="319px" />
+          <Img src={image1.src} w="full" maxH="229px" />
+          <Flex
+            sx={{
+              flexWrap: "wrap",
+              position: "relative",
+            }}
+          >
+            <Img src={imgage2.src} w="full" maxH="319px" />
+            <TileHover />
+            <UnderTiles />
+          </Flex>
+        </SimpleGrid>
+      </Flex>
     </Flex>
   );
 }
