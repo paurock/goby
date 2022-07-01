@@ -20,7 +20,7 @@ const colors = {
   },
   lightBlue: "#CECFEA",
   lightGray: "#F4F5FF",
-  black: { 100: "#010504" },
+  black: { 100: "#010504", 300: "#191921" },
   text: {
     100: "#010504",
     900: "#E7FFF1",

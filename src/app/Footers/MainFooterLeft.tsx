@@ -7,7 +7,7 @@ import NextLink from "next/link";
   /* Left Logo block */
 }
 export const MainFooterLeft = (): JSX.Element => ( 
-    <VStack w="full" h="full">
+    <VStack w="full" h="full" bg="black.300">
       <Flex w="full" >
       <NextLink href="#" passHref>
         <Link>

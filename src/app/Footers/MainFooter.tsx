@@ -4,26 +4,22 @@ import { MainFooterLeft } from "./MainFooterLeft";
 
 export const MainFooter = (): JSX.Element => (
   <Flex
-      w="full"
+      w="full" 
+      h="full"
       justifyContent="center"
       mt="64px"
       px="0"
-      background="#191921"
+      bg="black.300"
     >
-    <Flex
-      gap="32px"
+    <Flex 
       w="full"
+      h="full"
       maxW="1050px"
-      minH="332px"
+      minH="332px" 
       mx={["16px", "16px", "16px", "80px", "195px", "195px"]} 
-      pt={["32px", "64px"]}
-      sx={{
-        justify: "space-between",
-        fontFamily: "body", 
-        flexWrap: "wrap",
-      }}
+      pt={["32px", "64px"]}  
     >  
-      <HStack w="full" gap="40px">
+      <HStack w="full" h="full" pb="64px" gap="40px" flexWrap={["wrap", "nowrap"]}>
         <MainFooterLeft /> 
         <MainFooterRight /> 
       </HStack>
