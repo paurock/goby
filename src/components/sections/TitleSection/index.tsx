@@ -14,17 +14,16 @@ const TitleSection = ({
     <Flex w="full" bg={background} justifyContent="center">
       <Flex
         w="full"
+        maxW="1050px"
         maxH="249px"
-        h={["fit-content", "847px", "847px", "847px", "860px"]}
-        mx={["16px", "16px", "16px", "80px", "80px", "195px"]}
-        px={["16px", "30px", "36px"]}
+        h={["fit-content", "847px", "847px", "847px", "860px"]} 
+        mx={["16px", "16px", "16px", "80px", "195px", "195px"]} 
         pt={["32px", "64px"]}
         color={text}
       >
-        <VFlex
-          mx={["16px", "16px", "16px", "80px", "80px", "195px"]}
+        <VFlex 
           justify="space-between"
-          maxH="185px"
+          maxH="185px" 
         >
           <Box>
             <Flex>

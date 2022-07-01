@@ -69,7 +69,7 @@ const Loans = (): JSX.Element => {
           </HStack>
           <LoanTable status={"Open"} />
           <Divider />
-          <LoanTable status={"Closed"} getAsset={false} />
+          <LoanTable status={"Overdue"} getAsset={false} />
           <Box h="104px"></Box>
         </VStack>
       </Flex>

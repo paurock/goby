@@ -14,7 +14,6 @@ import {
 } from "@chakra-ui/react";
 import { ethereum, moreRound } from "app/assets/Icons";
 import { loanTableType } from "components/types";
-import Image from "next/image";
 import React from "react";
 import { Img } from "shared";
 import image from "/src/app/assets/square_img_150x150.png";
@@ -115,11 +114,11 @@ export const LoanTable = ({ status, getAsset = false }: loanTableType) => {
                 <Text>84.00 ETH</Text>
               </HStack>
             </VStack>
-            <HStack w="50%" justifyContent={["flex-end"]} alignItems={"center"}>
+            {getAsset ? <HStack w="50%" justifyContent={["flex-end"]} alignItems={"center"}>
               <Button bg="green" w="fit-content" h="48px" p="13px 32px">
                 Get an asset
               </Button>
-            </HStack>
+            </HStack> : null}
           </GridItem>
         </Grid>
       </VStack>
