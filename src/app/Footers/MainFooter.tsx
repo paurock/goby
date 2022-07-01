@@ -18,7 +18,7 @@ export const MainFooter = (): JSX.Element => (
       minH="332px" 
       mx={["16px", "16px", "16px", "80px", "195px", "195px"]} 
       pt={["32px", "64px"]} 
-      pb="106px"
+      pb={["16px", "32px", "80px", "106px"]}
       borderBottom="1px solid gray" 
     >  
       <HStack w="full" h="full" pb="64px" gap="40px" flexWrap={["wrap", "nowrap"]}>
