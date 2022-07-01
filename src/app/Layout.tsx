@@ -1,11 +1,11 @@
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, Flex } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react";
 import { breakpoints } from "./theme/breakpoints";
 import { fonts } from "./theme/fonts";
 import { Header } from "./Header";
 import { Footer } from "./Footers/Footer";
 import Head from "next/head";
-
+import myImage from "/src/app/assets/nft_front.png";
 const colors = {
   purple: "#6334B1",
   green: "#28FF98",
@@ -58,8 +58,12 @@ export const theme = extendTheme({
   breakpoints,
 });
 import { ReactNode } from "react";
+import { useRouter } from "next/router";
+import Image from "next/image";
 
 const Layout = ({ children }: { children?: ReactNode }): JSX.Element => {
+  const router = useRouter()
+   
   return (
     <ChakraProvider resetCSS theme={theme}>
       <Head>
@@ -71,9 +75,13 @@ const Layout = ({ children }: { children?: ReactNode }): JSX.Element => {
         <Header />
       </header>
       <main>{children}</main>
-      <footer>
+      {router.pathname === "/"|| "/collateral" 
+      ? (<Flex w="full" justifyContent="center" my="64px">
+          <Image alt="image" width="55px" height="55px" src={myImage.src} />
+        </Flex>)
+      : (<footer>
         <Footer />
-      </footer>
+      </footer>)}
     </ChakraProvider>
   );
 };

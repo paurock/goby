@@ -9,10 +9,7 @@ export const LeftSide = () => {
     <VStack maxW={["100%", "50%"]} pr="15px" zIndex="100">
     <Box mt="64px">
       <Image alt="image" width="510px" height="647px" src={image.src} />
-    </Box>
-   
-      
-         
+    </Box> 
         <Accordion w="full" mt="24px" defaultIndex={[0]} allowMultiple
         sx={{ borderRadius: "4px", border: "1px solid lightblue" }}
         >

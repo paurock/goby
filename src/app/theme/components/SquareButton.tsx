@@ -1,4 +1,4 @@
-import { svgProps, svgPropsSquareBtn } from 'components/types'
+import { svgPropsSquareBtn } from 'components/types'
 import React  from 'react'
 import { IconButton } from "@chakra-ui/react";
  
