@@ -11,7 +11,7 @@ const footerLinkBlock2 = {
 }
 
 export const MainFooterRight = (): JSX.Element => (
-<HStack w="full" alignItems="flex-start"> 
+<HStack w="full" alignItems="flex-start" h="full"> 
   <FooterLinksCol footerLinkBlock={footerLinkBlock1} /> 
   <FooterLinksCol footerLinkBlock={footerLinkBlock2} /> 
 </HStack>
