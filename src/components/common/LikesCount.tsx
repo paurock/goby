@@ -1,9 +1,9 @@
-import { HStack, Tag, TagLabel, TagLeftIcon } from "@chakra-ui/react";
-import { LikesIcon } from "app/assets/Icons";
-import React from "react";
+import { HStack, Tag, TagLabel, TagLeftIcon } from '@chakra-ui/react';
+import { LikesIcon } from 'app/assets/Icons';
+import React from 'react';
 
 export const LikesCount = ({
-  count = "120",
+  count = '120',
 }: {
   count?: string;
 }): JSX.Element => {
@@ -14,9 +14,9 @@ export const LikesCount = ({
           boxSize="12px"
           // @ts-ignore
           as={LikesIcon}
-          sx={{ color: "lightGray" }}
+          sx={{ color: 'lightGray' }}
         />
-        <TagLabel sx={{ color: "lightGray", fontSize: "12px" }}>
+        <TagLabel sx={{ color: 'lightGray', fontSize: '12px' }}>
           {count}
         </TagLabel>
       </Tag>

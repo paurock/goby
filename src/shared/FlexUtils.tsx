@@ -6,14 +6,19 @@
 /* eslint-disable no-restricted-imports */
 /* eslint-disable react/jsx-props-no-spreading */
 import {
-  Flex as FlexOrig, FlexProps, ImgProps, Img as ImgOrig,
+  Flex as FlexOrig,
+  FlexProps,
+  ImgProps,
+  Img as ImgOrig,
 } from '@chakra-ui/react';
 
 type Sizes = {
-    size?: string[]
-}
+  size?: string[];
+};
 
-export const VFlex = (props: FlexProps) => (<FlexOrig direction="column" {...props} />);
+export const VFlex = (props: FlexProps) => (
+  <FlexOrig direction="column" {...props} />
+);
 
 export const Img = (props: Omit<ImgProps, 'sizes'> & Sizes) => {
   const { size } = props;
@@ -22,7 +27,7 @@ export const Img = (props: Omit<ImgProps, 'sizes'> & Sizes) => {
       maxH: size.map((h) => h.split(' ')?.[0]?.concat('px')),
       maxW: size.map((w) => w.split(' ')?.[1]?.concat('px')),
     };
-    return (<ImgOrig {...props} {...sizesTransformed} />);
+    return <ImgOrig {...props} {...sizesTransformed} />;
   }
   return <ImgOrig {...props} />;
 };

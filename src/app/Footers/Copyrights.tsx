@@ -1,36 +1,31 @@
-import {
-    Flex, Link, chakra, Box as Div, Text,
-  } from '@chakra-ui/react';
-  import NextLink from 'next/link';
-  import {
-    VFlex,
-  } from 'shared';
-  
-  export const Copyrights = () => (
+import { Flex, Link, chakra, Box as Div, Text } from '@chakra-ui/react';
+import NextLink from 'next/link';
+import { VFlex } from 'shared';
+
+export const Copyrights = () => (
+  <Flex w="full" justifyContent="center" px="0" bg="black.300">
     <Flex
-      w="full" 
-      justifyContent="center" 
-      px="0"
-      bg="black.300"
-    >  
-    <Flex 
-      w="full" 
-      maxW="1050px" 
-      mx={["16px", "16px", "16px", "80px", "195px", "195px"]}  
-    >  
+      w="full"
+      maxW="1050px"
+      mx={['16px', '16px', '16px', '80px', '195px', '195px']}
+    >
       <Flex
         w="full"
         gap="40px"
         py="40px"
         alignSelf="start"
         justify="space-between"
-        color="black" 
+        color="black"
         display={['none', 'none', 'flex', 'flex', 'flex']}
       >
         <Flex gap="40px" opacity="0.4">
           <Text color="text.900">© 2022 Goby.Network Ltd</Text>
-          <Link color="text.900" href="#">Help</Link>
-          <Link color="text.900" href="#">Terms</Link>
+          <Link color="text.900" href="#">
+            Help
+          </Link>
+          <Link color="text.900" href="#">
+            Terms
+          </Link>
           {/* <Link href="#">Privacy policy</Link> */}
         </Flex>
         <Flex alignSelf="end" gap="40px">
@@ -44,10 +39,8 @@ import {
             >
               <circle cx="6" cy="6" r="6" fill="#1D9BF0" />
             </svg>
-  
-            <a href="https://twitter.com/GobyNetwork"> 
-                Twitter 
-            </a>
+
+            <a href="https://twitter.com/GobyNetwork">Twitter</a>
           </Flex>
           <Flex justify="center" align="center" gap="8px">
             <svg
@@ -59,10 +52,7 @@ import {
             >
               <circle cx="6" cy="6" r="6" fill="#1D9BF0" />
             </svg>
-            <NextLink
-              href="https://t.me/goby_network"
-              passHref
-            >
+            <NextLink href="https://t.me/goby_network" passHref>
               <Link isExternal color="text.900">
                 Telegram
               </Link>
@@ -78,10 +68,7 @@ import {
             >
               <circle cx="6" cy="6" r="6" fill="#1D9BF0" />
             </svg>
-            <NextLink
-              href="https://t.me/Goby_chat"
-              passHref
-            >
+            <NextLink href="https://t.me/Goby_chat" passHref>
               <Link isExternal color="text.900">
                 Telegram Chat
               </Link>
@@ -89,7 +76,7 @@ import {
           </Flex>
         </Flex>
       </Flex>
-  
+
       <VFlex
         display={['flex', 'flex', 'none', 'none', 'none']}
         justify="center"
@@ -118,7 +105,10 @@ import {
             >
               <circle cx="6" cy="6" r="6" fill="#1D9BF0" />
             </svg>
-            <Link color="text.900" href="https://twitter.com/gobynetwork?s=11&t=WlSPnwPpH-u2WNywzuu-AQ">
+            <Link
+              color="text.900"
+              href="https://twitter.com/gobynetwork?s=11&t=WlSPnwPpH-u2WNywzuu-AQ"
+            >
               Twitter
             </Link>
           </Flex>
@@ -132,7 +122,9 @@ import {
             >
               <circle cx="6" cy="6" r="6" fill="#1D9BF0" />
             </svg>
-            <Link color="text.900" href="https://t.me/goby_network">Telegram</Link>
+            <Link color="text.900" href="https://t.me/goby_network">
+              Telegram
+            </Link>
           </Flex>
           <Flex justify="center" align="center" gap="8px">
             <svg
@@ -144,7 +136,9 @@ import {
             >
               <circle cx="6" cy="6" r="6" fill="#1D9BF0" />
             </svg>
-            <Link color="text.900" href="https://t.me/Goby_chat">Telegram chat</Link>
+            <Link color="text.900" href="https://t.me/Goby_chat">
+              Telegram chat
+            </Link>
           </Flex>
         </Flex>
         <Div opacity="0.4">
@@ -169,5 +163,5 @@ import {
         </Text>
       </VFlex>
     </Flex>
-    </Flex>
-  );
+  </Flex>
+);

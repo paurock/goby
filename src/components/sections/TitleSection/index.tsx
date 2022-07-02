@@ -1,9 +1,9 @@
-import { Flex, Box, useColorMode, Heading } from "@chakra-ui/react";
-import { VFlex, useAssets } from "../../../shared";
-import { TabsMenu } from "./TabsMenu";
+import { Flex, Box, useColorMode, Heading } from '@chakra-ui/react';
+import { VFlex, useAssets } from '../../../shared';
+import { TabsMenu } from './TabsMenu';
 
 const TitleSection = ({
-  pageName = "Collateral",
+  pageName = 'Collateral',
 }: {
   pageName: string;
 }): JSX.Element => {
@@ -16,15 +16,12 @@ const TitleSection = ({
         w="full"
         maxW="1050px"
         maxH="249px"
-        h={["fit-content", "847px", "847px", "847px", "860px"]} 
-        mx={["16px", "16px", "16px", "80px", "195px", "195px"]} 
-        pt={["32px", "64px"]}
+        h={['fit-content', '847px', '847px', '847px', '860px']}
+        mx={['16px', '16px', '16px', '80px', '195px', '195px']}
+        pt={['32px', '64px']}
         color={text}
       >
-        <VFlex 
-          justify="space-between"
-          maxH="185px" 
-        >
+        <VFlex justify="space-between" maxH="185px">
           <Box>
             <Flex>
               <Heading

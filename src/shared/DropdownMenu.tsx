@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { ChevronDownIcon } from "@chakra-ui/icons";
+import React, { useState } from 'react';
+import { ChevronDownIcon } from '@chakra-ui/icons';
 import {
   Menu,
   MenuButton,
@@ -8,8 +8,8 @@ import {
   Flex,
   Img,
   Button,
-} from "@chakra-ui/react";
-import { useAssets } from "shared";
+} from '@chakra-ui/react';
+import { useAssets } from 'shared';
 
 interface MenuProps {
   entries: {
@@ -28,9 +28,9 @@ export function DropdownMenu({ entries }: MenuProps) {
         as={Button}
         rightIcon={<ChevronDownIcon />}
         sx={{
-          minWidth: "145px",
-          borderRadius: "20px",
-          padding: "5px 16px",
+          minWidth: '145px',
+          borderRadius: '20px',
+          padding: '5px 16px',
         }}
       >
         {/* Initial Currency start */}
@@ -38,7 +38,7 @@ export function DropdownMenu({ entries }: MenuProps) {
           <Img src={currencyInfo?.imgSrc} sizes="20px 20px" />
           <Flex
             width="fit-content"
-            sx={{ fontSize: "14px", alignItems: "center" }}
+            sx={{ fontSize: '14px', alignItems: 'center' }}
           >
             {currency}
           </Flex>
@@ -48,17 +48,17 @@ export function DropdownMenu({ entries }: MenuProps) {
 
       <MenuList
         sx={{
-          border: "none",
-          borderRadius: "5px",
+          border: 'none',
+          borderRadius: '5px',
 
-          minWidth: "145px",
+          minWidth: '145px',
         }}
       >
         {entries
           .filter(({ caption }) => caption !== currency)
           .map(({ imgSrc, caption }) => (
             <MenuItem
-              sx={{ minWidth: "145px" }}
+              sx={{ minWidth: '145px' }}
               pl="5px"
               gap="10px"
               key={caption}

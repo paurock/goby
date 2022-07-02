@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 import {
   Flex,
   Grid,
@@ -9,24 +9,24 @@ import {
   Icon,
   IconButton,
   useColorModeValue,
-} from "@chakra-ui/react";
-import { SearchIcon } from "@chakra-ui/icons";
-import { gridIcon, heartIcon, listIcon } from "app/assets/Icons";
-import ProjDropdown from "./ProjDropdown";
+} from '@chakra-ui/react';
+import { SearchIcon } from '@chakra-ui/icons';
+import { gridIcon, heartIcon, listIcon } from 'app/assets/Icons';
+import ProjDropdown from './ProjDropdown';
 
 const Toolbar = (): JSX.Element => {
   const [isLiked, setIsLiked] = useState(false);
   const [likes, setLikes] = useState(0);
-  const color = useColorModeValue("purple", "green");
+  const color = useColorModeValue('purple', 'green');
 
   useEffect(() => {
-    const likeD_LS = JSON.parse(localStorage.getItem("isLiked") || "false");
-    const likeS_LS = JSON.parse(localStorage.getItem("likes") || "0");
+    const likeD_LS = JSON.parse(localStorage.getItem('isLiked') || 'false');
+    const likeS_LS = JSON.parse(localStorage.getItem('likes') || '0');
 
-    if (likeD_LS && likeD_LS !== "") {
+    if (likeD_LS && likeD_LS !== '') {
       setIsLiked(likeD_LS);
     }
-    if (likeS_LS && likeS_LS !== "") {
+    if (likeS_LS && likeS_LS !== '') {
       setLikes(likeS_LS);
     }
   }, []);
@@ -34,15 +34,15 @@ const Toolbar = (): JSX.Element => {
   const handleClick = (): void => {
     setLikes(likes + 1);
     setIsLiked(true);
-    localStorage.setItem("isLiked", JSON.stringify(true));
-    localStorage.setItem("likes", JSON.stringify(likes + 1));
+    localStorage.setItem('isLiked', JSON.stringify(true));
+    localStorage.setItem('likes', JSON.stringify(likes + 1));
   };
 
   return (
     <Flex w="full" justifyContent="center">
       <Flex
         w="full"
-        mx={["16px", "16px", "16px", "80px", "195px", "195px"]}
+        mx={['16px', '16px', '16px', '80px', '195px', '195px']}
         maxW="1050px"
       >
         <Grid mt="26px" templateColumns="repeat(4, 1fr)" gap="5">
@@ -60,25 +60,25 @@ const Toolbar = (): JSX.Element => {
           <GridItem
             w="100%"
             h="10"
-            display={["none", "flex", "flex", "flex", "flex"]}
+            display={['none', 'flex', 'flex', 'flex', 'flex']}
           />
           <GridItem
             w="100%"
             h="10"
             gap="5px"
             sx={{
-              display: "flex",
-              justifyContent: "flex-end",
+              display: 'flex',
+              justifyContent: 'flex-end',
             }}
           >
             <Flex
               minW="86px"
               minH="40px"
               sx={{
-                justifyContent: "space-around",
-                alignItems: "center",
-                border: "1px solid lightBlue",
-                borderRadius: "10px",
+                justifyContent: 'space-around',
+                alignItems: 'center',
+                border: '1px solid lightBlue',
+                borderRadius: '10px',
               }}
             >
               <Icon
@@ -86,11 +86,11 @@ const Toolbar = (): JSX.Element => {
                 as={heartIcon}
                 w="25px"
                 h="25px"
-                _hover={{ fill: "red", stroke: "red" }}
+                _hover={{ fill: 'red', stroke: 'red' }}
                 sx={{
-                  cursor: "pointer",
-                  fill: `${isLiked ? "red" : null}`,
-                  stroke: `${isLiked ? "red" : color}`,
+                  cursor: 'pointer',
+                  fill: `${isLiked ? 'red' : null}`,
+                  stroke: `${isLiked ? 'red' : color}`,
                 }}
                 onClick={() => {
                   !isLiked && handleClick();
@@ -99,13 +99,13 @@ const Toolbar = (): JSX.Element => {
               {likes}
             </Flex>
             <Flex
-              display={["none", "flex", "flex", "flex", "flex"]}
+              display={['none', 'flex', 'flex', 'flex', 'flex']}
               sx={{
-                justifyContent: "center",
-                alignItems: "center",
-                border: "1px solid lightBlue",
-                borderRadius: "10px",
-                maxWidth: "100px",
+                justifyContent: 'center',
+                alignItems: 'center',
+                border: '1px solid lightBlue',
+                borderRadius: '10px',
+                maxWidth: '100px',
               }}
             >
               <IconButton
@@ -116,8 +116,8 @@ const Toolbar = (): JSX.Element => {
                 aria-label="Grid mode"
                 //@ts-ignore
                 icon={gridIcon(color)}
-                _active={{ background: "lightBlue" }}
-                _selected={{ background: "lightBlue" }}
+                _active={{ background: 'lightBlue' }}
+                _selected={{ background: 'lightBlue' }}
               />
               {/*<IconButton
                 w="40px"

@@ -1,17 +1,17 @@
-import { NextPage } from "next";
+import { NextPage } from 'next';
 import {
   Flex,
   Box,
-  VStack, 
-  Divider, 
-  useColorModeValue, 
-} from "@chakra-ui/react"; 
+  VStack,
+  Divider,
+  useColorModeValue,
+} from '@chakra-ui/react';
 
-import { LeftSide } from "components/sections/content/ConnectWallet/LeftSide";
-import { RightSide } from "components/sections/content/ConnectWallet/RightSide";
- 
+import { LeftSide } from 'components/sections/content/ConnectWallet/LeftSide';
+import { RightSide } from 'components/sections/content/ConnectWallet/RightSide';
+
 const ConnectWallet: NextPage = () => {
-  const colors = useColorModeValue("black", "lightGreen");
+  const colors = useColorModeValue('black', 'lightGreen');
 
   return (
     // CONTAINER
@@ -20,20 +20,20 @@ const ConnectWallet: NextPage = () => {
         w="full"
         h="432px"
         bg="lightGray"
-        sx={{ position: "absolute", zIndex: "0" }}
+        sx={{ position: 'absolute', zIndex: '0' }}
       ></Box>
       <VStack gap="24px" bg="white" zIndex="100">
         <Flex
           w="full"
           maxW="1050px"
-          px={["16px", "0"]}
-          pb={["10px"]}
+          px={['16px', '0']}
+          pb={['10px']}
           flexWrap="wrap"
         >
           {/* LEFT COLUMN  */}
           <LeftSide />
           {/* RIGHT COLUMN  */}
-         <RightSide colors={colors}/>
+          <RightSide colors={colors} />
         </Flex>
         <Divider w="full" maxW="1050px" />
         {/* ADVERT BLOCK  */}

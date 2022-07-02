@@ -1,20 +1,20 @@
-import { Flex, Text, Link, VStack } from "@chakra-ui/react";
-import { Img } from "shared";
-import logo from "../assets/logo.svg";
-import NextLink from "next/link";
+import { Flex, Text, Link, VStack } from '@chakra-ui/react';
+import { Img } from 'shared';
+import logo from '../assets/logo.svg';
+import NextLink from 'next/link';
 
 {
   /* Left Logo block */
 }
-export const MainFooterLeft = (): JSX.Element => ( 
-    <VStack w="full" h="full" bg="black.300">
-      <Flex w="full" >
+export const MainFooterLeft = (): JSX.Element => (
+  <VStack w="full" h="full" bg="black.300">
+    <Flex w="full">
       <NextLink href="#" passHref>
         <Link>
-          <Img src={logo.src} sx={{ cursor: "pointer" }} />
+          <Img src={logo.src} sx={{ cursor: 'pointer' }} />
         </Link>
-      </NextLink> 
-      </Flex>
+      </NextLink>
+    </Flex>
     <Flex w="full">
       <Text color="text.900">
         American online non-fungible token (NFT) marketplace headquartered in

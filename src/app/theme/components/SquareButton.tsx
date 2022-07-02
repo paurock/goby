@@ -1,11 +1,9 @@
-import { svgPropsSquareBtn } from 'components/types'
-import React  from 'react'
-import { IconButton } from "@chakra-ui/react";
- 
+import { svgPropsSquareBtn } from 'components/types';
+import React from 'react';
+import { IconButton } from '@chakra-ui/react';
 
-
-export const SquareButton = (props: svgPropsSquareBtn): JSX.Element=> {
-  return ( 
+export const SquareButton = (props: svgPropsSquareBtn): JSX.Element => {
+  return (
     <IconButton
       bg={props.bg}
       aria-label={props.ariaLabel}
@@ -16,9 +14,9 @@ export const SquareButton = (props: svgPropsSquareBtn): JSX.Element=> {
       stroke={props.stroke}
       _hover={{ stroke: props.hoverColorStroke, fill: props.hoverColorFill }}
       sx={{
-        cursor: "pointer",
+        cursor: 'pointer',
       }}
-      onClick={ (()=> props.action ? props.action(): null) }
-    /> 
-  )
-}
+      onClick={() => (props.action ? props.action() : null)}
+    />
+  );
+};
