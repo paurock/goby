@@ -8,12 +8,19 @@ import {
   Heading,
   Text,
   VStack,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import image from '/src/app/assets/mock_cw.png';
 import React from 'react';
 
-export const LeftSide = () => {
+export const LeftSide = ({
+  colors,
+  bgColors,
+}: {
+  colors: string;
+  bgColors: string;
+}) => {
   return (
     <VStack maxW={['100%', '50%']} pr="15px" zIndex="100">
       <Box mt="64px">

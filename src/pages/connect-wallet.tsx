@@ -12,17 +12,18 @@ import { RightSide } from 'components/sections/content/ConnectWallet/RightSide';
 
 const ConnectWallet: NextPage = () => {
   const colors = useColorModeValue('black', 'lightGreen');
-
+  const bgColors = useColorModeValue('white', 'black.100');
+  const bgColors300 = useColorModeValue('white', 'black.300');
   return (
     // CONTAINER
     <>
       <Box
         w="full"
         h="432px"
-        bg="lightGray"
+        bg={bgColors}
         sx={{ position: 'absolute', zIndex: '0' }}
       ></Box>
-      <VStack gap="24px" bg="white" zIndex="100">
+      <VStack gap="24px" zIndex="100">
         <Flex
           w="full"
           maxW="1050px"
@@ -31,9 +32,9 @@ const ConnectWallet: NextPage = () => {
           flexWrap="wrap"
         >
           {/* LEFT COLUMN  */}
-          <LeftSide />
+          <LeftSide colors={colors} bgColors={bgColors300} />
           {/* RIGHT COLUMN  */}
-          <RightSide colors={colors} />
+          <RightSide colors={colors} bgColors={bgColors300} />
         </Flex>
         <Divider w="full" maxW="1050px" />
         {/* ADVERT BLOCK  */}

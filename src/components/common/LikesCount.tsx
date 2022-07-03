@@ -4,11 +4,13 @@ import React from 'react';
 
 export const LikesCount = ({
   count = '120',
+  bgColors,
 }: {
   count?: string;
+  bgColors?: string;
 }): JSX.Element => {
   return (
-    <HStack maxH="22px" py="0" bg="white">
+    <HStack maxH="22px" py="0" bg={bgColors}>
       <Tag maxH="22px" py="0" variant="subtle" colorScheme="white">
         <TagLeftIcon
           boxSize="12px"

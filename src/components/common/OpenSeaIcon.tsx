@@ -5,9 +5,10 @@ import React from 'react';
 type Props = {
   color?: string;
   bg?: string;
+  bgColors: string;
 };
 
-export const OpenSeaIcon = ({ color, bg }: Props): JSX.Element => {
+export const OpenSeaIcon = ({ color, bg, bgColors }: Props): JSX.Element => {
   return (
     <Button
       w="82px"
@@ -19,9 +20,9 @@ export const OpenSeaIcon = ({ color, bg }: Props): JSX.Element => {
       variant="outline"
       p="0"
       sx={{
-        color: color ? color : 'black',
+        color: color ? color : 'white',
         fontSize: '12px',
-        backgroundColor: bg ? bg : 'white',
+        backgroundColor: bgColors,
         borderRadius: '2px',
         border: 'none',
       }}

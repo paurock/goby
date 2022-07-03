@@ -27,7 +27,13 @@ const lightGray = {
   opacity: '0.4',
 } as const;
 
-export const RightSide = ({ colors }: { colors: string }) => {
+export const RightSide = ({
+  colors,
+  bgColors,
+}: {
+  colors: string;
+  bgColors: string;
+}) => {
   return (
     <VStack w="full" maxW={['100%', '50%']} pl="15px" zIndex="100">
       {/* TOP SIDE  */}
@@ -41,7 +47,7 @@ export const RightSide = ({ colors }: { colors: string }) => {
               _hover={{ bg: 'none' }}
             />
           </Box>
-          <Text w="full" maxH="20px" mb="0" pb="0" sx={{ color: 'purple' }}>
+          <Text w="full" maxH="20px" mb="0" pb="0" sx={{ color: colors }}>
             Project name
           </Text>
           <Heading
@@ -55,17 +61,17 @@ export const RightSide = ({ colors }: { colors: string }) => {
           <Flex w="full">
             <HStack w="full">
               <Box>
-                <OpenSeaIcon />
+                <OpenSeaIcon bgColors={bgColors} />
               </Box>
               <Box>
                 <Listed />
               </Box>
               <Box w="full"></Box>
               <Box>
-                <ViewsCount />
+                <ViewsCount bgColors={bgColors} />
               </Box>
               <Box>
-                <LikesCount />
+                <LikesCount bgColors={bgColors} />
               </Box>
             </HStack>
           </Flex>
@@ -98,9 +104,9 @@ export const RightSide = ({ colors }: { colors: string }) => {
             <Button maxW="382px" w="full" bg="green" colorScheme="green">
               Make Offer
             </Button>
-            <Center w="57px" h="48px" bg="white" borderRadius="4px">
+            <Center w="57px" h="48px" bg={bgColors} borderRadius="4px">
               <SquareButton
-                bg="white"
+                bg={bgColors}
                 widthBtn="20px"
                 heightBtn="20px"
                 ariaLabel="Like"
@@ -110,9 +116,9 @@ export const RightSide = ({ colors }: { colors: string }) => {
                 action={() => console.log('clicked')}
               />
             </Center>
-            <Center w="57px" h="48px" bg="white" borderRadius="4px">
+            <Center w="57px" h="48px" bg={bgColors} borderRadius="4px">
               <SquareButton
-                bg="white"
+                bg={bgColors}
                 widthBtn="20px"
                 heightBtn="20px"
                 ariaLabel="Share"
