@@ -12,7 +12,7 @@ import { RightSide } from 'components/sections/content/ConnectWallet/RightSide';
 
 const ConnectWallet: NextPage = () => {
   const colors = useColorModeValue('black', 'lightGreen');
-  const bgColors = useColorModeValue('white', 'black.100');
+  const bgColors = useColorModeValue('lightGray', 'black.100');
   const bgColors300 = useColorModeValue('white', 'black.300');
   return (
     // CONTAINER

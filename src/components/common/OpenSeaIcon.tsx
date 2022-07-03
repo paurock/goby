@@ -9,6 +9,7 @@ type Props = {
 };
 
 export const OpenSeaIcon = ({ color, bg, bgColors }: Props): JSX.Element => {
+  console.log(bgColors);
   return (
     <Button
       w="82px"
@@ -20,7 +21,7 @@ export const OpenSeaIcon = ({ color, bg, bgColors }: Props): JSX.Element => {
       variant="outline"
       p="0"
       sx={{
-        color: color ? color : 'white',
+        color: bgColors === 'white' ? 'black' : 'white',
         fontSize: '12px',
         backgroundColor: bgColors,
         borderRadius: '2px',
