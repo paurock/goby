@@ -14,11 +14,9 @@ export const LikesCount = ({
           boxSize="12px"
           // @ts-ignore
           as={LikesIcon}
-          sx={{ color: 'lightGray' }}
+          sx={{ color: 'gray' }}
         />
-        <TagLabel sx={{ color: 'lightGray', fontSize: '12px' }}>
-          {count}
-        </TagLabel>
+        <TagLabel sx={{ color: 'gray', fontSize: '12px' }}>{count}</TagLabel>
       </Tag>
     </HStack>
   );
