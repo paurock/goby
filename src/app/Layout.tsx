@@ -75,7 +75,7 @@ const Layout = ({ children }: { children?: ReactNode }): JSX.Element => {
         <Header />
       </header>
       <main>{children}</main>
-      {router.pathname === '/' || '/collateral' ? (
+      {router.pathname === '/' || router.pathname === '/collateral' ? (
         <Flex w="full" justifyContent="center" my="64px">
           <Image alt="image" width="55px" height="55px" src={myImage.src} />
         </Flex>
