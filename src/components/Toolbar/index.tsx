@@ -98,8 +98,10 @@ const Toolbar = (): JSX.Element => {
               />
               {likes}
             </Flex>
+            {/*
             <Flex
-              display={['none', 'flex', 'flex', 'flex', 'flex']}
+              display={['none', 'flex', 'flex', 'flex', 'flex']}]
+              bg="gray"
               sx={{
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -108,6 +110,7 @@ const Toolbar = (): JSX.Element => {
                 maxWidth: '100px',
               }}
             >
+
               <IconButton
                 w="40px"
                 minH="40px"
@@ -119,7 +122,7 @@ const Toolbar = (): JSX.Element => {
                 _active={{ background: 'lightBlue' }}
                 _selected={{ background: 'lightBlue' }}
               />
-              {/*<IconButton
+              <IconButton
                 w="40px"
                 h="40px"
                 variant="outlined"
@@ -128,8 +131,8 @@ const Toolbar = (): JSX.Element => {
                 icon={listIcon(color)}
                 _active={{ background: "lightBlue" }}
                 _selected={{ background: "lightBlue" }}
-              />*/}
-            </Flex>
+              />
+            </Flex>*/}
           </GridItem>
         </Grid>
       </Flex>
