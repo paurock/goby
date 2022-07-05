@@ -37,8 +37,9 @@ const ConnectWallet: NextPage = () => {
           <RightSide colors={colors} bgColors={bgColors300} />
         </Flex>
         <Divider w="full" maxW="1050px" />
-        {/* ADVERT BLOCK  */}
+        {/* ADVERT BLOCK
         <Box w="full" h="238px" maxW="1050px" maxH="238px" bg="gray"></Box>
+        */}
         {/* EMPTY GAP BOX  */}
         <Box h="64px"></Box>
       </VStack>

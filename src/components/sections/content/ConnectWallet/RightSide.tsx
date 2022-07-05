@@ -132,14 +132,14 @@ export const RightSide = ({
         </VStack>
       </VStack>
       {/* LOW SIDE  */}
-      <VStack>
+      {/*  <VStack>
         <Box pt="22px">
           <Image alt="image" width="510px" height="647px" src={imageBg.src} />
         </Box>
         <Box pt="22px">
           <Image alt="image" width="510px" height="647px" src={imageBg.src} />
         </Box>
-      </VStack>
+      </VStack>*/}
     </VStack>
   );
 };
