@@ -112,7 +112,8 @@ export const RightSide = ({
                 ariaLabel="Like"
                 icon={heartIcon}
                 stroke={colors}
-                hoverColorStroke={'black'}
+                hoverColorStroke={'red'}
+                hoverColorFill={'red'}
                 action={() => console.log('clicked')}
               />
             </Center>

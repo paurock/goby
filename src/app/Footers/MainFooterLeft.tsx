@@ -7,8 +7,8 @@ import NextLink from 'next/link';
   /* Left Logo block */
 }
 export const MainFooterLeft = (): JSX.Element => (
-  <VStack w="full" h="full" bg="black.300">
-    <Flex w="full">
+  <VStack w="full" h="full" bg="black.300" alignItems="flex-start">
+    <Flex w="full" mb="35px">
       <NextLink href="#" passHref>
         <Link>
           <Img src={logo.src} sx={{ cursor: 'pointer' }} />
