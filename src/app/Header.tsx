@@ -127,7 +127,7 @@ export const Header: React.FC = () => {
               fontWeight="normal"
               color="black"
               px="16px"
-              mt="-2px"
+              mt="0"
             >
               Connect wallet
             </Button>
