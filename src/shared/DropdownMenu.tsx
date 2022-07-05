@@ -38,7 +38,11 @@ export function DropdownMenu({ entries }: MenuProps) {
           <Img src={currencyInfo?.imgSrc} sizes="20px 20px" />
           <Flex
             width="fit-content"
-            sx={{ fontSize: '14px', alignItems: 'center' }}
+            sx={{
+              fontSize: '14px',
+              fontWeight: 'normal',
+              alignItems: 'center',
+            }}
           >
             {currency}
           </Flex>

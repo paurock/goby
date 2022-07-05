@@ -122,7 +122,13 @@ export const Header: React.FC = () => {
                 <DropdownMenu entries={currencies} />
               </VFlex>
             </Flex>
-            <Button background="#28FF98" color="#000" px="16px" py="9px">
+            <Button
+              background="green"
+              fontWeight="normal"
+              color="black"
+              px="16px"
+              mt="-2px"
+            >
               Connect wallet
             </Button>
           </Flex>

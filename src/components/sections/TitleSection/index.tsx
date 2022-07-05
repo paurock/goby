@@ -4,8 +4,10 @@ import { TabsMenu } from './TabsMenu';
 
 const TitleSection = ({
   pageName = 'Collateral',
+  pageTitle,
 }: {
   pageName: string;
+  pageTitle: string;
 }): JSX.Element => {
   const { text, background } = useAssets();
   const { colorMode, toggleColorMode } = useColorMode();
@@ -34,7 +36,7 @@ const TitleSection = ({
                 mb="12px"
                 as="h1"
               >
-                {pageName}
+                {pageTitle}
               </Heading>
             </Flex>
             <Flex
