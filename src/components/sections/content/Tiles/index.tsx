@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Flex, SimpleGrid, Skeleton } from '@chakra-ui/react';
 import { Img } from 'shared';
 import image1 from '/src/app/assets/rectangle_240x229.png';
@@ -7,6 +7,7 @@ import TileHover from './TileHover';
 import UnderTiles from './UnderTiles';
 
 export default function Tiles(): JSX.Element {
+  const [isHover, setIsHover] = useState<boolean>(false);
   return (
     <Flex w="full" justifyContent="center">
       <Flex
@@ -31,14 +32,23 @@ export default function Tiles(): JSX.Element {
             <Img src={image1.src} w="full" maxH="319px" />
           </Skeleton>
           <Flex
+            h="full"
+            onMouseEnter={() => setIsHover(true)}
+            onMouseLeave={() => setIsHover(false)}
             sx={{
               flexWrap: 'wrap',
               position: 'relative',
             }}
           >
-            <Img src={imgage2.src} w="full" maxH="319px" />
-            <TileHover />
-            <UnderTiles />
+            <Skeleton w="full" maxH="319px">
+              <Img src={image1.src} w="full" maxH="319px" />
+            </Skeleton>
+            {isHover ? (
+              <>
+                <TileHover />
+                <UnderTiles />
+              </>
+            ) : null}
           </Flex>
         </SimpleGrid>
       </Flex>

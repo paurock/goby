@@ -17,13 +17,7 @@ export default function UnderTiles(): JSX.Element {
   const colors = useColorModeValue('black', 'lightGreen');
   const bgColors = useColorModeValue('white', 'black');
   return (
-    <VStack
-      w="full"
-      sx={{
-        boxShadow: 'rgba(99, 99, 99, 0.1) 0px 1px 8px 0px}}',
-      }}
-      bg={bgColors}
-    >
+    <VStack w="full" maxH="200px" bg={bgColors}>
       <VStack w="full" p="24px">
         <Box w="full" h="22px">
           <Heading
