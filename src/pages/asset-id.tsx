@@ -7,8 +7,8 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 
-import { LeftSide } from 'components/sections/content/ConnectWallet/LeftSide';
-import { RightSide } from 'components/sections/content/ConnectWallet/RightSide';
+import { LeftSide } from 'components/sections/content/ConnectedWallet/LeftSide';
+import { RightSide } from 'components/sections/content/ConnectedWallet/RightSide';
 
 const ConnectWallet: NextPage = () => {
   const colors = useColorModeValue('black', 'lightGreen');

@@ -12,11 +12,10 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react';
-import { ViewsCount } from 'components/common/ViewsCount';
-import { LikesCount } from 'components/common/LikesCount';
 import { BackIcon, ethereum, heartIcon, shareIcon } from 'app/assets/Icons';
 import { SquareButton } from 'app/theme/components/SquareButton';
 import { OpenSeaAndListed } from 'components/common/OpenSeaAndListed';
+import LikesAndViews from 'components/common/LikesAndViews';
 
 const lightGray = {
   fontSize: '14px',
@@ -59,12 +58,7 @@ export const RightSide = ({
             <HStack w="full">
               <OpenSeaAndListed bgColors={bgColors} />
               <Box w="full"></Box>
-              <Box>
-                <ViewsCount bgColors={bgColors} />
-              </Box>
-              <Box>
-                <LikesCount bgColors={bgColors} />
-              </Box>
+              <LikesAndViews bgColors={bgColors} />
             </HStack>
           </Flex>
           <Divider />

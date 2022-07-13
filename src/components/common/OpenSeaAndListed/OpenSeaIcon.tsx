@@ -22,7 +22,6 @@ export const OpenSeaIcon = ({ bgColors }: Props): JSX.Element => {
         backgroundColor: bgColors,
         borderRadius: '2px',
         border: 'none',
-        marginTop: '3px',
       }}
     >
       OpenSea
