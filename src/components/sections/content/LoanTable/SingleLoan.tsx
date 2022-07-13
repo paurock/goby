@@ -20,7 +20,7 @@ import image from '/src/app/assets/square_img_150x150.png';
 
 export const LoanTable = ({ status, getAsset = false }: loanTableType) => {
   return (
-    <Flex w="full" pt="24px" flexWrap={['wrap', 'nowrap']}>
+    <Flex w="full" pt="24px" pb="24px" flexWrap={['wrap', 'nowrap']}>
       {/* IMAGE  */}
       <Box w="full" maxW={['100%', '150px']} m={['24px', 0]}>
         <Img alt="image" width="100%" objectFit="cover" src={image.src} />

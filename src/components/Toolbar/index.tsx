@@ -75,9 +75,10 @@ const Toolbar = (): JSX.Element => {
               minW="86px"
               minH="40px"
               sx={{
+                marginRight: '-10px',
                 justifyContent: 'space-around',
                 alignItems: 'center',
-                border: '1px solid lightBlue',
+                border: '1px solid lightGray',
                 borderRadius: '10px',
               }}
             >
