@@ -8,24 +8,21 @@ type Props = {
   bgColors: string;
 };
 
-export const OpenSeaIcon = ({ color, bg, bgColors }: Props): JSX.Element => {
-  console.log(bgColors);
+export const OpenSeaIcon = ({ bgColors }: Props): JSX.Element => {
   return (
     <Button
       w="82px"
       h="22px"
-      bg="white"
       _hover={{ backgroundColor: 'white' }}
       leftIcon={<OpenSeaIconSVG />}
-      colorScheme="teal"
       variant="outline"
-      p="0"
       sx={{
         color: bgColors === 'white' ? 'black' : 'white',
         fontSize: '12px',
         backgroundColor: bgColors,
         borderRadius: '2px',
         border: 'none',
+        marginTop: '3px',
       }}
     >
       OpenSea

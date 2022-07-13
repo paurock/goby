@@ -12,14 +12,11 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react';
-import imageBg from '/src/app/assets/mock_gray_bg.png';
-import { OpenSeaIcon } from 'components/common/OpenSeaIcon';
-import { Listed } from 'components/common/Listed';
 import { ViewsCount } from 'components/common/ViewsCount';
 import { LikesCount } from 'components/common/LikesCount';
 import { BackIcon, ethereum, heartIcon, shareIcon } from 'app/assets/Icons';
 import { SquareButton } from 'app/theme/components/SquareButton';
-import Image from 'next/image';
+import { OpenSeaAndListed } from 'components/common/OpenSeaAndListed';
 
 const lightGray = {
   fontSize: '14px',
@@ -60,12 +57,7 @@ export const RightSide = ({
           </Heading>
           <Flex w="full">
             <HStack w="full">
-              <Box>
-                <OpenSeaIcon bgColors={bgColors} />
-              </Box>
-              <Box>
-                <Listed />
-              </Box>
+              <OpenSeaAndListed bgColors={bgColors} />
               <Box w="full"></Box>
               <Box>
                 <ViewsCount bgColors={bgColors} />
