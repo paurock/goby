@@ -25,6 +25,10 @@ const useAssets = () => {
   };
 };
 
-const links = ['Lend', 'Borrow', 'Stats'];
+const links = [
+  { name: 'Lend', href: '/collateral' },
+  { name: 'Borrow', href: '/borrow' },
+  { name: 'Stats', href: '/stats' },
+];
 
 export { links, useAssets, VFlex, Img, DropdownMenu };

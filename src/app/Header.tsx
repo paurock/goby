@@ -45,15 +45,15 @@ export const Header: React.FC = () => {
     { caption: 'Poligon', imgSrc: polygon },
     { caption: 'BNB Chain', imgSrc: bnbChain },
   ];
+
   const { colorMode, toggleColorMode, setColorMode } = useColorMode();
 
   const [showCurrencyPopup, setShowCurrencyPopup] = useState(false);
   const { getButtonProps, getDisclosureProps, isOpen } = useDisclosure();
   const [hidden, setHidden] = useState(!isOpen);
-  const changeCurrency = () => {
+  const changeCurrency = (): void => {
     setShowCurrencyPopup(!showCurrencyPopup);
   };
-
   return (
     <Container maxW="1600px" px={['16px', '16px', '20px', '32px']}>
       <Flex minH="80px">
@@ -76,7 +76,7 @@ export const Header: React.FC = () => {
           <Flex as="nav" gap="32px" sx={{ alignItems: 'center' }}>
             {links.map((link) => (
               <Flex
-                key={link}
+                key={link.href}
                 mt="2"
                 _hover={{
                   opacity: '0.8',
@@ -89,7 +89,7 @@ export const Header: React.FC = () => {
                   alignItems: 'center',
                 }}
               >
-                <Link href="#">{link}</Link>
+                <Link href={link.href}>{link.name}</Link>
               </Flex>
             ))}
             <Flex as="div" gap="20px" sx={{ alignItems: 'center' }}>
@@ -119,7 +119,7 @@ export const Header: React.FC = () => {
               </Center>
 
               <VFlex onClick={changeCurrency}>
-                <DropdownMenu entries={currencies} />
+                <DropdownMenu currencies={currencies} />
               </VFlex>
             </Flex>
             <Button
@@ -234,8 +234,8 @@ export const Header: React.FC = () => {
           </Flex>
 
           {links.map((link) => (
-            <Link href="#" key={link}>
-              {link}
+            <Link href={link.href} key={link.href}>
+              {link.name}
             </Link>
           ))}
           <Flex

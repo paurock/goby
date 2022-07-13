@@ -9,19 +9,17 @@ import {
   Img,
   Button,
 } from '@chakra-ui/react';
-import { useAssets } from 'shared';
 
 interface MenuProps {
-  entries: {
+  currencies: {
     imgSrc: string;
     caption: string;
   }[];
 }
 
-export function DropdownMenu({ entries }: MenuProps) {
-  const [currency, setCurrency] = useState(entries[0].caption);
-  const currencyInfo = entries.find(({ caption }) => caption === currency);
-  const { select, toggleCurrency } = useAssets();
+export function DropdownMenu({ currencies }: MenuProps) {
+  const [currency, setCurrency] = useState(currencies[0].caption);
+  const currencyInfo = currencies.find(({ caption }) => caption === currency);
   return (
     <Menu>
       <MenuButton
@@ -58,7 +56,7 @@ export function DropdownMenu({ entries }: MenuProps) {
           minWidth: '145px',
         }}
       >
-        {entries
+        {currencies
           .filter(({ caption }) => caption !== currency)
           .map(({ imgSrc, caption }) => (
             <MenuItem

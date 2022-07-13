@@ -5,7 +5,7 @@ import Loans from '../components/sections/content/LoanTable';
 const Collateral: NextPage = () => {
   return (
     <>
-      <TitleSection pageName="Loan" pageTitle="Loan" />
+      <TitleSection pageTitle="Lend" />
       <Loans />
     </>
   );

@@ -1,17 +1,14 @@
 import { Flex, Box, useColorMode, Heading } from '@chakra-ui/react';
+import { NextRouter, Router, useRouter } from 'next/router';
 import { VFlex, useAssets } from '../../../shared';
 import { TabsMenu } from './TabsMenu';
 
-const TitleSection = ({
-  pageName = 'Collateral',
-  pageTitle,
-}: {
-  pageName: string;
-  pageTitle: string;
-}): JSX.Element => {
+const TitleSection = ({ pageTitle }: { pageTitle: string }): JSX.Element => {
   const { text, background } = useAssets();
   const { colorMode, toggleColorMode } = useColorMode();
-
+  const router: NextRouter = useRouter();
+  const pageName =
+    router.pathname.charAt(1).toUpperCase() + router.pathname.slice(2);
   return (
     <Flex w="full" bg={background} justifyContent="center">
       <Flex

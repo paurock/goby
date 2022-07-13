@@ -9,7 +9,6 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 import NextLink from 'next/link';
-import { useRouter, NextRouter } from 'next/router';
 import { cardIcon, collatIcon, flagIcon } from 'app/assets/Icons';
 
 type TabType = {
@@ -50,7 +49,6 @@ const menuItemStyle = {
 
 export const TabsMenu = ({ text, pageName }: TabsCompType): JSX.Element => {
   const [isHover, setIsHover] = useState<number>(-1);
-  const router: NextRouter = useRouter();
   const color: string = useColorModeValue('purple', 'green');
 
   const showBottomBorder = (): object => ({
