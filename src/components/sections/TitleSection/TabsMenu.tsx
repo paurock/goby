@@ -49,7 +49,7 @@ const menuItemStyle = {
 
 export const TabsMenu = ({ text, pageName }: TabsCompType): JSX.Element => {
   const [isHover, setIsHover] = useState<number>(-1);
-  const color: string = useColorModeValue('purple', 'green');
+  const color: string = useColorModeValue('#6334B1', '#28FF98');
 
   const showBottomBorder = (): object => ({
     borderBottom: `2px solid ${color}`,

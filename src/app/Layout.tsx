@@ -6,6 +6,7 @@ import { Header } from './Header';
 import { Footer } from './Footers/Footer';
 import Head from 'next/head';
 import myImage from '/src/app/assets/nft_front.png';
+
 const colors = {
   purple: '#6334B1',
   green: '#28FF98',
