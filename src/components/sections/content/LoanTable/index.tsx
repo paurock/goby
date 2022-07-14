@@ -83,7 +83,7 @@ const Loans = (): JSX.Element => {
               <TabPanel px="0">
                 <LoanTable status={'Open'} />
                 <Divider />
-                <LoanTable status={'Overdue'} />
+                <LoanTable status={'Overdue'} getAsset={true} />
               </TabPanel>
               <TabPanel px="0">
                 <LoanTable status={'Colosed'} />
