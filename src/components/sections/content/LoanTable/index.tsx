@@ -1,15 +1,19 @@
 import {
   Box,
-  Button,
   Divider,
   Heading,
-  HStack,
   Text,
   VStack,
   Flex,
+  Tabs,
+  TabList,
+  Tab,
+  TabPanels,
+  TabPanel,
 } from '@chakra-ui/react';
 import { LoanTable } from './SingleLoan';
-import React, { useState } from 'react';
+import React from 'react';
+import { useAssets } from 'shared';
 
 const myFontStyle = {
   fontWeight: '400',
@@ -18,7 +22,7 @@ const myFontStyle = {
 };
 
 const Loans = (): JSX.Element => {
-  const [active, setActive] = useState<boolean>(true);
+  const { text, background } = useAssets();
   return (
     <Flex w="full" justifyContent="center">
       <Flex
@@ -27,49 +31,67 @@ const Loans = (): JSX.Element => {
         maxW="1050px"
       >
         <VStack w="full" mt={['26px']} pb={['10px']} flexWrap="wrap">
-          <Heading as="h2" w="full" sx={{ ...myFontStyle, fontSize: '24px' }}>
+          <Heading
+            as="h2"
+            w="full"
+            sx={{ ...myFontStyle, fontSize: '24px', color: text }}
+          >
             My Loans
           </Heading>
           <Text
             as="h5"
             w="full"
-            sx={{ ...myFontStyle, fontSize: '24px', opacity: 0.4 }}
+            sx={{ ...myFontStyle, fontSize: '24px', opacity: 0.4, color: text }}
           >
             2 loans
           </Text>
-          <HStack w="full">
-            <Button
-              maxW="67px"
-              maxH="32px"
-              variant="outline"
-              sx={
-                active
-                  ? {
-                      borderColor: 'purple',
-                      borderRadius: '3px',
-                      fontSize: '16px',
-                    }
-                  : {
-                      borderColor: 'initial',
-                      borderRadius: '3px',
-                      fontSize: '16px',
-                    }
-              }
-            >
-              Open
-            </Button>
-            <Button
-              maxW="67px"
-              maxH="32px"
-              variant="outline"
-              sx={{ borderRadius: '2px', fontSize: '16px' }}
-            >
-              Closed
-            </Button>
-          </HStack>
-          <LoanTable status={'Open'} />
-          <Divider />
-          <LoanTable status={'Overdue'} getAsset={true} />
+          <Tabs w="full" variant="soft-rounded" colorScheme="white">
+            <TabList px="0" fontSize="16px">
+              <Tab
+                maxW="67px"
+                maxH="32px"
+                mr="12px"
+                mt="24px"
+                px="12px"
+                border="1px solid lightblue"
+                borderRadius="3px"
+                _selected={{
+                  border: '1px solid',
+                  borderColor: 'purple',
+                  color: text,
+                }}
+              >
+                Open
+              </Tab>
+              <Tab
+                maxW="67px"
+                maxH="32px"
+                mr="12px"
+                mt="24px"
+                px="12px"
+                borderRadius="3px"
+                _selected={{
+                  border: '1px solid',
+                  borderColor: 'purple',
+                  color: text,
+                }}
+              >
+                Closed
+              </Tab>
+            </TabList>
+            <TabPanels>
+              <TabPanel px="0">
+                <LoanTable status={'Open'} />
+                <Divider />
+                <LoanTable status={'Overdue'} />
+              </TabPanel>
+              <TabPanel px="0">
+                <LoanTable status={'Colosed'} />
+                <Divider />
+                <LoanTable status={'Closed'} />
+              </TabPanel>
+            </TabPanels>
+          </Tabs>
           <Box h="104px"></Box>
         </VStack>
       </Flex>
