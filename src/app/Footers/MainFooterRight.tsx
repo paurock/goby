@@ -11,8 +11,8 @@ const footerLinkBlock1 = {
 const footerLinkBlock2 = {
   title: 'Support',
   links: [
-    { name: 'FAQ', isExternalLink: false, url: '' },
-    { name: 'Help', isExternalLink: false, url: '' },
+    { name: 'FAQ', isExternalLink: false, url: '/' },
+    { name: 'Help', isExternalLink: false, url: '/' },
     {
       name: 'Telegram',
       isExternalLink: true,

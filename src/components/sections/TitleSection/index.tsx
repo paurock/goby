@@ -3,7 +3,15 @@ import { NextRouter, Router, useRouter } from 'next/router';
 import { VFlex, useAssets } from '../../../shared';
 import { TabsMenu } from './TabsMenu';
 
-const TitleSection = ({ pageTitle }: { pageTitle: string }): JSX.Element => {
+interface TitleSectionProps {
+  pageTitle: string;
+  pageSubtitle: string;
+}
+
+const TitleSection = ({
+  pageTitle,
+  pageSubtitle,
+}: TitleSectionProps): JSX.Element => {
   const { text, background } = useAssets();
   const { colorMode, toggleColorMode } = useColorMode();
   const router: NextRouter = useRouter();
@@ -45,7 +53,7 @@ const TitleSection = ({ pageTitle }: { pageTitle: string }): JSX.Element => {
               opacity="0.6"
               mb="32px"
             >
-              Offer loans to other users on their non-fungible tokens
+              {pageSubtitle}
             </Flex>
           </Box>
           <TabsMenu text={text} colorMode={colorMode} pageName={pageName} />

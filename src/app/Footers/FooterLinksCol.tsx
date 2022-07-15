@@ -40,15 +40,15 @@ export const FooterLinksCol = ({
         </ListItem>
         {links.map((link) => (
           <ListItem key={link.name}>
-            <NextLink key={link.name} href={link.url} passHref>
-              {link.isExternalLink ? (
-                <a target="_blank" rel="noreferrer" href={link.url}>
-                  {link.name}
-                </a>
-              ) : (
+            {link.isExternalLink ? (
+              <a target="_blank" rel="noreferrer" href={link.url}>
+                {link.name}
+              </a>
+            ) : (
+              <NextLink key={link.name} href={link.url} passHref>
                 <Link key={link.name}>{link.name}</Link>
-              )}
-            </NextLink>
+              </NextLink>
+            )}
           </ListItem>
         ))}
       </List>

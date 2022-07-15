@@ -1,4 +1,4 @@
-import { Divider, Flex, HStack } from '@chakra-ui/react';
+import { Flex, HStack } from '@chakra-ui/react';
 import { MainFooterRight } from './MainFooterRight';
 import { MainFooterLeft } from './MainFooterLeft';
 

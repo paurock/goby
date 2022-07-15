@@ -6,9 +6,7 @@ import {
   AccordionPanel,
   Box,
   Heading,
-  Text,
   VStack,
-  useColorModeValue,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import image from '/src/app/assets/mock_cw.png';
@@ -18,8 +16,8 @@ export const LeftSide = ({
   colors,
   bgColors,
 }: {
-  colors: string;
-  bgColors: string;
+  colors?: string;
+  bgColors?: string;
 }) => {
   return (
     <VStack maxW={['100%', '50%']} pr="15px" zIndex="100">
