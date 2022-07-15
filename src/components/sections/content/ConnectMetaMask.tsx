@@ -17,19 +17,20 @@ export const ConnectMetaMask = () => {
         alignItems="center"
       >
         <VStack maxW="510px" maxH="200px">
-          <Box>
+          <Box pb="35px">
             <Image alt="image" width="72px" height="72px" src={image.src} />
           </Box>
-          <Heading as="span" sx={{ fontSize: '20px' }}>
+          <Heading as="span" pb="12px" sx={{ fontSize: '20px' }}>
             Connect your MetaMask
           </Heading>
           <Heading
             as="span"
+            pb="24px"
             sx={{ fontSize: '14px', color: 'rgba(1, 5, 4, 0.6)' }}
           >
             Connect your wallet to get started with your assets
           </Heading>
-          {/* <ConnectWalletBtn /> */}
+          <ConnectWalletBtn />
         </VStack>
       </Flex>
     </Flex>
