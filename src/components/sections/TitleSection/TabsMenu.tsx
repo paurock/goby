@@ -7,7 +7,7 @@ import {
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-
+import { useRouter } from 'next/router';
 import NextLink from 'next/link';
 import { cardIcon, collatIcon, flagIcon } from 'app/assets/Icons';
 
@@ -48,6 +48,7 @@ const menuItemStyle = {
 };
 
 export const TabsMenu = ({ text, pageName }: TabsCompType): JSX.Element => {
+  const router: NextRouter = useRouter();
   const [isHover, setIsHover] = useState<number>(-1);
   const color: string = useColorModeValue('#6334B1', '#28FF98');
 
@@ -55,16 +56,20 @@ export const TabsMenu = ({ text, pageName }: TabsCompType): JSX.Element => {
     borderBottom: `2px solid ${color}`,
   });
 
-  // const pathName = (): string =>
-  //   router.pathname.replace(/\s+/g, "").toLowerCase();
+  const pathName = (): string =>
+    router.pathname.replace(/\s+/g, '').toLowerCase();
 
   const linkName = (tabName: string): string =>
     `/${tabName}`.replace(/\s+/g, '').toLowerCase();
 
   const pageNameNormal = (): string => `/${pageName}`.toLowerCase();
 
-  const isActiveLink = (tabName: string): boolean =>
-    pageNameNormal() === linkName(tabName);
+  const isActiveLink = (tabName: string): boolean => {
+    // console.log(pageNameNormal(), 'pageNameNormal');
+    // console.log(linkName(tabName), 'linkName(tabName)');
+    //console.log(tabName, ' tabName');
+    return pageNameNormal() === linkName(tabName);
+  };
 
   return (
     <Flex maxW="1600px" maxH="36px" w="full">

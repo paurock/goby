@@ -26,7 +26,7 @@ const useAssets = () => {
 };
 
 const links = [
-  { name: 'Lend', href: '/collateral' },
+  { name: 'Lend', href: '/lend' },
   { name: 'Borrow', href: '/borrow' },
   { name: 'Stats', href: '/stats' },
 ];
