@@ -95,6 +95,7 @@ export const RightSide = ({
           <HStack w="full">
             <Flex w="full">
               <GreenBtn
+                height="48px"
                 text={
                   pageName === 'Lend' ? 'Make offer' : 'Create borrow terms'
                 }

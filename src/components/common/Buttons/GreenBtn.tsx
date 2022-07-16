@@ -6,6 +6,7 @@ interface ButtonProps {
   bg?: string;
   color?: string;
   onClick: () => void;
+  height?: string;
 }
 
 export const GreenBtn = ({
@@ -13,10 +14,12 @@ export const GreenBtn = ({
   bg = 'green',
   color = 'black',
   onClick,
+  height,
 }: ButtonProps): JSX.Element => {
   return (
     <Button
       w="full"
+      h={height}
       background={bg}
       fontWeight="normal"
       color={color}
