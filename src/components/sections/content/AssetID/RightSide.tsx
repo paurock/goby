@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   Box,
-  Button,
   Center,
   Divider,
   Flex,
@@ -16,6 +15,7 @@ import { BackIcon, ethereum, heartIcon, shareIcon } from 'app/assets/Icons';
 import { SquareButton } from 'app/theme/components/SquareButton';
 import { OpenSeaAndListed } from 'components/common/OpenSeaAndListed';
 import LikesAndViews from 'components/common/LikesAndViews';
+import { GreenBtn } from 'components/common/Buttons/GreenBtn';
 
 const lightGray = {
   fontSize: '14px',
@@ -87,9 +87,9 @@ export const RightSide = ({
             <Text w="25%">0.5%</Text>
           </HStack>
           <HStack w="full">
-            <Button maxW="382px" w="full" bg="green" colorScheme="green">
-              Make Offer
-            </Button>
+            <Flex maxW="382px" w="full">
+              <GreenBtn text="Make Offer" />
+            </Flex>
             <Center w="57px" h="48px" bg={bgColors} borderRadius="4px">
               <SquareButton
                 bg={bgColors}

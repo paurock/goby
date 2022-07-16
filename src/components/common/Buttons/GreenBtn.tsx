@@ -13,7 +13,14 @@ export const GreenBtn = ({
   color = 'black',
 }: ButtonProps): JSX.Element => {
   return (
-    <Button background={bg} fontWeight="normal" color={color} px="16px" mt="0">
+    <Button
+      w="full"
+      background={bg}
+      fontWeight="normal"
+      color={color}
+      px="16px"
+      mt="0"
+    >
       {text}
     </Button>
   );

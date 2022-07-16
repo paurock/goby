@@ -83,7 +83,7 @@ export const TabsMenu = ({ text, pageName }: TabsCompType): JSX.Element => {
             onMouseLeave={() => setIsHover(-1)}
           >
             <NextLink
-              href={`/${pageName.toLowerCase()}/` + linkName(tab.name)}
+              href={`/${pageName.toLowerCase()}` + linkName(tab.name)}
               passHref
             >
               <Flex key={i} sx={tabStyle}>
