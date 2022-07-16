@@ -2,7 +2,7 @@ import { Box, Flex, Heading, VStack } from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
 import image from 'app/assets/MetaMaskFox.png';
-import { ConnectWalletBtn } from 'components/common/Buttons/ConnectWalletBtn';
+import { GreenBtn } from 'components/common/Buttons/GreenBtn';
 
 export const ConnectMetaMask = () => {
   return (
@@ -30,7 +30,9 @@ export const ConnectMetaMask = () => {
           >
             Connect your wallet to get started with your assets
           </Heading>
-          <ConnectWalletBtn />
+          <Flex w="full" h="40px" justifyContent="center">
+            <GreenBtn text="Connect wallet" />
+          </Flex>
         </VStack>
       </Flex>
     </Flex>

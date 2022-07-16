@@ -13,6 +13,7 @@ import {
   GridItem,
 } from '@chakra-ui/react';
 import { ethereum, moreRound } from 'app/assets/Icons';
+import { GreenBtn } from 'components/common/Buttons/GreenBtn';
 import { loanTableType } from 'components/types';
 import React from 'react';
 import { Img } from 'shared';
@@ -115,14 +116,10 @@ export const LoanTable = ({ status, getAsset = false }: loanTableType) => {
               </HStack>
             </VStack>
             {getAsset ? (
-              <HStack
-                w="50%"
-                justifyContent={['flex-end']}
-                alignItems={'center'}
-              >
-                <Button bg="green" w="fit-content" h="48px" p="13px 32px">
-                  Get an asset
-                </Button>
+              <HStack justifyContent={['flex-end']} alignItems={'center'}>
+                <Flex justifyContent="flex-end" h="48px">
+                  <GreenBtn text="Get an asset" />
+                </Flex>
               </HStack>
             ) : null}
           </GridItem>

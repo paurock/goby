@@ -12,7 +12,7 @@ import {
   Divider,
   Center,
 } from '@chakra-ui/react';
-import { ConnectWalletBtn } from 'components/common/Buttons/ConnectWalletBtn';
+import { GreenBtn } from 'components/common/Buttons/GreenBtn';
 import { motion } from 'framer-motion';
 
 import Link from 'next/link';
@@ -122,7 +122,14 @@ export const Header: React.FC = () => {
                 <DropdownMenu currencies={currencies} />
               </VFlex>
             </Flex>
-            <ConnectWalletBtn />
+            <Flex
+              w="full"
+              minH="40px"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <GreenBtn text="Connect Wallet" />
+            </Flex>
           </Flex>
         </Flex>
         <Flex
