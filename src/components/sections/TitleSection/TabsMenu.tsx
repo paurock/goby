@@ -7,7 +7,7 @@ import {
 } from '@chakra-ui/react';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useRouter } from 'next/router';
+import { NextRouter, useRouter } from 'next/router';
 import NextLink from 'next/link';
 import { cardIcon, collatIcon, flagIcon } from 'app/assets/Icons';
 
@@ -30,7 +30,7 @@ const tabStyle: object = {
 
 type TabsCompType = {
   text: string;
-  colorMode: ColorMode;
+  colorMode?: ColorMode;
   pageName: string;
 };
 
@@ -55,22 +55,16 @@ export const TabsMenu = ({ text, pageName }: TabsCompType): JSX.Element => {
   const showBottomBorder = (): object => ({
     borderBottom: `2px solid ${color}`,
   });
-
+  //get url pathname
   const pathName = (): string =>
     router.pathname.replace(/\s+/g, '').toLowerCase();
-
+  //get links names
   const linkName = (tabName: string): string =>
     `/${tabName}`.replace(/\s+/g, '').toLowerCase();
-
-  const pageNameNormal = (): string => `/${pageName}`.toLowerCase();
-
-  const isActiveLink = (tabName: string): boolean => {
-    // console.log(pageNameNormal(), 'pageNameNormal');
-    // console.log(linkName(tabName), 'linkName(tabName)');
-    //console.log(tabName, ' tabName');
-    return pageNameNormal() === linkName(tabName);
-  };
-
+  //compare link name and pathname if equal set isActive true
+  const isActiveLink = (tabName: string): boolean =>
+    '/' + pathName().split('/').pop() === linkName(tabName);
+  // console.log(pathName(), 'path');
   return (
     <Flex maxW="1600px" maxH="36px" w="full">
       <Flex gap="32px">
@@ -88,7 +82,10 @@ export const TabsMenu = ({ text, pageName }: TabsCompType): JSX.Element => {
             onMouseEnter={() => setIsHover(i)}
             onMouseLeave={() => setIsHover(-1)}
           >
-            <NextLink href={linkName(tab.name)} passHref>
+            <NextLink
+              href={`/${pageName.toLowerCase()}/` + linkName(tab.name)}
+              passHref
+            >
               <Flex key={i} sx={tabStyle}>
                 <Icon
                   key={i}

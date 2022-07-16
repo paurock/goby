@@ -1,5 +1,5 @@
 import { Flex, Box, useColorMode, Heading } from '@chakra-ui/react';
-import { NextRouter, Router, useRouter } from 'next/router';
+import { NextRouter, useRouter } from 'next/router';
 import { VFlex, useAssets } from '../../../shared';
 import { TabsMenu } from './TabsMenu';
 
@@ -15,8 +15,6 @@ const TitleSection = ({
   const { text, background } = useAssets();
   const { colorMode, toggleColorMode } = useColorMode();
   const router: NextRouter = useRouter();
-  const pageName =
-    router.pathname.charAt(1).toUpperCase() + router.pathname.slice(2);
   return (
     <Flex w="full" bg={background} justifyContent="center">
       <Flex
@@ -56,7 +54,7 @@ const TitleSection = ({
               {pageSubtitle}
             </Flex>
           </Box>
-          <TabsMenu text={text} colorMode={colorMode} pageName={pageName} />
+          <TabsMenu text={text} colorMode={colorMode} pageName={pageTitle} />
         </VFlex>
       </Flex>
     </Flex>

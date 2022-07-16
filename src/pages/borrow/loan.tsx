@@ -6,8 +6,8 @@ const Loan: NextPage = () => {
   return (
     <>
       <TitleSection
-        pageTitle="Lend"
-        pageSubtitle="Offer loans to other users on their non-fungible tokens"
+        pageTitle="Borrow"
+        pageSubtitle="Put your NFT assets up as collateral for a loan"
       />
       <Loans />
     </>
