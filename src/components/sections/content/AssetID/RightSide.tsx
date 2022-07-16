@@ -23,13 +23,19 @@ const lightGray = {
   opacity: '0.4',
 } as const;
 
+interface RightSideProps {
+  colors: string;
+  bgColors: string;
+  btnClick: () => void;
+  pageName: string;
+}
+
 export const RightSide = ({
   colors,
   bgColors,
-}: {
-  colors: string;
-  bgColors: string;
-}) => {
+  btnClick,
+  pageName,
+}: RightSideProps) => {
   return (
     <VStack w="full" maxW={['100%', '50%']} pl="15px" zIndex="100">
       {/* TOP SIDE  */}
@@ -87,8 +93,13 @@ export const RightSide = ({
             <Text w="25%">0.5%</Text>
           </HStack>
           <HStack w="full">
-            <Flex maxW="382px" w="full">
-              <GreenBtn text="Make Offer" />
+            <Flex w="full">
+              <GreenBtn
+                text={
+                  pageName === 'Lend' ? 'Make offer' : 'Create borrow terms'
+                }
+                onClick={btnClick}
+              />
             </Flex>
             <Center w="57px" h="48px" bg={bgColors} borderRadius="4px">
               <SquareButton

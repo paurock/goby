@@ -34,7 +34,12 @@ const ConnectWallet: NextPage = () => {
           {/* LEFT COLUMN  */}
           <LeftSide colors={colors} bgColors={bgColors300} />
           {/* RIGHT COLUMN  */}
-          <RightSide colors={colors} bgColors={bgColors300} />
+          <RightSide
+            colors={colors}
+            bgColors={bgColors300}
+            pageName="Lend"
+            btnClick={() => console.log('clicked')}
+          />
         </Flex>
         <Divider w="full" maxW="1050px" />
         {/* ADVERT BLOCK

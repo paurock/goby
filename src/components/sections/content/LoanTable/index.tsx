@@ -21,7 +21,7 @@ const myFontStyle = {
   fontStyle: 'normal',
 };
 
-const Loans = (): JSX.Element => {
+const Loans = ({ pageName }: { pageName: string }): JSX.Element => {
   const { text, background } = useAssets();
   return (
     <Flex w="full" justifyContent="center">
@@ -81,14 +81,18 @@ const Loans = (): JSX.Element => {
             </TabList>
             <TabPanels>
               <TabPanel px="0">
-                <LoanTable status={'Open'} />
+                <LoanTable status={'Open'} pageName={pageName} />
                 <Divider />
-                <LoanTable status={'Overdue'} getAsset={true} />
+                <LoanTable
+                  status={'Overdue'}
+                  pageName={pageName}
+                  isShowBtn={true}
+                />
               </TabPanel>
               <TabPanel px="0">
-                <LoanTable status={'Colosed'} />
+                <LoanTable status={'Colosed'} pageName={pageName} />
                 <Divider />
-                <LoanTable status={'Closed'} />
+                <LoanTable status={'Closed'} pageName={pageName} />
               </TabPanel>
             </TabPanels>
           </Tabs>

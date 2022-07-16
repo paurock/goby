@@ -5,12 +5,14 @@ interface ButtonProps {
   text: string;
   bg?: string;
   color?: string;
+  onClick: () => void;
 }
 
 export const GreenBtn = ({
   text,
   bg = 'green',
   color = 'black',
+  onClick,
 }: ButtonProps): JSX.Element => {
   return (
     <Button
@@ -20,6 +22,7 @@ export const GreenBtn = ({
       color={color}
       px="16px"
       mt="0"
+      onClick={onClick}
     >
       {text}
     </Button>

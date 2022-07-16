@@ -9,7 +9,7 @@ const Loan: NextPage = () => {
         pageTitle="Borrow"
         pageSubtitle="Put your NFT assets up as collateral for a loan"
       />
-      <Loans />
+      <Loans pageName="Borrow" />
     </>
   );
 };

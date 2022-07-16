@@ -31,7 +31,10 @@ export const ConnectMetaMask = () => {
             Connect your wallet to get started with your assets
           </Heading>
           <Flex w="full" maxW="174px" h="40px" justifyContent="center">
-            <GreenBtn text="Connect wallet" />
+            <GreenBtn
+              text="Connect wallet"
+              onClick={() => console.log('clicked')}
+            />
           </Flex>
         </VStack>
       </Flex>

@@ -13,8 +13,3 @@ export type svgPropsSquareBtn = {
   heightBtn?: string;
   bg?: string;
 };
-
-export type loanTableType = {
-  status: string;
-  getAsset?: boolean;
-};

@@ -14,12 +14,22 @@ import {
 } from '@chakra-ui/react';
 import { ethereum, moreRound } from 'app/assets/Icons';
 import { GreenBtn } from 'components/common/Buttons/GreenBtn';
-import { loanTableType } from 'components/types';
 import React from 'react';
 import { Img } from 'shared';
 import image from '/src/app/assets/square_img_150x150.png';
 
-export const LoanTable = ({ status, getAsset = false }: loanTableType) => {
+export type loanTableType = {
+  status: string;
+  getAsset?: boolean;
+  isShowBtn?: boolean;
+  pageName: string;
+};
+
+export const LoanTable = ({
+  status,
+  isShowBtn = false,
+  pageName,
+}: loanTableType) => {
   return (
     <Flex w="full" pt="24px" pb="24px" flexWrap={['wrap', 'nowrap']}>
       {/* IMAGE  */}
@@ -115,10 +125,13 @@ export const LoanTable = ({ status, getAsset = false }: loanTableType) => {
                 <Text>84.00 ETH</Text>
               </HStack>
             </VStack>
-            {getAsset ? (
+            {isShowBtn ? (
               <HStack justifyContent={['flex-end']} alignItems={'center'}>
                 <Flex justifyContent="flex-end" h="48px">
-                  <GreenBtn text="Get an asset" />
+                  <GreenBtn
+                    text={pageName === 'Lend' ? 'Get an asset' : 'Return'}
+                    onClick={() => console.log('clicked')}
+                  />
                 </Flex>
               </HStack>
             ) : null}

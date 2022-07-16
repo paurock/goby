@@ -128,7 +128,10 @@ export const Header: React.FC = () => {
               justifyContent="center"
               alignItems="center"
             >
-              <GreenBtn text="Connect Wallet" />
+              <GreenBtn
+                text="Connect Wallet"
+                onClick={() => console.log('clicked')}
+              />
             </Flex>
           </Flex>
         </Flex>

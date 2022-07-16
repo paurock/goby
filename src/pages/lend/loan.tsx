@@ -9,7 +9,7 @@ const Loan: NextPage = () => {
         pageTitle="Lend"
         pageSubtitle="Offer loans to other users on their non-fungible tokens"
       />
-      <Loans />
+      <Loans pageName="Lend" />
     </>
   );
 };
