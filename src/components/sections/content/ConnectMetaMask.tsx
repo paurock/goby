@@ -1,10 +1,17 @@
-import { Box, Flex, Heading, VStack } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  Heading,
+  useColorModeValue,
+  VStack,
+} from '@chakra-ui/react';
 import Image from 'next/image';
 import React from 'react';
 import image from 'app/assets/MetaMaskFox.png';
 import { GreenBtn } from 'components/common/Buttons/GreenBtn';
 
 export const ConnectMetaMask = () => {
+  const color = useColorModeValue('black.100', 'lightgreen.100');
   return (
     <Flex w="full" justifyContent="center">
       <Flex
@@ -26,7 +33,7 @@ export const ConnectMetaMask = () => {
           <Heading
             as="span"
             pb="24px"
-            sx={{ fontSize: '14px', color: 'rgba(1, 5, 4, 0.6)' }}
+            sx={{ fontSize: '14px', color, opacity: 0.6 }}
           >
             Connect your wallet to get started with your assets
           </Heading>
