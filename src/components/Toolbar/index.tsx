@@ -10,7 +10,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
-import { gridIcon, heartIcon, listIcon } from 'app/assets/Icons';
+import { heartIcon } from 'app/assets/Icons';
 import ProjDropdown from './ProjDropdown';
 
 const Toolbar = (): JSX.Element => {

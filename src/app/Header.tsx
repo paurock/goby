@@ -11,6 +11,7 @@ import {
   IconButton,
   Divider,
   Center,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { GreenBtn } from 'components/common/Buttons/GreenBtn';
 import { motion } from 'framer-motion';
@@ -47,6 +48,7 @@ export const Header: React.FC = () => {
   ];
 
   const { colorMode, toggleColorMode, setColorMode } = useColorMode();
+  const color = useColorModeValue('purple', 'lightgreen');
 
   const [showCurrencyPopup, setShowCurrencyPopup] = useState(false);
   const { getButtonProps, getDisclosureProps, isOpen } = useDisclosure();
@@ -77,11 +79,9 @@ export const Header: React.FC = () => {
             {links.map((link) => (
               <Flex
                 key={link.href}
-                mt="2"
                 _hover={{
-                  opacity: '0.8',
                   textDecor: 'none',
-                  borderBottom: '2px solid #6334B1',
+                  borderBottom: `2px solid ${color}`,
                 }}
                 sx={{
                   height: '80px',
@@ -252,7 +252,7 @@ export const Header: React.FC = () => {
               src={lightModeMob}
               onClick={() => setColorMode('light')}
               rounded="20px"
-              fill={colorMode === 'dark' ? '#fff' : '#000'}
+              fill={colorMode === 'dark' ? '#fff' : 'black.100'}
             />
             <Img
               src={darkModeMob}
