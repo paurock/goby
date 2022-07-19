@@ -4,9 +4,9 @@ import {
   Flex,
   useColorModeValue,
   Link,
+  Box,
 } from '@chakra-ui/react';
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { NextRouter, useRouter } from 'next/router';
 import NextLink from 'next/link';
 import { cardIcon, collatIcon, flagIcon } from 'app/assets/Icons';
@@ -50,7 +50,7 @@ const menuItemStyle = {
 export const TabsMenu = ({ text, pageName }: TabsCompType): JSX.Element => {
   const router: NextRouter = useRouter();
   const [isHover, setIsHover] = useState<number>(-1);
-  const color: string = useColorModeValue('#6334B1', '#28FF98');
+  const color: string = useColorModeValue('purple', 'green');
 
   const showBottomBorder = (): object => ({
     borderBottom: `2px solid ${color}`,
@@ -64,15 +64,14 @@ export const TabsMenu = ({ text, pageName }: TabsCompType): JSX.Element => {
   //compare link name and pathname if equal set isActive true
   const isActiveLink = (tabName: string): boolean =>
     '/' + pathName().split('/').pop() === linkName(tabName);
-  // console.log(pathName(), 'path');
   return (
     <Flex maxW="1600px" maxH="36px" w="full">
       <Flex gap="32px">
         {tabNames.map((tab, i) => (
-          <motion.div
+          <Box
             key={i}
             //@ts-ignore
-            style={
+            sx={
               isActiveLink(tab.name) && {
                 ...menuItemStyle,
                 borderBottom: `2px solid ${color}`,
@@ -105,7 +104,7 @@ export const TabsMenu = ({ text, pageName }: TabsCompType): JSX.Element => {
                 </Link>
               </Flex>
             </NextLink>
-          </motion.div>
+          </Box>
         ))}
       </Flex>
     </Flex>
