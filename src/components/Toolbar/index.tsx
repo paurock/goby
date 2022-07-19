@@ -16,7 +16,7 @@ import ProjDropdown from './ProjDropdown';
 const Toolbar = (): JSX.Element => {
   const [isLiked, setIsLiked] = useState(false);
   const [likes, setLikes] = useState(0);
-  const color = useColorModeValue('purple', 'green');
+  const color: string = useColorModeValue('purple', 'green');
 
   useEffect(() => {
     const likeD_LS = JSON.parse(localStorage.getItem('isLiked') || 'false');
@@ -77,7 +77,7 @@ const Toolbar = (): JSX.Element => {
                 marginRight: '-10px',
                 justifyContent: 'space-around',
                 alignItems: 'center',
-                border: '1px solid lightGray',
+                border: `0.5px solid var(--chakra-colors-chakra-border-color)`,
                 borderRadius: '10px',
               }}
             >
