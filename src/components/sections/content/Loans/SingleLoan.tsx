@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Grid,
   Heading,
   HStack,
@@ -11,12 +10,16 @@ import {
   VStack,
   Flex,
   GridItem,
+  useColorModeValue,
+  Link,
+  Center,
 } from '@chakra-ui/react';
 import { ethereum, moreRound } from 'app/assets/Icons';
 import { GreenBtn } from 'components/common/Buttons/GreenBtn';
 import React from 'react';
 import { Img } from 'shared';
 import image from '/src/app/assets/square_img_150x150.png';
+import NextLink from 'next/link';
 
 export type loanTableType = {
   status: string;
@@ -25,11 +28,32 @@ export type loanTableType = {
   pageName: string;
 };
 
-export const LoanTable = ({
+export const SingleLoan = ({
   status,
   isShowBtn = false,
   pageName,
 }: loanTableType) => {
+  const strokeColor = useColorModeValue('black.100', 'lightGreen.100');
+  const color: string = useColorModeValue('purple', 'green');
+  const openStateColor: string = useColorModeValue('lightgreen', 'green.200');
+  const overdueStateColor: string = useColorModeValue(
+    'redcolor.100',
+    'redcolor.900'
+  );
+  const closedStateColor: string = useColorModeValue('lightgray', 'gray');
+
+  const setColorScheme = (status: string): string => {
+    switch (status) {
+      case 'Open':
+        return openStateColor;
+      case 'Overdue':
+        return overdueStateColor;
+      case 'Closed':
+        return closedStateColor;
+      default:
+        return 'gray';
+    }
+  };
   return (
     <Flex w="full" pt="24px" pb="24px" flexWrap={['wrap', 'nowrap']}>
       {/* IMAGE  */}
@@ -45,9 +69,18 @@ export const LoanTable = ({
           <Tag
             maxH="22px"
             minW="fit-content"
-            colorScheme={status == 'Open' ? 'lightGreen' : 'redcolor'}
+            //colorScheme={setColorScheme(status)}
+            sx={{
+              backgroundColor: setColorScheme(status),
+              opacity: 0.7,
+            }}
           >
-            {status ? status : 'Close'}
+            <Center
+              w="fit-content"
+              sx={{ backgroundColor: setColorScheme(status) }}
+            >
+              {status.toUpperCase()}
+            </Center>
           </Tag>
           <Box w="full"></Box>
           <IconButton
@@ -57,8 +90,9 @@ export const LoanTable = ({
             as={moreRound}
             w="40px"
             h="40px"
-            stroke="lightGray"
-            _hover={{ bacground: 'none' }}
+            stroke={strokeColor}
+            fill="transparent"
+            _hover={{ background: 'none' }}
             onClick={() => console.log('click')}
           />
         </HStack>
@@ -70,14 +104,17 @@ export const LoanTable = ({
             as="span"
             sx={{
               fontSize: '14px',
-              color: 'purple',
+              color,
               textTransform: 'lowerCase',
             }}
           >
-            Name of Borrower
+            <NextLink href="#" passHref>
+              <Link _hover={{ textDecoration: 'none' }}>Name of Borrower</Link>
+            </NextLink>
           </Text>
         </HStack>
         {/* DETAILS  */}
+        <Box h="full"></Box>
         <Grid templateColumns={['repeat(1, 1fr)', 'repeat(2, 1fr)']} w="full">
           {/* LEFT COLUMN  */}
           <GridItem w="full">
@@ -117,17 +154,17 @@ export const LoanTable = ({
               <Text as="span" sx={{ fontSize: '14px', opacity: 0.4 }}>
                 Repayment
               </Text>
-              <HStack pr="20px">
+              <HStack>
                 <Icon
                   //@ts-ignore
                   as={ethereum}
                 />
-                <Text>84.00 ETH</Text>
+                <Text sx={{ strokeColor }}>84.00 ETH</Text>
               </HStack>
             </VStack>
             {isShowBtn ? (
               <HStack justifyContent={['flex-end']} alignItems={'center'}>
-                <Flex justifyContent="flex-end" h="48px">
+                <Flex justifyContent="flex-end" h="48px" ml="20px">
                   <GreenBtn
                     text={pageName === 'Lend' ? 'Get an asset' : 'Return'}
                     onClick={() => console.log('clicked')}

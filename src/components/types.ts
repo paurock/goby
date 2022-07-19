@@ -1,5 +1,6 @@
 export type svgProps = {
   stroke?: string;
+  fill?: string;
 };
 
 export type svgPropsSquareBtn = {

@@ -10,8 +10,9 @@ import {
   Tab,
   TabPanels,
   TabPanel,
+  useColorModeValue,
 } from '@chakra-ui/react';
-import { LoanTable } from './SingleLoan';
+import { SingleLoan } from './SingleLoan';
 import React from 'react';
 import { useAssets } from 'shared';
 
@@ -23,6 +24,8 @@ const myFontStyle = {
 
 const Loans = ({ pageName }: { pageName: string }): JSX.Element => {
   const { text, background } = useAssets();
+  const borderColor = useColorModeValue('purple', 'green');
+
   return (
     <Flex w="full" justifyContent="center">
       <Flex
@@ -31,6 +34,7 @@ const Loans = ({ pageName }: { pageName: string }): JSX.Element => {
         maxW="1050px"
       >
         <VStack w="full" mt={['26px']} pb={['10px']} flexWrap="wrap">
+          {/* HEAD OF TABLE  */}
           <Heading
             as="h2"
             w="full"
@@ -45,6 +49,7 @@ const Loans = ({ pageName }: { pageName: string }): JSX.Element => {
           >
             2 loans
           </Text>
+          {/* BODY OF TABLE  */}
           <Tabs w="full" variant="soft-rounded" colorScheme="white">
             <TabList px="0" fontSize="16px">
               <Tab
@@ -57,7 +62,7 @@ const Loans = ({ pageName }: { pageName: string }): JSX.Element => {
                 borderRadius="3px"
                 _selected={{
                   border: '1px solid',
-                  borderColor: 'purple',
+                  borderColor,
                   color: text,
                 }}
               >
@@ -72,7 +77,7 @@ const Loans = ({ pageName }: { pageName: string }): JSX.Element => {
                 borderRadius="3px"
                 _selected={{
                   border: '1px solid',
-                  borderColor: 'purple',
+                  borderColor,
                   color: text,
                 }}
               >
@@ -81,18 +86,22 @@ const Loans = ({ pageName }: { pageName: string }): JSX.Element => {
             </TabList>
             <TabPanels>
               <TabPanel px="0">
-                <LoanTable status={'Open'} pageName={pageName} />
+                <SingleLoan
+                  status={'Open'}
+                  pageName={pageName}
+                  isShowBtn={true}
+                />
                 <Divider />
-                <LoanTable
+                <SingleLoan
                   status={'Overdue'}
                   pageName={pageName}
                   isShowBtn={true}
                 />
               </TabPanel>
               <TabPanel px="0">
-                <LoanTable status={'Colosed'} pageName={pageName} />
+                <SingleLoan status={'Closed'} pageName={pageName} />
                 <Divider />
-                <LoanTable status={'Closed'} pageName={pageName} />
+                <SingleLoan status={'Closed'} pageName={pageName} />
               </TabPanel>
             </TabPanels>
           </Tabs>

@@ -26,7 +26,7 @@ interface ModalAssetProps {
   onOpen: () => void;
   onClose: () => void;
 }
-export const ModalAsset = ({ isOpen, onOpen, onClose }: ModalAssetProps) => {
+export const ModalAsset = ({ isOpen, onClose }: ModalAssetProps) => {
   return (
     <>
       <Modal isOpen={isOpen} onClose={onClose}>

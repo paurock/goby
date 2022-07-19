@@ -12,6 +12,7 @@ const colors = {
   green: '#28FF98',
   lightGreen: {
     100: '#E7FFF1',
+    200: '#276749',
     300: '#30BE7A',
   },
   redcolor: {

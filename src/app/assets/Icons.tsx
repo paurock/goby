@@ -84,32 +84,32 @@ export const moreRound = (props: svgProps): SVGProps<SVGSVGElement> => (
     width="42"
     height="42"
     viewBox="0 0 42 42"
-    fill="none"
+    fill={props.fill}
     xmlns="http://www.w3.org/2000/svg"
   >
     <circle
       cx="21"
       cy="21"
       r="20"
-      fill="white"
-      stroke="#CECFEA"
+      fill={props.fill}
+      stroke={props.stroke}
       strokeWidth="0.5"
     />
     <path
       d="M21 21.6668C21.3682 21.6668 21.6667 21.3684 21.6667 21.0002C21.6667 20.632 21.3682 20.3335 21 20.3335C20.6318 20.3335 20.3333 20.632 20.3333 21.0002C20.3333 21.3684 20.6318 21.6668 21 21.6668Z"
-      stroke="#010504"
+      stroke={props.stroke}
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M25.6667 21.6668C26.0349 21.6668 26.3333 21.3684 26.3333 21.0002C26.3333 20.632 26.0349 20.3335 25.6667 20.3335C25.2985 20.3335 25 20.632 25 21.0002C25 21.3684 25.2985 21.6668 25.6667 21.6668Z"
-      stroke="#010504"
+      stroke={props.stroke}
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M16.3333 21.6668C16.7015 21.6668 17 21.3684 17 21.0002C17 20.632 16.7015 20.3335 16.3333 20.3335C15.9651 20.3335 15.6667 20.632 15.6667 21.0002C15.6667 21.3684 15.9651 21.6668 16.3333 21.6668Z"
-      stroke="#010504"
+      stroke={props.stroke}
       strokeLinecap="round"
       strokeLinejoin="round"
     />
