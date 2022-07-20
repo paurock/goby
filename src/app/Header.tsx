@@ -103,6 +103,7 @@ export const Header: React.FC = () => {
             {links.map((link) => (
               <Flex
                 key={link.href}
+                //@ts-ignore
                 sx={
                   isActiveLink(link.name) && {
                     ...menuItemStyle,
