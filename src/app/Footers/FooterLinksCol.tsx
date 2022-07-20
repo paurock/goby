@@ -28,8 +28,8 @@ export const FooterLinksCol = ({
 }) => {
   const { title, links } = footerLinkBlock;
   return (
-    <VStack w="full">
-      <List sx={ulStyle} spacing="20px">
+    <VStack w="full" alignItems="flex-start">
+      <List sx={ulStyle} spacing="20px" ml="-8px">
         <ListItem>
           <Heading
             as="h5"
