@@ -77,7 +77,7 @@ export const TabsMenu = ({ text, pageName }: TabsCompType): JSX.Element => {
                 borderBottom: `2px solid ${color}`,
               }
             }
-            whileHover={showBottomBorder()}
+            whilehover={showBottomBorder()}
             onMouseEnter={() => setIsHover(i)}
             onMouseLeave={() => setIsHover(-1)}
           >

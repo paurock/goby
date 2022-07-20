@@ -17,9 +17,16 @@ import { GreenBtn } from 'components/common/Buttons/GreenBtn';
 import { motion } from 'framer-motion';
 
 import Link from 'next/link';
+import { NextRouter, useRouter } from 'next/router';
 import React, { useState } from 'react';
 
 import { links, useAssets, VFlex, DropdownMenu } from 'shared';
+
+const menuItemStyle = {
+  height: '80px',
+  display: 'flex',
+  alignItems: 'center',
+};
 
 export const Header: React.FC = () => {
   const {
@@ -56,6 +63,23 @@ export const Header: React.FC = () => {
   const changeCurrency = (): void => {
     setShowCurrencyPopup(!showCurrencyPopup);
   };
+  const router: NextRouter = useRouter();
+
+  const showBottomBorder = (): object => ({
+    borderBottom: `2px solid ${color}`,
+  });
+
+  //get url pathname
+  const pathName = (): string =>
+    router.pathname.replace(/\s+/g, '').toLowerCase();
+  //get links names
+  const linkName = (itemName: string): string =>
+    `/${itemName}`.replace(/\s+/g, '').toLowerCase();
+  //compare link name and pathname if equal set isActive true
+  const isActiveLink = (tabName: string): boolean => {
+    return '/' + pathName().split('/').slice(1, 2) === linkName(tabName);
+  };
+
   return (
     <Container maxW="1600px" px={['16px', '16px', '20px', '32px']}>
       <Flex minH="80px">
@@ -79,15 +103,12 @@ export const Header: React.FC = () => {
             {links.map((link) => (
               <Flex
                 key={link.href}
-                _hover={{
-                  textDecor: 'none',
-                  borderBottom: `2px solid ${color}`,
-                }}
-                sx={{
-                  height: '80px',
-                  display: 'flex',
-                  alignItems: 'center',
-                }}
+                sx={
+                  isActiveLink(link.name) && {
+                    ...menuItemStyle,
+                    borderBottom: `2px solid ${color}`,
+                  }
+                }
               >
                 <Link href={link.href}>{link.name}</Link>
               </Flex>

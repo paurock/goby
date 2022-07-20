@@ -29,6 +29,7 @@ export default function TileHover(): JSX.Element {
         alignItems="flex-start"
         justifyContent="flex-end"
         mx="12px"
+        pt="12px"
       >
         <OpenSeaAndListed bgColors={bgColors} />
         <Box h="full"></Box>
