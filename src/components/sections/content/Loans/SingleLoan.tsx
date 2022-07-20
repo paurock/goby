@@ -57,10 +57,35 @@ export const SingleLoan = ({
   return (
     <Flex w="full" pt="24px" pb="24px" flexWrap={['wrap', 'nowrap']}>
       {/* IMAGE  */}
-      <Box w="full" maxW={['100%', '150px']} m={['24px', 0]}>
+      <Box
+        w="full"
+        maxW={['100%', '150px']}
+        m="0"
+        mb={['24px', 0]}
+        position="relative"
+      >
+        <Box
+          position="absolute"
+          right="12px"
+          top="12px"
+          display={['block', 'none']}
+        >
+          <IconButton
+            bg="none"
+            aria-label="more"
+            //@ts-ignore
+            as={moreRound}
+            w="40px"
+            h="40px"
+            stroke={strokeColor}
+            fill="white"
+            _hover={{ background: 'none' }}
+            onClick={() => console.log('click')}
+          />
+        </Box>
         <Img alt="image" width="100%" objectFit="cover" src={image.src} />
       </Box>
-      <VStack w="full" pl="24px" sx={{ alignItems: 'flex-start' }}>
+      <VStack w="full" px={[0, '24px']} sx={{ alignItems: 'flex-start' }}>
         {/* NAME AND STATUS  */}
         <HStack w="full">
           <Heading as="h3" sx={{ fontSize: '20px' }} minW="fit-content">
@@ -94,6 +119,7 @@ export const SingleLoan = ({
             fill="transparent"
             _hover={{ background: 'none' }}
             onClick={() => console.log('click')}
+            display={['none', 'block']}
           />
         </HStack>
         <HStack w="full" mb="24px">
@@ -149,9 +175,15 @@ export const SingleLoan = ({
             w="full"
             display="flex"
             justifyContent={['space-between', 'flex-end']}
+            pt={['10px', 0]}
           >
-            <VStack spacing="0">
-              <Text as="span" sx={{ fontSize: '14px', opacity: 0.4 }}>
+            <VStack spacing="0" alignContent="flex-start">
+              <Text
+                w="full"
+                as="span"
+                alignContent="flex-start"
+                sx={{ fontSize: '14px', opacity: 0.4 }}
+              >
                 Repayment
               </Text>
               <HStack>
