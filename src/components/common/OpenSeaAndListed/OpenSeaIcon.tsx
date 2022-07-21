@@ -13,7 +13,7 @@ export const OpenSeaIcon = ({ bgColors }: Props): JSX.Element => {
     <Button
       w="82px"
       h="22px"
-      _hover={{ backgroundColor: 'white' }}
+      _hover={{ backgroundColor: 'white', color: 'black' }}
       leftIcon={<OpenSeaIconSVG />}
       variant="outline"
       sx={{

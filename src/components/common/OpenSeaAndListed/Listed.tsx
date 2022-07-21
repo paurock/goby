@@ -8,6 +8,7 @@ export const Listed = ({ bg = 'green' }: { bg?: string }): JSX.Element => {
       h="22px"
       colorScheme="green"
       bg={bg}
+      color="black"
       sx={{
         textTransform: 'uppercase',
         fontSize: '12px',

@@ -9,6 +9,7 @@ import {
   Icon,
   IconButton,
   Text,
+  useColorModeValue,
   VStack,
 } from '@chakra-ui/react';
 import { BackIcon, ethereum, heartIcon, shareIcon } from 'app/assets/Icons';
@@ -36,6 +37,9 @@ export const RightSide = ({
   btnClick,
   pageName,
 }: RightSideProps) => {
+  const bg = useColorModeValue('rgba(255, 255, 255, 1)', 'rgba(48, 49, 60, 1)');
+  const color = useColorModeValue('rgba(0, 0, 0, 1)', 'rgba(231, 255, 241, 1)');
+
   return (
     <VStack w="full" maxW={['100%', '50%']} pl="15px" zIndex="100">
       {/* TOP SIDE  */}
@@ -44,7 +48,7 @@ export const RightSide = ({
           <Box w="full">
             <IconButton
               aria-label="Go Back"
-              icon={<BackIcon />}
+              icon={<BackIcon fill={bg} stroke={color} />}
               bg="none"
               _hover={{ bg: 'none' }}
             />
@@ -70,7 +74,7 @@ export const RightSide = ({
           <Divider />
         </VStack>
         <VStack w="full">
-          <HStack w="full">
+          <HStack w="full" mt="24px">
             <Text w="30%" sx={lightGray}>
               Desired price
             </Text>

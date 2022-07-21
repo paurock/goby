@@ -6,6 +6,7 @@ import {
   AccordionPanel,
   Box,
   Heading,
+  useColorModeValue,
   VStack,
 } from '@chakra-ui/react';
 import Image from 'next/image';
@@ -19,6 +20,7 @@ export const LeftSide = ({
   colors?: string;
   bgColors?: string;
 }) => {
+  const bg = useColorModeValue('rgba(206, 207, 234, 1)', 'rgba(48, 49, 60, 1)');
   return (
     <VStack maxW={['100%', '50%']} pr="15px" zIndex="100">
       <Box mt="64px">
@@ -29,7 +31,10 @@ export const LeftSide = ({
         mt="24px"
         defaultIndex={[0]}
         allowMultiple
-        sx={{ borderRadius: '4px', border: '1px solid lightblue' }}
+        sx={{
+          borderRadius: '4px',
+          border: `1px solid ${bg}`,
+        }}
       >
         <AccordionItem>
           <h2>
@@ -50,7 +55,7 @@ export const LeftSide = ({
                   sx={{
                     fontSize: '14px',
                     opacity: 0.3,
-                    borderBottom: '1px solid lightgray',
+                    borderBottom: `1px solid ${bg}`,
                     textAlign: 'left',
                     paddingBottom: '16px',
                   }}

@@ -26,6 +26,7 @@ export const GreenBtn = ({
       px="16px"
       mt="0"
       onClick={onClick}
+      _hover={{ opacity: 0.8 }}
     >
       {text}
     </Button>
