@@ -1,5 +1,5 @@
 import { Grid, Flex } from '@chakra-ui/react';
-import Toolbar from 'components/Toolbar';
+import Toolbar from 'components/sections/content/Toolbar';
 import { NextPage } from 'next';
 
 const MyOffers: NextPage = () => {

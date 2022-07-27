@@ -1,5 +1,22 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+PROJECT STRUCTURE
+
+app/ - разметка, тема и файлы картинок и изображений
+PAGES/ - Страницы приложения
+COMPONENTS/ - Общие компоненты типа кнопки и пр.
+===
+COMPONENTS/
+=====
+
+1.  content/ - Более крупные компоненты-части страниц, на основе которых собираются страницы
+    AssetID - фрагменты составляющие страницу "/asset-id"
+    Loans - "/.../loans
+    Toolbar/ - это компонент для страницы Tiles
+    напр. /lend/collateral (плитка изображений)
+    ====
+2.  # TitleSection/ - Фрагмент страницы, отвечающие за часть между хэдером и содержимым страницы. Секция заголовка другими словами.
+
 ## Getting Started
 
 First, run the development server:

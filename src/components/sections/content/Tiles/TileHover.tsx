@@ -7,7 +7,7 @@ import {
   Flex,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { OpenSeaAndListed } from 'components/common/OpenSeaAndListed';
+import { OpenSeaAndListed } from 'components/OpenSeaAndListed';
 
 export default function TileHover(): JSX.Element {
   const bgColors = useColorModeValue('white', 'black.100');

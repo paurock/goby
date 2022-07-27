@@ -8,7 +8,7 @@ import {
 import Image from 'next/image';
 import React from 'react';
 import image from 'app/assets/MetaMaskFox.png';
-import { GreenBtn } from 'components/common/Buttons/GreenBtn';
+import { GreenBtn } from 'components/Buttons/GreenBtn';
 
 export const ConnectMetaMask = () => {
   const color = useColorModeValue('black.100', 'lightgreen.100');

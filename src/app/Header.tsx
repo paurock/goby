@@ -13,7 +13,7 @@ import {
   Center,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { GreenBtn } from 'components/common/Buttons/GreenBtn';
+import { GreenBtn } from 'components/Buttons/GreenBtn';
 import { motion } from 'framer-motion';
 
 import Link from 'next/link';

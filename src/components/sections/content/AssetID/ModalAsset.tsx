@@ -16,7 +16,7 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react';
-import { GreenBtn } from 'components/common/Buttons/GreenBtn';
+import { GreenBtn } from 'components/Buttons/GreenBtn';
 import React from 'react';
 import { Img } from 'shared';
 import image4 from '/src/app/assets/mockImgs/Rectangle4.png';

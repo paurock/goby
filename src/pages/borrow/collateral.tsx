@@ -1,4 +1,4 @@
-import Toolbar from '../../components/Toolbar';
+import Toolbar from '../../components/sections/content/Toolbar';
 import { NextPage } from 'next';
 import TitleSection from 'components/sections/TitleSection';
 import { ConnectMetaMask } from 'components/sections/content/ConnectMetaMask';

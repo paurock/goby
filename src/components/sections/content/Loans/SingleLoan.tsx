@@ -15,11 +15,11 @@ import {
   Center,
 } from '@chakra-ui/react';
 import { ethereum, moreRound } from 'app/assets/Icons';
-import { GreenBtn } from 'components/common/Buttons/GreenBtn';
 import React from 'react';
 import { Img } from 'shared';
 import image from '/src/app/assets/square_img_150x150.png';
 import NextLink from 'next/link';
+import { GreenBtn } from 'components/Buttons/GreenBtn';
 
 export type loanTableType = {
   status: string;

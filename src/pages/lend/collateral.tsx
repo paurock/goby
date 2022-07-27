@@ -1,4 +1,4 @@
-import Toolbar from '../../components/Toolbar';
+import Toolbar from '../../components/sections/content/Toolbar';
 import Tiles from '../../components/sections/content/Tiles';
 import { NextPage } from 'next';
 import TitleSection from 'components/sections/TitleSection';
